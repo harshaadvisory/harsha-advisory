@@ -137,56 +137,75 @@ section { padding: 6rem 0; }
 .service-card h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--blue-900); margin-bottom: .75rem; line-height: 1.4; }
 .service-card p { font-size: .88rem; color: var(--gray-500); line-height: 1.7; }
 
-/* CTA baru (background putih) */
-.cta-section-light {
-  background: var(--white);
-  padding: 3rem 0;
-  margin-top: -5rem;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+.advisory-section {
+  padding: 4rem 0;
 }
 
-.cta-box {
-  max-width: 900px;
-  margin: 0 auto;
-  background: linear-gradient(135deg, var(--blue-600), var(--blue-800));
-  padding: 3rem 3rem;
+.advisory-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* Base card */
+.advisory-card {
   border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(10, 22, 40, 0.12);
+  padding: 2.5rem;
+  border: 1px solid var(--gray-200);
 }
 
-/* Text inside */
-.cta-box h2 {
+.advisory-card h3 {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.advisory-meta {
+  font-size: 0.9rem;
+  color: var(--gray-500);
   margin-bottom: 1rem;
 }
 
-.cta-box p {
-  color: var(--blue-200);
-  font-size: 1rem;
-  line-height: 1.8;
-  max-width: 640px; /* penting: batasi lebar teks */
-  margin: 0 auto 2rem auto;
+.advisory-card p {
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
-.cta-box {
-  position: relative;
-  overflow: hidden;
+.advisory-card ul {
+  margin: 0 0 2rem 1.2rem;
+  color: var(--gray-600);
 }
 
-.cta-box::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -10%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 60%);
-  transform: translateY(-50%);
+.advisory-card ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* FREE (light) */
+.advisory-card.light {
+  background: var(--white);
+}
+
+/* PAID (highlight) */
+.advisory-card.highlight {
+  background: linear-gradient(135deg, var(--blue-600), var(--blue-800));
+  color: var(--white);
+  border: none;
+}
+
+.advisory-card.highlight p,
+.advisory-card.highlight ul,
+.advisory-card.highlight .advisory-meta {
+  color: rgba(255,255,255,0.85);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .advisory-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* VALUES */
