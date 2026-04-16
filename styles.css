@@ -140,19 +140,17 @@ section { padding: 6rem 0; }
 /* CTA baru (background putih) */
 .cta-section-light {
   background: var(--white);
-  padding: 5rem 0;
-}
-
-/* CTA Box - Blue Highlight */
-.cta-section {
-  background: var(--white);
+  padding: 3rem 0;
+  margin-top: -2rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
 }
 
 .cta-box {
-  max-width: 720px;
+  max-width: 900px;
   margin: 0 auto;
   background: linear-gradient(135deg, var(--blue-600), var(--blue-800));
-  padding: 3rem 2.5rem;
+  padding: 3rem 3rem;
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 20px 60px rgba(10, 22, 40, 0.12);
@@ -170,11 +168,9 @@ section { padding: 6rem 0; }
 .cta-box p {
   color: var(--blue-200);
   font-size: 1rem;
-  margin-bottom: 2rem;
   line-height: 1.8;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 640px; /* penting: batasi lebar teks */
+  margin: 0 auto 2rem auto;
 }
 
 .cta-box {
