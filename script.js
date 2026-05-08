@@ -141,4 +141,10 @@ document.addEventListener('DOMContentLoaded', () => {
     portfolioObserver.observe(portfolioSection);
   }
 
+  // Redirect /index.html → /
+  if (window.location.pathname.endsWith('index.html')) {
+     window.location.replace(
+       window.location.pathname.replace('index.html', '')
+     );
+   }
 });
