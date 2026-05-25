@@ -823,6 +823,7 @@ section { padding: 6rem 0; }
 .case-row-header { background: linear-gradient(90deg, var(--blue-500), var(--blue-700)); color: var(--white); font-weight: 700; }
 .case-row-header .case-cell { font-family: var(--font-display); font-size: .95rem; padding: 1.1rem 1.5rem; text-align: center; }
 .case-cell { padding: 1.15rem 1.5rem; font-size: .92rem; line-height: 1.6; color: var(--gray-700); }
+.case-cell-white { padding: 1.15rem 1.5rem; font-size: .92rem; line-height: 1.6; color: (--white-700); }
 .case-row:not(.case-row-header):hover { background: var(--gray-50); }
 .case-row:not(.case-row-header) .case-cell:first-child { color: var(--gray-500); border-right: 1px solid var(--gray-200); }
 .case-row:not(.case-row-header) .case-cell:last-child { color: var(--blue-800); font-weight: 500; }
