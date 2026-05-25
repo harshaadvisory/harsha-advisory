@@ -141,6 +141,25 @@ document.addEventListener('DOMContentLoaded', () => {
     portfolioObserver.observe(portfolioSection);
   }
 
+  /* ---------- Filter Buttons (Case Studies & Insights) ---------- */
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      this.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  /* ---------- FAQ Accordion (only one open at a time) ---------- */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('toggle', function() {
+      if (this.open) {
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== this && other.open) other.open = false;
+        });
+      }
+    });
+  });
+
   // Redirect /index.html → /
   if (window.location.pathname.endsWith('index.html')) {
      window.location.replace(
