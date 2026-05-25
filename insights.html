@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Insights — Harsha Dana Consulting</title>
-  <meta name="description" content="Insights dan thought leadership tentang keuangan korporat, sustainable finance, treasury, financial wellness, dan strategi pembiayaan dari Harsha Dana Consulting.">
+  <meta name="description" content="Insights dan thought leadership tentang keuangan korporat, sustainable finance, treasury, financial wellness, dan strategi pembiayaan.">
   <link rel="icon" href="assets/logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +20,7 @@
         <div class="nav-logo-text">Harsha Dana<span>Consulting</span></div>
       </a>
       <div class="nav-links">
-        <a href="/#services">Layanan</a>
-        <a href="/#methodology">Metodologi</a>
+        <a href="/">Home</a>
         <a href="/case-studies.html">Case Studies</a>
         <a href="/sustainable-finance.html">Sustainable Finance</a>
         <a href="/insights.html" class="active">Insights</a>
@@ -38,16 +37,6 @@
       <div class="breadcrumb"><a href="/">Home</a> <span>›</span> <span>Insights</span></div>
       <h1>Insights &amp; <em>Thought Leadership</em></h1>
       <p class="page-hero-desc">Pemikiran strategis tentang keuangan korporat, sustainable finance, treasury, dan financial wellness — untuk pemilik bisnis dan praktisi.</p>
-
-      <div class="case-filter">
-        <button class="filter-btn active">Semua</button>
-        <button class="filter-btn">Arsitektur Keuangan</button>
-        <button class="filter-btn">Cash Flow</button>
-        <button class="filter-btn">Investasi</button>
-        <button class="filter-btn">Financial Wellness</button>
-        <button class="filter-btn">Strategi Pembiayaan</button>
-        <button class="filter-btn">Riset &amp; Data</button>
-      </div>
     </div>
   </section>
 
@@ -56,13 +45,27 @@
     <div class="container">
       <div class="section-label fade-up">Artikel Unggulan</div>
       <article class="featured-article fade-up">
-        <div class="featured-article-image" style="background:linear-gradient(135deg, var(--blue-700), var(--blue-500));">
-          <div class="featured-article-overlay">
-            <div class="featured-article-cat">Arsitektur Keuangan</div>
-            <div class="featured-article-icon">
-              <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-            </div>
-          </div>
+        <div class="featured-article-image illust-omzet">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <!-- Bars going up then collapsing -->
+            <g stroke="rgba(255,255,255,.92)" stroke-width="2" fill="rgba(255,255,255,.85)">
+              <rect x="80" y="220" width="35" height="50" rx="3"/>
+              <rect x="130" y="190" width="35" height="80" rx="3"/>
+              <rect x="180" y="150" width="35" height="120" rx="3"/>
+              <rect x="230" y="100" width="35" height="170" rx="3"/>
+            </g>
+            <!-- Crashing bar -->
+            <g transform="translate(305 80) rotate(35)" fill="rgba(248,180,140,.95)" stroke="rgba(255,255,255,.95)" stroke-width="2">
+              <rect x="0" y="0" width="35" height="170" rx="3"/>
+            </g>
+            <!-- Trend line going up then dropping -->
+            <path d="M 80 220 L 130 190 L 180 150 L 230 100 L 280 60 L 330 240" stroke="rgba(255,255,255,.6)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="6 6"/>
+            <!-- Warning indicator -->
+            <circle cx="330" cy="240" r="10" fill="#ffffff" stroke="rgba(232,121,58,1)" stroke-width="3"/>
+            <text x="330" y="245" font-family="Manrope, sans-serif" font-weight="700" font-size="14" fill="rgba(232,121,58,1)" text-anchor="middle">!</text>
+            <!-- Baseline -->
+            <line x1="60" y1="270" x2="360" y2="270" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+          </svg>
         </div>
         <div class="featured-article-content">
           <span class="article-meta">8 menit baca · Mei 2026</span>
@@ -81,11 +84,25 @@
 
       <div class="insights-grid">
 
+        <!-- Article: Biaya Tersembunyi — Iceberg illustration -->
         <article class="insight-card fade-up">
-          <div class="insight-card-image" style="background:linear-gradient(135deg, var(--orange-500), var(--orange-300));">
-            <span class="insight-category">Riset &amp; Data</span>
+          <div class="insight-card-image illust-iceberg">
+            <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <!-- Water surface -->
+              <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-dasharray="6 6"/>
+              <!-- Water ripples -->
+              <path d="M 30 120 Q 60 115, 90 120 T 150 120 T 210 120 T 270 120 T 330 120 T 390 120" stroke="rgba(255,255,255,.25)" stroke-width="1.5" fill="none"/>
+              <!-- Tip of iceberg (visible) -->
+              <path d="M 175 60 L 225 60 L 240 120 L 160 120 Z" fill="rgba(255,255,255,.95)"/>
+              <!-- Hidden iceberg (below water) -->
+              <path d="M 160 120 L 240 120 L 280 170 L 300 200 L 270 220 L 220 215 L 180 220 L 130 215 L 110 195 L 120 160 Z" fill="rgba(255,255,255,.55)"/>
+              <!-- Labels visible vs hidden -->
+              <text x="200" y="50" font-family="Manrope, sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,.85)" text-anchor="middle">Terlihat</text>
+              <text x="200" y="235" font-family="Manrope, sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,.7)" text-anchor="middle">Tersembunyi</text>
+            </svg>
           </div>
           <div class="insight-card-content">
+            <span class="insight-category">Riset &amp; Data</span>
             <span class="article-meta">6 menit baca</span>
             <h3>Biaya Tersembunyi dari Rendahnya Literasi Keuangan Karyawan</h3>
             <p>Analisis dampak rendahnya literasi keuangan karyawan terhadap produktivitas perusahaan dan strategi mengatasinya.</p>
@@ -93,11 +110,27 @@
           </div>
         </article>
 
+        <!-- Article: Ilusi Kesiapan — Cracked wallet -->
         <article class="insight-card fade-up">
-          <div class="insight-card-image" style="background:linear-gradient(135deg, var(--blue-600), var(--blue-400));">
-            <span class="insight-category">Financial Wellness</span>
+          <div class="insight-card-image illust-illusion">
+            <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <!-- Wallet body -->
+              <rect x="100" y="80" width="200" height="120" rx="12" fill="rgba(255,255,255,.95)" stroke="rgba(10,22,40,.2)" stroke-width="2"/>
+              <!-- Wallet fold -->
+              <rect x="100" y="80" width="200" height="40" rx="12" fill="rgba(255,255,255,.7)"/>
+              <line x1="100" y1="120" x2="300" y2="120" stroke="rgba(10,22,40,.15)" stroke-width="1.5"/>
+              <!-- Crack across wallet -->
+              <path d="M 80 70 L 130 110 L 110 140 L 160 165 L 140 195 L 200 210 L 240 180 L 290 195 L 320 175" stroke="rgba(232,121,58,1)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- "Empty" dots showing hollow -->
+              <circle cx="180" cy="145" r="3" fill="rgba(10,22,40,.3)"/>
+              <circle cx="220" cy="145" r="3" fill="rgba(10,22,40,.3)"/>
+              <circle cx="200" cy="170" r="3" fill="rgba(10,22,40,.3)"/>
+              <!-- Question mark -->
+              <text x="200" y="55" font-family="Manrope, sans-serif" font-weight="800" font-size="36" fill="rgba(255,255,255,.85)" text-anchor="middle">?</text>
+            </svg>
           </div>
           <div class="insight-card-content">
+            <span class="insight-category">Financial Wellness</span>
             <span class="article-meta">5 menit baca</span>
             <h3>Ilusi Kesiapan Finansial: Mengapa Tabungan Saja Tidak Cukup</h3>
             <p>Banyak orang merasa siap secara finansial padahal sebenarnya rentan. Apa yang membedakan keuangan yang benar-benar sehat?</p>
@@ -105,11 +138,31 @@
           </div>
         </article>
 
+        <!-- Article: Arus Kas — Pulse/heartbeat -->
         <article class="insight-card fade-up">
-          <div class="insight-card-image" style="background:linear-gradient(135deg, var(--blue-700), var(--blue-500));">
-            <span class="insight-category">Cash Flow</span>
+          <div class="insight-card-image illust-pulse">
+            <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <!-- Grid background -->
+              <g stroke="rgba(255,255,255,.08)" stroke-width="1">
+                <line x1="0" y1="60" x2="400" y2="60"/>
+                <line x1="0" y1="120" x2="400" y2="120"/>
+                <line x1="0" y1="180" x2="400" y2="180"/>
+              </g>
+              <!-- Baseline -->
+              <line x1="20" y1="120" x2="380" y2="120" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
+              <!-- Heartbeat pulse line -->
+              <path d="M 20 120 L 80 120 L 95 90 L 110 150 L 125 60 L 140 180 L 160 120 L 220 120 L 235 100 L 250 140 L 265 70 L 280 170 L 300 120 L 340 120 L 355 85 L 370 165 L 380 120" 
+                    stroke="rgba(255,255,255,.95)" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+              <!-- Warning dot at end -->
+              <circle cx="380" cy="120" r="6" fill="rgba(232,121,58,1)"/>
+              <circle cx="380" cy="120" r="12" fill="none" stroke="rgba(232,121,58,.5)" stroke-width="2"/>
+              <!-- Labels -->
+              <text x="40" y="40" font-family="Manrope, sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,.7)">CASH FLOW</text>
+              <text x="350" y="40" font-family="Manrope, sans-serif" font-weight="700" font-size="11" fill="rgba(232,121,58,1)" text-anchor="end">ALERT</text>
+            </svg>
           </div>
           <div class="insight-card-content">
+            <span class="insight-category">Cash Flow</span>
             <span class="article-meta">7 menit baca</span>
             <h3>Arus Kas: Sinyal Peringatan Dini Kesehatan Bisnis</h3>
             <p>Bagaimana membaca pola arus kas untuk mendeteksi masalah bisnis sebelum terlambat. Indikator dan early warning yang harus diperhatikan.</p>
@@ -117,11 +170,35 @@
           </div>
         </article>
 
+        <!-- Article: Financial Stress — Pressure gauge -->
         <article class="insight-card fade-up">
-          <div class="insight-card-image" style="background:linear-gradient(135deg, var(--gray-700), var(--blue-800));">
-            <span class="insight-category">Financial Wellness</span>
+          <div class="insight-card-image illust-gauge">
+            <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <!-- Gauge arc background -->
+              <path d="M 100 180 A 100 100 0 0 1 300 180" stroke="rgba(255,255,255,.25)" stroke-width="20" fill="none" stroke-linecap="round"/>
+              <!-- Gauge arc colored sections -->
+              <path d="M 100 180 A 100 100 0 0 1 175 95" stroke="rgba(255,255,255,.7)" stroke-width="20" fill="none" stroke-linecap="round"/>
+              <path d="M 175 95 A 100 100 0 0 1 245 102" stroke="rgba(248,180,140,.9)" stroke-width="20" fill="none"/>
+              <path d="M 245 102 A 100 100 0 0 1 300 180" stroke="rgba(232,121,58,1)" stroke-width="20" fill="none" stroke-linecap="round"/>
+              <!-- Tick marks -->
+              <g stroke="rgba(255,255,255,.5)" stroke-width="2">
+                <line x1="100" y1="180" x2="108" y2="172"/>
+                <line x1="135" y1="125" x2="145" y2="130"/>
+                <line x1="200" y1="80" x2="200" y2="90"/>
+                <line x1="265" y1="125" x2="255" y2="130"/>
+                <line x1="300" y1="180" x2="292" y2="172"/>
+              </g>
+              <!-- Needle pointing to danger zone (red) -->
+              <line x1="200" y1="180" x2="280" y2="135" stroke="rgba(255,255,255,1)" stroke-width="4" stroke-linecap="round"/>
+              <!-- Pivot -->
+              <circle cx="200" cy="180" r="10" fill="rgba(255,255,255,1)"/>
+              <circle cx="200" cy="180" r="4" fill="rgba(10,22,40,1)"/>
+              <!-- Label -->
+              <text x="200" y="215" font-family="Manrope, sans-serif" font-weight="700" font-size="13" fill="rgba(255,255,255,.9)" text-anchor="middle" letter-spacing="2">STRESS LEVEL</text>
+            </svg>
           </div>
           <div class="insight-card-content">
+            <span class="insight-category">Financial Wellness</span>
             <span class="article-meta">8 menit baca</span>
             <h3>Risiko Financial Stress di Tempat Kerja</h3>
             <p>Dampak tekanan finansial pribadi karyawan terhadap produktivitas, retensi, dan kesehatan organisasi secara keseluruhan.</p>
@@ -129,11 +206,32 @@
           </div>
         </article>
 
+        <!-- Article: Transformasi Pembiayaan — Growth stairs -->
         <article class="insight-card fade-up">
-          <div class="insight-card-image" style="background:linear-gradient(135deg, var(--blue-500), var(--blue-300));">
-            <span class="insight-category">Strategi Pembiayaan</span>
+          <div class="insight-card-image illust-growth">
+            <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <!-- Stairs going up -->
+              <g fill="rgba(255,255,255,.92)" stroke="rgba(255,255,255,1)" stroke-width="1.5">
+                <rect x="60" y="190" width="60" height="30" rx="2"/>
+                <rect x="120" y="160" width="60" height="60" rx="2"/>
+                <rect x="180" y="130" width="60" height="90" rx="2"/>
+                <rect x="240" y="100" width="60" height="120" rx="2"/>
+                <rect x="300" y="70" width="60" height="150" rx="2"/>
+              </g>
+              <!-- Arrow trajectory -->
+              <path d="M 70 175 L 130 145 L 190 115 L 250 85 L 330 50" stroke="rgba(255,255,255,.95)" stroke-width="3" fill="none" stroke-dasharray="6 4" stroke-linecap="round"/>
+              <!-- Arrow head -->
+              <polygon points="330,50 318,52 322,42" fill="rgba(255,255,255,1)" transform="rotate(-30 330 50)"/>
+              <!-- Currency symbols on steps -->
+              <text x="90" y="212" font-family="Manrope, sans-serif" font-weight="700" font-size="11" fill="rgba(10,22,40,.65)" text-anchor="middle">Bootstrap</text>
+              <text x="150" y="197" font-family="Manrope, sans-serif" font-weight="700" font-size="11" fill="rgba(10,22,40,.65)" text-anchor="middle">Debt</text>
+              <text x="210" y="182" font-family="Manrope, sans-serif" font-weight="700" font-size="11" fill="rgba(10,22,40,.65)" text-anchor="middle">Equity</text>
+              <text x="270" y="167" font-family="Manrope, sans-serif" font-weight="700" font-size="11" fill="rgba(10,22,40,.65)" text-anchor="middle">Scale</text>
+              <text x="330" y="152" font-family="Manrope, sans-serif" font-weight="700" font-size="11" fill="rgba(10,22,40,.65)" text-anchor="middle">Exit</text>
+            </svg>
           </div>
           <div class="insight-card-content">
+            <span class="insight-category">Strategi Pembiayaan</span>
             <span class="article-meta">9 menit baca</span>
             <h3>Transformasi Pembiayaan untuk Bisnis yang Sedang Scaling</h3>
             <p>Pendekatan strategis pembiayaan untuk perusahaan yang sedang ekspansi. Dari bootstrap, debt financing, hingga ekuitas.</p>
@@ -141,14 +239,30 @@
           </div>
         </article>
 
+        <!-- Article: Omzet Miliaran — Same as featured -->
         <article class="insight-card fade-up">
-          <div class="insight-card-image" style="background:linear-gradient(135deg, var(--orange-500), var(--orange-400));">
-            <span class="insight-category">Arsitektur Keuangan</span>
+          <div class="insight-card-image illust-omzet">
+            <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <g stroke="rgba(255,255,255,.92)" stroke-width="2" fill="rgba(255,255,255,.85)">
+                <rect x="80" y="160" width="30" height="50" rx="3"/>
+                <rect x="125" y="130" width="30" height="80" rx="3"/>
+                <rect x="170" y="100" width="30" height="110" rx="3"/>
+                <rect x="215" y="65" width="30" height="145" rx="3"/>
+              </g>
+              <g transform="translate(280 50) rotate(35)" fill="rgba(248,180,140,.95)" stroke="rgba(255,255,255,.95)" stroke-width="2">
+                <rect x="0" y="0" width="30" height="145" rx="3"/>
+              </g>
+              <path d="M 80 160 L 125 130 L 170 100 L 215 65 L 260 30 L 305 190" stroke="rgba(255,255,255,.6)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="5 5"/>
+              <circle cx="305" cy="190" r="8" fill="#ffffff" stroke="rgba(232,121,58,1)" stroke-width="2"/>
+              <text x="305" y="194" font-family="Manrope, sans-serif" font-weight="700" font-size="12" fill="rgba(232,121,58,1)" text-anchor="middle">!</text>
+              <line x1="60" y1="210" x2="340" y2="210" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+            </svg>
           </div>
           <div class="insight-card-content">
+            <span class="insight-category">Arsitektur Keuangan</span>
             <span class="article-meta">8 menit baca</span>
             <h3>Omzet Miliaran Tapi Bisnis Gagal</h3>
-            <p>Anatomi arsitektur keuangan yang lemah. Mengapa revenue impressive tidak menjamin bisnis berkelanjutan, dan apa yang sebenarnya menentukan.</p>
+            <p>Anatomi arsitektur keuangan yang lemah. Mengapa revenue impressive tidak menjamin bisnis berkelanjutan.</p>
             <a href="https://konsultankeuangan.id/omzet-miliaran-gagal/" target="_blank" rel="noopener" class="article-link">Baca <span>→</span></a>
           </div>
         </article>
@@ -166,8 +280,18 @@
         </div>
         <h2>Dapatkan Insight Bulanan</h2>
         <p>Berlangganan newsletter Harsha Dana — 1 artikel strategic per bulan, tanpa spam. Berisi analisis tema-tema penting di keuangan korporat, treasury, dan sustainable finance.</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Terima kasih! Newsletter akan kami kirim ke email Anda.');">
-          <input type="email" placeholder="email@perusahaan.com" required>
+
+        <!-- 
+          PENTING — KONFIGURASI EMAIL DESTINATION:
+          Untuk menerima email subscriber, daftar di https://formspree.io (free tier OK),
+          buat form, lalu ganti URL di action="" dengan URL Formspree milik tanya@konsultankeuangan.id.
+          Format URL Formspree: https://formspree.io/f/xqejdjae
+          Setelah konfigurasi, semua email subscriber akan diforward ke tanya@konsultankeuangan.id otomatis.
+        -->
+        <form class="newsletter-form" action="https://formspree.io/f/xqejdjae" method="POST">
+          <input type="email" name="email" placeholder="email@perusahaan.com" required>
+          <input type="hidden" name="_subject" value="Newsletter Subscription — Harsha Dana">
+          <input type="hidden" name="form-type" value="newsletter">
           <button type="submit" class="btn-primary">Berlangganan</button>
         </form>
         <p class="newsletter-note">Atau hubungi langsung di <a href="mailto:tanya@konsultankeuangan.id">tanya@konsultankeuangan.id</a></p>
