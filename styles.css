@@ -747,11 +747,11 @@ section { padding: 6rem 0; }
 /* ===== TRUST BAR ===== */
 .trust-bar { padding: 4rem 0; background: var(--white); border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); }
 .trust-bar-label { text-align: center; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--gray-500); margin-bottom: 2.5rem; }
-.trust-bar-logos { display: grid; grid-template-columns: repeat(8, 1fr); gap: 2rem 2.5rem; align-items: center; justify-items: center; max-width: 1100px; margin: 0 auto; }
-.trust-logo-item { width: 100%; height: 60px; display: flex; align-items: center; justify-content: center; opacity: .55; filter: grayscale(100%); transition: opacity .3s, filter .3s; }
-.trust-logo-item:hover { opacity: 1; filter: grayscale(0%); }
+.trust-bar-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2.5rem 3.5rem; max-width: 1100px; margin: 0 auto; }
+.trust-logo-item { width: 140px; height: 70px; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; }
+.trust-logo-item:hover { transform: scale(1.06); }
 .trust-logo-item img { max-height: 100%; max-width: 100%; object-fit: contain; }
-.trust-logo-text { font-family: var(--font-display); font-weight: 700; font-size: .95rem; color: var(--gray-700); letter-spacing: -.01em; text-align: center; line-height: 1.2; }
+.trust-logo-text { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--blue-700); letter-spacing: -.01em; text-align: center; line-height: 1.2; }
 .trust-bar-industries { text-align: center; font-size: .9rem; color: var(--gray-500); margin-top: 2.5rem; }
 .trust-bar-industries strong { color: var(--blue-700); font-weight: 600; }
 
@@ -1117,7 +1117,7 @@ section { padding: 6rem 0; }
 
 /* ===== RESPONSIVE — TRUST BAR ===== */
 @media (max-width: 1024px) {
-  .trust-bar-logos { grid-template-columns: repeat(4, 1fr); gap: 1.5rem 2rem; }
+  .trust-bar-logos { gap: 2rem 2.5rem; }
   .vp-grid { grid-template-columns: 1fr; }
   .engagement-grid { grid-template-columns: 1fr; }
   .engagement-card.highlight { transform: none; }
@@ -1138,8 +1138,8 @@ section { padding: 6rem 0; }
 
 @media (max-width: 768px) {
   .trust-bar { padding: 3rem 0; }
-  .trust-bar-logos { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .trust-logo-item { height: 50px; }
+  .trust-bar-logos { gap: 1.5rem 2rem; }
+  .trust-logo-item { width: 110px; height: 55px; }
   .pain-points { gap: .75rem; }
   .method-item { padding: 1.5rem; grid-template-columns: 50px 1fr; gap: 1.25rem; }
   .method-num { font-size: 1.8rem; }
@@ -1163,7 +1163,8 @@ section { padding: 6rem 0; }
 }
 
 @media (max-width: 480px) {
-  .trust-bar-logos { grid-template-columns: repeat(2, 1fr); }
+  .trust-bar-logos { gap: 1.25rem 1.5rem; }
+  .trust-logo-item { width: 95px; height: 50px; }
   .story-stats { grid-template-columns: 1fr 1fr; gap: .75rem; }
   .story-stat { padding: 1.25rem .75rem; }
   .story-stat-num { font-size: 1.8rem; }
@@ -1265,3 +1266,81 @@ section { padding: 6rem 0; }
 @media (max-width: 480px) {
   .quant-topics { grid-template-columns: 1fr; }
 }
+
+/* ============================================
+   PHASE 4 — SVG Article Illustrations
+   ============================================ */
+
+/* Illustration containers - thematic gradients with embedded SVGs */
+.illust-omzet { background: linear-gradient(135deg, #e8793a, #c5450f); display: flex; align-items: center; justify-content: center; }
+.illust-iceberg { background: linear-gradient(135deg, #1a4480, #0a1628); display: flex; align-items: center; justify-content: center; }
+.illust-illusion { background: linear-gradient(135deg, #3b82c4, #2563a0); display: flex; align-items: center; justify-content: center; }
+.illust-pulse { background: linear-gradient(135deg, #14325a, #0f2240); display: flex; align-items: center; justify-content: center; }
+.illust-gauge { background: linear-gradient(135deg, #2563a0, #14325a); display: flex; align-items: center; justify-content: center; }
+.illust-growth { background: linear-gradient(135deg, #f09258, #e8793a); display: flex; align-items: center; justify-content: center; }
+
+.illust-omzet svg,
+.illust-iceberg svg,
+.illust-illusion svg,
+.illust-pulse svg,
+.illust-gauge svg,
+.illust-growth svg {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+/* Override insight-card-image padding for illustration containers - we want full bleed */
+.insight-card-image.illust-omzet,
+.insight-card-image.illust-iceberg,
+.insight-card-image.illust-illusion,
+.insight-card-image.illust-pulse,
+.insight-card-image.illust-gauge,
+.insight-card-image.illust-growth {
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Featured article larger container needs bigger illustrations */
+.featured-article-image.illust-omzet,
+.featured-article-image.illust-iceberg,
+.featured-article-image.illust-illusion,
+.featured-article-image.illust-pulse,
+.featured-article-image.illust-gauge,
+.featured-article-image.illust-growth {
+  padding: 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+/* Category label needs proper background since we removed the wrapper */
+.insight-card .insight-category {
+  display: inline-block;
+  background: var(--blue-100);
+  color: var(--blue-700);
+  padding: .3rem .75rem;
+  border-radius: 6px;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+
+/* Article meta - smaller gap below category */
+.insight-card-content .article-meta {
+  display: block;
+  margin-top: .35rem;
+  margin-bottom: .35rem;
+}
+
+/* Subtle hover animation for illustrations */
+.insight-card:hover .insight-card-image svg,
+.insight-card .insight-card-image:hover svg {
+  transform: scale(1.04);
+  transition: transform .5s ease;
+}
+.insight-card-image svg { transition: transform .5s ease; }
