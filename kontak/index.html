@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontak — Harsha Dana Consulting</title>
   <meta name="description" content="Hubungi Harsha Dana Consulting via Calendly, email, atau form. Office di Denpasar, Bali. Jam operasional Senin-Jumat 09:00-17:00 WITA.">
-  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="icon" href="../assets/logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
   <nav class="nav scrolled" id="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img src="assets/logo.png" alt="Harsha Dana Consulting">
+        <img src="../assets/logo.png" alt="Harsha Dana Consulting">
         <div class="nav-logo-text">Harsha Dana<span>Consulting</span></div>
       </a>
       <div class="nav-links">
         <a href="/">Home</a>
-        <a href="/case-studies.html">Case Studies</a>
-        <a href="/sustainable-finance.html">Sustainable Finance</a>
-        <a href="/insights.html">Insights</a>
-        <a href="/tentang.html">Tentang</a>
+        <a href="/case-studies/">Case Studies</a>
+        <a href="/sustainable-finance/">Sustainable Finance</a>
+        <a href="/insights/">Insights</a>
+        <a href="/tentang/">Tentang</a>
         <a href="https://calendly.com/harshadanadigital/konsultasi-gratis" target="_blank" rel="noopener" class="nav-cta">Diskusi Gratis</a>
       </div>
       <button class="nav-mobile" aria-label="Buka menu"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
@@ -101,15 +101,21 @@
         <p class="section-desc">Isi form di bawah dengan informasi yang relevan. Kami respond dalam 2 hari kerja dengan rekomendasi pendekatan atau pertanyaan klarifikasi.</p>
       </div>
 
-      <form class="rfp-form fade-up" onsubmit="event.preventDefault(); alert('Terima kasih! Kami akan respond dalam 2 hari kerja.');">
+      <!--
+        FORMSPREE — form kontak/RFP terpisah (endpoint sendiri, beda dari newsletter di halaman insights).
+        Submission diteruskan ke email yang terhubung di dashboard Formspree (tanya@konsultankeuangan.id).
+        Ini hanya merekap data submission; tidak ada email balasan otomatis ke pengirim
+        kecuali autoresponse diaktifkan manual di dashboard.
+      -->
+      <form class="rfp-form fade-up" action="https://formspree.io/f/mgoqnpld" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label>Nama Perusahaan / Organisasi *</label>
-            <input type="text" required>
+            <input type="text" name="Nama Perusahaan" required>
           </div>
           <div class="form-group">
             <label>Industri *</label>
-            <select required>
+            <select name="Industri" required>
               <option value="">Pilih industri</option>
               <option>Perbankan (BPR/Bank)</option>
               <option>Hospitality</option>
@@ -125,47 +131,47 @@
         <div class="form-row">
           <div class="form-group">
             <label>Nama Kontak *</label>
-            <input type="text" required>
+            <input type="text" name="Nama Kontak" required>
           </div>
           <div class="form-group">
             <label>Posisi / Role *</label>
-            <input type="text" required placeholder="CFO / Head of Finance / Owner / dll">
+            <input type="text" name="Posisi" required placeholder="CFO / Head of Finance / Owner / dll">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label>Email *</label>
-            <input type="email" required>
+            <input type="email" name="email" required>
           </div>
           <div class="form-group">
             <label>Telepon</label>
-            <input type="tel">
+            <input type="tel" name="Telepon">
           </div>
         </div>
 
         <div class="form-group">
           <label>Jenis Engagement yang Diminati *</label>
           <div class="checkbox-grid">
-            <label class="checkbox-item"><input type="checkbox"> Pembukuan &amp; Financial Evaluation</label>
-            <label class="checkbox-item"><input type="checkbox"> CFO Fraction</label>
-            <label class="checkbox-item"><input type="checkbox"> Treasury Advisory</label>
-            <label class="checkbox-item"><input type="checkbox"> Financial Wellness Program</label>
-            <label class="checkbox-item"><input type="checkbox"> Forensic Accounting</label>
-            <label class="checkbox-item"><input type="checkbox"> Sustainable Finance / ESG</label>
-            <label class="checkbox-item"><input type="checkbox"> Custom / Other</label>
+            <label class="checkbox-item"><input type="checkbox" name="Engagement" value="Pembukuan & Financial Evaluation"> Pembukuan &amp; Financial Evaluation</label>
+            <label class="checkbox-item"><input type="checkbox" name="Engagement" value="CFO Fraction"> CFO Fraction</label>
+            <label class="checkbox-item"><input type="checkbox" name="Engagement" value="Treasury Advisory"> Treasury Advisory</label>
+            <label class="checkbox-item"><input type="checkbox" name="Engagement" value="Financial Wellness Program"> Financial Wellness Program</label>
+            <label class="checkbox-item"><input type="checkbox" name="Engagement" value="Forensic Accounting"> Forensic Accounting</label>
+            <label class="checkbox-item"><input type="checkbox" name="Engagement" value="Sustainable Finance / ESG"> Sustainable Finance / ESG</label>
+            <label class="checkbox-item"><input type="checkbox" name="Engagement" value="Custom / Other"> Custom / Other</label>
           </div>
         </div>
 
         <div class="form-group">
           <label>Deskripsi Singkat Kebutuhan *</label>
-          <textarea rows="5" required placeholder="Jelaskan konteks bisnis Anda, masalah yang ingin dipecahkan, atau outcome yang diharapkan..."></textarea>
+          <textarea name="Deskripsi Kebutuhan" rows="5" required placeholder="Jelaskan konteks bisnis Anda, masalah yang ingin dipecahkan, atau outcome yang diharapkan..."></textarea>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label>Timeline Ekspektasi</label>
-            <select>
+            <select name="Timeline">
               <option value="">Pilih timeline</option>
               <option>Sesegera mungkin</option>
               <option>1-3 bulan ke depan</option>
@@ -175,7 +181,7 @@
           </div>
           <div class="form-group">
             <label>Mengetahui Kami Dari</label>
-            <select>
+            <select name="Sumber Informasi">
               <option value="">Pilih</option>
               <option>Google / Search</option>
               <option>LinkedIn</option>
@@ -187,6 +193,8 @@
           </div>
         </div>
 
+        <input type="hidden" name="_subject" value="RFP / Inquiry Baru — Form Kontak Harsha Dana">
+        <input type="hidden" name="form-type" value="kontak">
         <button type="submit" class="btn-cta" style="width:100%; justify-content:center; margin-top:1rem;">Kirim Request Proposal</button>
         <p class="form-disclaimer">Dengan mengirim form, Anda setuju kami menggunakan informasi ini untuk merespond inquiry Anda. Data tidak dibagikan ke pihak ketiga.</p>
       </form>
@@ -240,7 +248,7 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-col footer-brand">
-          <div class="footer-logo"><img src="assets/logo.png" alt="Harsha Dana"><span>Harsha Dana Consulting</span></div>
+          <div class="footer-logo"><img src="../assets/logo.png" alt="Harsha Dana"><span>Harsha Dana Consulting</span></div>
           <p class="footer-tagline">Praktisi keuangan untuk perusahaan yang ingin tumbuh dengan dasar yang sehat.</p>
         </div>
         <div class="footer-col">
@@ -249,13 +257,13 @@
           <a href="/#services">Business Financial Evaluation + Quant Finance Insight</a>
           <a href="/#services">CFO Fraction</a>
           <a href="/#services">Pelatihan Strategi Keuangan &amp; Financial Wellness</a>
-          <a href="/sustainable-finance.html">Sustainable Finance</a>
+          <a href="/sustainable-finance/">Sustainable Finance</a>
         </div>
         <div class="footer-col">
           <h5>Resources</h5>
-          <a href="/insights.html">Insights</a>
-          <a href="/case-studies.html">Case Studies</a>
-          <a href="/tentang.html">Tentang Kami</a>
+          <a href="/insights/">Insights</a>
+          <a href="/case-studies/">Case Studies</a>
+          <a href="/tentang/">Tentang Kami</a>
           <a href="/#faq">FAQ</a>
         </div>
         <div class="footer-col">
@@ -272,6 +280,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>
