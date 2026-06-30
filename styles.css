@@ -1,5 +1,5 @@
 /* ============================================
-   HARSHA DANA CONSULTING — STYLES
+   HARSHA ADVISORY: STYLES
    ============================================ */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -737,7 +737,7 @@ section { padding: 6rem 0; }
 }
 
 /* ============================================
-   PHASE 2 — NEW COMPONENT STYLES
+   PHASE 2: NEW COMPONENT STYLES
    Trust bar, Methodology, Engagement Model,
    What We Don't Do, FAQ, Multi-CTA, Footer-full,
    Page hero, About, Sustainable Finance, Case Studies,
@@ -1115,7 +1115,7 @@ section { padding: 6rem 0; }
 .featured-article-content .article-meta,
 .insight-card-content .article-meta { display: inline-block; font-size: .78rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
 
-/* ===== RESPONSIVE — TRUST BAR ===== */
+/* ===== RESPONSIVE: TRUST BAR ===== */
 @media (max-width: 1024px) {
   .trust-bar-logos { gap: 2rem 2.5rem; }
   .vp-grid { grid-template-columns: 1fr; }
@@ -1178,7 +1178,7 @@ section { padding: 6rem 0; }
 }
 
 /* ============================================
-   PHASE 3 — Quant Section, Testimonials, Photo-based Case Cards,
+   PHASE 3: Quant Section, Testimonials, Photo-based Case Cards,
    Improved Active Nav State, Responsive fixes for services-4
    ============================================ */
 
@@ -1240,7 +1240,7 @@ section { padding: 6rem 0; }
 .nav-links a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -8px; height: 3px; background: var(--orange-500); border-radius: 2px; }
 .nav-links a.nav-cta.active::after { display: none; }
 
-/* ===== RESPONSIVE — Phase 3 ===== */
+/* ===== RESPONSIVE: Phase 3 ===== */
 @media (max-width: 1100px) {
   .services-grid.services-4 { grid-template-columns: repeat(2, 1fr); }
   .quant-topics { grid-template-columns: repeat(3, 1fr); }
@@ -1268,7 +1268,7 @@ section { padding: 6rem 0; }
 }
 
 /* ============================================
-   PHASE 4 — SVG Article Illustrations
+   PHASE 4: SVG Article Illustrations
    ============================================ */
 
 /* Illustration containers - thematic gradients with embedded SVGs */

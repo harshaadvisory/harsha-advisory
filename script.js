@@ -1,5 +1,5 @@
 /* ============================================
-   HARSHA DANA CONSULTING — SCRIPTS
+   HARSHA ADVISORY: SCRIPTS
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
