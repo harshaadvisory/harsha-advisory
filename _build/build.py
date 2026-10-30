@@ -20,6 +20,9 @@ PAGES = ROOT / "_build" / "pages"
 SITE = "https://konsultankeuangan.id"
 CAL = "https://calendly.com/harshadanadigital/konsultasi-gratis"
 EMAIL = "tanya@konsultankeuangan.id"
+WA_NUMBER = "6289673144112"
+WA_DISPLAY = "+62 896-7314-4112"
+WA = f"https://wa.me/{WA_NUMBER}?text=Halo%20Harsha%20Advisory%2C%20saya%20ingin%20konsultasi%20tentang%20keuangan%20bisnis%20saya."
 INSTAGRAM = "https://www.instagram.com/harsha.advisory/"
 LINKEDIN = "https://www.linkedin.com/company/harshadana"
 TODAY = datetime.date.today().isoformat()
@@ -44,6 +47,7 @@ ICONS = {
     "linkedin": '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5V17M7.5 7.5v.01M11.5 17v-6.5M11.5 13.5c0-1.7 1.1-3 2.6-3s2.4 1 2.4 2.8V17"/>',
     "menu": '<path d="M4 7h16M4 12h16M4 17h16"/>',
     "check": '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+    "whatsapp": '<path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1112 20.5a8.4 8.4 0 01-4.1-1.1L3.5 20.5z"/><path d="M9 8.5c0 3.3 3.2 6.5 6.5 6.5l1-1.6-2-1-1 .9c-1-.4-2.3-1.7-2.7-2.7l.9-1-1-2L9 8.5z"/>',
 }
 
 
@@ -91,6 +95,8 @@ ORG = {
                     "untuk karyawan dan manajemen."),
     "slogan": "Bisnis yang sehat adalah bisnis yang memahami angkanya.",
     "email": EMAIL,
+    "telephone": "+62-896-7314-4112",
+    "contactPoint": [{"@type": "ContactPoint", "contactType": "customer service", "telephone": "+62-896-7314-4112", "email": EMAIL, "areaServed": "ID", "availableLanguage": ["Indonesian", "English"]}],
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "Jl. Tukad Unda No.6",
@@ -248,6 +254,7 @@ def footer():
           Jl. Tukad Unda No.6, Denpasar Selatan<br>
           Bali 80226, Indonesia<br>
           <a href="mailto:{EMAIL}">{EMAIL}</a><br>
+          <a href="{WA}" target="_blank" rel="noopener">WhatsApp {WA_DISPLAY}</a><br>
           Senin sampai Jumat, 08.00 sampai 17.00 WITA
         </address>
       </div>
@@ -258,7 +265,8 @@ def footer():
     </div>
   </div>
 </footer>
-<div class="mobile-cta"><a href="{CAL}" class="btn btn-blue" target="_blank" rel="noopener">{icon("calendar")} Jadwalkan Diskusi Gratis</a></div>
+<a class="wa-float" href="{WA}" target="_blank" rel="noopener" aria-label="Chat WhatsApp Harsha Advisory">{icon("whatsapp")}<span>Chat WhatsApp</span></a>
+<div class="mobile-cta"><a href="{WA}" class="btn btn-wa" target="_blank" rel="noopener" aria-label="Chat WhatsApp">{icon("whatsapp")} WhatsApp</a><a href="{CAL}" class="btn btn-blue" target="_blank" rel="noopener">{icon("calendar")} Diskusi Gratis</a></div>
 <script src="/script.js" defer></script>"""
 
 
@@ -404,7 +412,7 @@ def head(p, url):
   <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <script type="application/ld+json">
 {page_schema(p, url)}
@@ -433,7 +441,7 @@ def article_main(p, articles):
     <aside class="article-cta">
       <h2>Menghadapi tantangan serupa di perusahaan Anda?</h2>
       <p>Setiap perusahaan punya dinamika keuangan yang unik. Kami bantu menemukan akar masalahnya, merancang solusi yang terukur, dan mendampingi implementasinya.</p>
-      <div class="hero-cta"><a href="{CAL}" class="btn btn-light" target="_blank" rel="noopener">{icon("calendar")} Jadwalkan Diskusi 30 Menit</a><a href="mailto:{EMAIL}" class="btn btn-outline-light">Kirim Email</a></div>
+      <div class="hero-cta"><a href="{CAL}" class="btn btn-light" target="_blank" rel="noopener">{icon("calendar")} Jadwalkan Diskusi 30 Menit</a><a href="{WA}" class="btn btn-outline-light" target="_blank" rel="noopener">{icon("whatsapp")} Chat WhatsApp</a></div>
     </aside>
   </div>
 </article>
@@ -455,6 +463,8 @@ def render(p, articles):
         tokens = {
             "{{cal}}": CAL,
             "{{email}}": EMAIL,
+            "{{wa}}": WA,
+            "{{wa_display}}": WA_DISPLAY,
             "{{instagram}}": INSTAGRAM,
             "{{linkedin}}": LINKEDIN,
             "{{crumbs}}": crumbs_html(p.get("crumbs", [])),
@@ -511,7 +521,7 @@ Fakta utama:
 - Founder & CEO: Anak Agung Ngurah Mustakawarman, CFP®. Lebih dari 12 tahun pengalaman perbankan dan 10 tahun pengalaman investasi; lebih dari 200 klien financial planning di 4 negara (Indonesia, Amerika Serikat, Jepang, Singapura). Sertifikasi: CFP®, WMI, WPPE, PI.
 - Penghargaan founder: Top 40 Youth Economic Leadership Program (Bank Indonesia Institute); Top 50 Startup Terbaik Indonesia (Kemenparekraf).
 - Alamat: Jl. Tukad Unda No.6, Denpasar Selatan, Bali 80226. Melayani klien di seluruh Indonesia.
-- Kontak: {EMAIL}. Diskusi awal 30 menit gratis: {CAL}
+- Kontak: {EMAIL}, WhatsApp {WA_DISPLAY} ({WA.split("?")[0]}). Diskusi awal 30 menit gratis: {CAL}
 - Klien dan mitra pelatihan antara lain: British Petroleum, Petronas, Kangean Energy, Eni Indonesia, Donggi Senoro LNG, Bank Indonesia, Komdigi, GoPay, BPR Lestari, Joger Bali.
 - Biaya: disesuaikan dengan ruang lingkup, ditawarkan setelah diskusi awal. Tidak ada paket harga tetap.
 - Harsha Advisory tidak menyediakan audit statutory, layanan hukum, perpajakan kompleks lintas yurisdiksi, atau manajemen investasi diskresioner; untuk area tersebut kami bekerja dengan mitra spesialis.
