@@ -4,7 +4,7 @@ Sumber: https://harshaadvisory.com/ . Diperbarui 2026-10-30. Ringkasan singkat a
 
 ---
 
-# Harsha Advisory | Konsultan Keuangan Bisnis di Bali untuk Perusahaan di Indonesia
+# Harsha Advisory | Konsultan Keuangan Bisnis untuk Perusahaan di Indonesia
 
 URL: https://harshaadvisory.com/
 
@@ -36,7 +36,7 @@ Harsha Advisory adalah perusahaan konsultan keuangan B2B yang membantu bisnis me
 Banyak perusahaan punya laporan keuangan, tapi tetap sulit menjawab pertanyaan sederhana: bulan ini sebenarnya untung, atau hanya ramai? Kami bekerja pada empat lapis: mencatat dengan rapi, membaca kondisi keuangan, menyusun strategi, lalu membangun kapasitas finansial tim di dalamnya.
 Kenali kami lebih dekat
 - Badan usaha: PT Harsha Dana Digital
-- Kantor: Denpasar Selatan, Bali. Melayani seluruh Indonesia
+- Wilayah layanan: Seluruh Indonesia
 - Founder: Anak Agung Ngurah Mustakawarman, CFP®
 - Layanan: Pembukuan, evaluasi keuangan, CFO Fraction, pelatihan keuangan
 - Langkah awal: Diskusi 30 menit, gratis dan tanpa komitmen
@@ -114,7 +114,7 @@ ESG dan pembiayaan hijau kami integrasikan ke treasury, financial planning, dan 
 Lihat pendekatan
 Studi kasus utama
 
-### Corporate Financial Diagnostic untuk produsen F&B di Bali
+### Corporate Financial Diagnostic untuk produsen F&B
 Evaluasi KeuanganAnonim, terikat NDA
 Klien sudah memiliki SOP keuangan dan konsultan pajak, tetapi masih ada celah kontrol yang membuka risiko fraud dan kebocoran. Kami mendiagnosis siklus Finance, Accounting, dan Tax secara menyeluruh, memetakan 10 skenario fraud, lalu merancang kerangka kontrol baru beserta perangkat implementasinya.
 Baca studi kasus lengkap
@@ -216,15 +216,15 @@ FAQ
 ### Pertanyaan yang sering kami terima.
 Belum menemukan jawabannya? Tanyakan langsung di tanya@konsultankeuangan.id.
 T: Apa itu Harsha Advisory?
-Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan B2B yang berbasis di Denpasar, Bali, dan melayani perusahaan di seluruh Indonesia. Kami membantu bisnis memahami angkanya sendiri lewat empat lapis layanan: jasa pembukuan, evaluasi keuangan bisnis dengan pendekatan kuantitatif, CFO Fraction, dan pelatihan keuangan untuk karyawan dan manajemen. Harsha Advisory didirikan oleh Anak Agung Ngurah Mustakawarman, CFP®.
+Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan B2B yang melayani perusahaan di seluruh Indonesia. Kami membantu bisnis memahami angkanya sendiri lewat empat lapis layanan: jasa pembukuan, evaluasi keuangan bisnis dengan pendekatan kuantitatif, CFO Fraction, dan pelatihan keuangan untuk karyawan dan manajemen. Harsha Advisory didirikan oleh Anak Agung Ngurah Mustakawarman, CFP®.
 T: Layanan apa saja yang ditawarkan Harsha Advisory?
 Ada empat layanan utama. Jasa Pembukuan: review dan perapian pembukuan sampai laporan keuangan akurat dan siap dibaca. Evaluasi Keuangan Bisnis + Quant Finance Insight: diagnosis kondisi keuangan dan kontrol internal berbasis data. CFO Fraction: strategi keuangan, pajak dasar, proyeksi, dan pendampingan keputusan tanpa merekrut CFO penuh waktu. Pelatihan Keuangan: financial planning, retirement planning, dan literasi keuangan untuk karyawan dan manajemen. Kami juga mengintegrasikan lensa sustainable finance untuk perusahaan yang membutuhkannya.
 T: Apa itu CFO Fraction dan kapan perusahaan membutuhkannya?
 CFO Fraction adalah layanan CFO paruh waktu: perusahaan mendapatkan akses ke praktisi keuangan senior tanpa biaya merekrut CFO penuh waktu. Cakupannya meliputi laporan manajemen bulanan, proyeksi arus kas 90 hari, perencanaan dan pengelolaan pajak dasar, serta sesi review bulanan bersama manajemen yang menghasilkan keputusan berprioritas. Layanan ini cocok untuk perusahaan yang sudah tumbuh dan sering mengambil keputusan besar, tetapi belum memiliki fungsi keuangan strategis.
 T: Berapa biaya menggunakan jasa Harsha Advisory?
 Biaya layanan Harsha Advisory mulai dari Rp 2,5 juta. Angka akhirnya disesuaikan dengan ruang lingkup, ukuran perusahaan, dan model kerja sama (proyek, retainer bulanan, atau kombinasi keduanya). Penawaran disusun setelah diskusi awal 30 menit yang gratis, karena ruang lingkup yang jelas selalu mendahului harga yang tepat.
-T: Apakah Harsha Advisory hanya melayani bisnis di Bali?
-Tidak. Kantor kami ada di Denpasar, Bali, tetapi kami melayani perusahaan di seluruh Indonesia. Klien dan mitra pelatihan kami mencakup perusahaan energi seperti British Petroleum, Petronas, dan Kangean Energy, lembaga seperti Bank Indonesia dan Komdigi, hingga pelaku usaha lokal. Founder kami juga telah mendampingi klien financial planning di Indonesia, Amerika Serikat, Jepang, dan Singapura.
+T: Wilayah mana saja yang dilayani Harsha Advisory?
+Kami melayani perusahaan di seluruh Indonesia, secara langsung maupun online. Kantor kami berada di Jl. Tukad Unda No.6, Denpasar Selatan, Bali. Klien dan mitra pelatihan kami mencakup perusahaan energi seperti British Petroleum, Petronas, dan Kangean Energy, lembaga seperti Bank Indonesia dan Komdigi, hingga pelaku usaha lokal. Founder kami juga telah mendampingi klien financial planning di Indonesia, Amerika Serikat, Jepang, dan Singapura.
 T: Bagaimana kerahasiaan data keuangan perusahaan kami dijaga?
 Setiap kerja sama diikat perjanjian kerahasiaan (NDA). Tim kami terikat standar etika CFP® dan praktik industri keuangan, dan data keuangan klien hanya diakses oleh tim yang ditugaskan. Karena itu studi kasus di website ini ditampilkan secara anonim.
 T: Apa bedanya Harsha Advisory dengan kantor akuntan publik (KAP)?
@@ -350,7 +350,7 @@ Studi kasus advisory Dokumentasi pelatihan
 Evaluasi KeuanganAnonim, NDA
 
 #### Corporate Financial Diagnostic & Advisory
-Klien: Produsen F&B di Bali
+Klien: Produsen F&B
 Klien sudah memiliki SOP keuangan dan konsultan pajak, tetapi masih ada celah kontrol yang membuka risiko fraud dan kebocoran. Kami mendiagnosis siklus Finance, Accounting, dan Tax, memetakan 10 skenario fraud ke kontrol spesifik, lalu menyerahkan 20 template kontrol beserta roadmap implementasi.
 Baca detail studi kasus
 8SOP dievaluasi
@@ -362,7 +362,7 @@ Target implementasi: deteksi error di bawah 5 hari (dari lebih dari 5 minggu), c
 Jasa PembukuanAnonim, NDA
 
 #### Rekonstruksi Pembukuan & Laporan Keuangan
-Klien: Bisnis F&B di Bali
+Klien: Bisnis F&B
 Empat tahun buku (2022 sampai 2025) tanpa pembukuan terstruktur, dengan satu-satunya data berupa mutasi rekening bank. Kami merekonstruksi seluruh catatan dari nol: asset register, penyusutan, jurnal penyesuaian, laba rugi, dan neraca, versi tahunan dan bulanan.
 Baca detail studi kasus
 4Tahun buku direkonstruksi
@@ -604,88 +604,6 @@ Jadwalkan diskusi Chat WhatsApp
 
 ---
 
-# Konsultan Keuangan Bisnis di Bali: Jasa Pembukuan, CFO Fraction, Pelatihan | Denpasar
-
-URL: https://harshaadvisory.com/konsultan-keuangan-bali/
-
-- Beranda
-- Layanan
-- Konsultan Keuangan Bali
-Konsultan keuangan · Denpasar, Bali
-
-## Konsultan keuangan bisnis dari Bali, untuk bisnis di Bali.
-Harsha Advisory berkantor di Denpasar Selatan. Kami memahami ritme bisnis di Bali: musim ramai dan sepi wisatawan, banyak outlet dengan satu pemilik, dan keuangan keluarga yang sering bercampur dengan keuangan usaha.
-Diskusi gratis 30 menit Chat WhatsApp
-Biaya layanan mulai dari Rp 2,5 juta, disesuaikan dengan ruang lingkup.
-
-### Ringkasan
-Harsha Advisory (PT Harsha Dana Digital) adalah konsultan keuangan B2B di Jl. Tukad Unda No.6, Denpasar Selatan, Bali. Kami menyediakan jasa pembukuan, evaluasi keuangan bisnis, CFO Fraction, dan pelatihan keuangan untuk hotel, villa, restoran, retail, BPR, dan family business di seluruh Bali. Klien dan mitra di Bali antara lain Joger Bali dan BPR. Biaya mulai dari Rp 2,5 juta.
-Tantangan khas
-
-### Masalah keuangan yang sering kami temui di Bali.
-Hospitality & villa
-
-#### Kas naik turun mengikuti musim
-Pendapatan menumpuk di musim ramai, biaya tetap berjalan sepanjang tahun. Tanpa proyeksi arus kas, musim sepi sering ditutup dengan pinjaman.
-F&B & retail
-
-#### Banyak outlet, satu laporan
-Semua outlet digabung dalam satu angka, sehingga tidak terlihat outlet mana yang benar-benar untung dan mana yang disubsidi.
-Family business
-
-#### Keuangan keluarga dan usaha bercampur
-Pengeluaran pribadi tercatat sebagai biaya usaha, atau sebaliknya. Laba sebenarnya sulit diketahui dan pengajuan kredit menjadi lebih sulit.
-Layanan untuk bisnis di Bali
-
-### Empat lapis layanan, satu mitra lokal.
-Mencatat
-
-#### Jasa Pembukuan
-Perapian atau rekonstruksi pembukuan, asset register, dan laporan laba rugi serta neraca yang siap dibaca bank.
-Detail layanan
-Membaca
-
-#### Evaluasi Keuangan Bisnis
-Diagnosis kondisi keuangan dan kontrol internal, termasuk pemetaan risiko fraud di kasir dan pembelian.
-Detail layanan
-Merencanakan
-
-#### CFO Fraction
-CFO paruh waktu untuk laporan manajemen bulanan, proyeksi kas 90 hari, dan profitabilitas per outlet.
-Detail layanan
-Melatih
-
-#### Pelatihan Keuangan
-Pelatihan untuk karyawan, manajemen, dan pelaku usaha. Pernah dibawakan untuk Joger Bali, BPR, dan program bersama GoPay di Denpasar.
-Detail layanan
-Lokasi
-
-### Kantor kami di Denpasar Selatan.
-Datang langsung, kami yang berkunjung ke lokasi bisnis Anda, atau diskusi online. Pilih yang paling nyaman.
-- Alamat: Jl. Tukad Unda No.6, Denpasar Selatan, Kota Denpasar, Bali 80226
-- Jam kerja: Senin sampai Jumat, 08.00 sampai 17.00 WITA
-- Wilayah: Denpasar, Badung, Gianyar, Tabanan, seluruh Bali, dan seluruh Indonesia
-- WhatsApp: +62 896-7314-4112
-- Peta: Buka di Google Maps
-FAQ
-
-### Seputar layanan di Bali.
-T: Di mana kantor Harsha Advisory di Bali?
-Kantor kami berada di Jl. Tukad Unda No.6, Denpasar Selatan, Kota Denpasar, Bali 80226. Jam kerja Senin sampai Jumat, 08.00 sampai 17.00 WITA.
-T: Apakah Harsha Advisory melayani bisnis di luar Denpasar?
-Ya. Kami melayani bisnis di seluruh Bali, termasuk Badung, Gianyar, Tabanan, dan kabupaten lainnya, serta perusahaan di seluruh Indonesia. Pertemuan dapat diatur di kantor kami, di lokasi bisnis Anda, atau secara online.
-T: Layanan apa yang paling sering dibutuhkan bisnis di Bali?
-Bisnis hospitality, villa, dan F&B di Bali paling sering membutuhkan perapian pembukuan, pemisahan keuangan pribadi dan usaha, analisis profitabilitas per unit atau outlet, serta proyeksi arus kas untuk menghadapi musim ramai dan sepi wisatawan.
-T: Berapa biaya konsultan keuangan di Harsha Advisory?
-Biaya layanan mulai dari Rp 2,5 juta, disesuaikan dengan ruang lingkup dan ukuran bisnis. Diskusi awal 30 menit gratis.
-Mulai dari diskusi
-
-### Bisnis Anda di Bali untung, atau hanya ramai?
-Ceritakan kondisi bisnis Anda. Kami bantu petakan angka yang perlu dibenahi lebih dulu, tanpa biaya dan tanpa komitmen.
-Jadwalkan diskusi Chat WhatsApp
-
----
-
 # Kontak Harsha Advisory: Diskusi Gratis 30 Menit, Request Proposal, atau Email
 
 URL: https://harshaadvisory.com/kontak/
@@ -872,7 +790,7 @@ Mendampingi penerapan secara bertahap.
 Memantau, mengaudit, dan menyempurnakan.
 Studi kasus utama
 
-### Produsen F&B di Bali
+### Produsen F&B
 Corporate Financial Diagnostic & AdvisoryAnonim, terikat NDA
 Klien telah memiliki kerangka SOP keuangan dan konsultan pajak, namun menyisakan celah kontrol yang membuka risiko fraud dan kebocoran finansial. Kami mendiagnosis siklus Finance, Accounting, dan Tax, memetakan risiko per proses, lalu merancang kerangka kontrol baru beserta perangkat implementasinya.
 8SOP Finance, Accounting & Tax dievaluasi
@@ -990,7 +908,7 @@ FAQ
 T: Apa itu Corporate Financial Diagnostic?
 Corporate Financial Diagnostic adalah kerangka kerja lima tahap yang digunakan Harsha Advisory untuk mengevaluasi keuangan perusahaan: Diagnose (memetakan kondisi keuangan dan proses), Identify Risks (menemukan gap kontrol dan titik risiko fraud), Design Controls (merancang kontrol dan perangkatnya), Implementation (mendampingi penerapan bertahap), dan Monitoring (memantau, mengaudit, dan menyempurnakan).
 T: Kami sudah punya SOP keuangan dan konsultan pajak. Apakah evaluasi masih perlu?
-Sering kali ya. Dalam studi kasus produsen F&B di Bali, klien sudah memiliki SOP dan konsultan pajak, namun kami tetap menemukan lebih dari 15 gap kritis, misalnya tidak ada definisi tegas status match dan unmatch dalam rekonsiliasi, dan rekonsiliasi bank yang hanya dilakukan bulanan.
+Sering kali ya. Dalam studi kasus produsen F&B, klien sudah memiliki SOP dan konsultan pajak, namun kami tetap menemukan lebih dari 15 gap kritis, misalnya tidak ada definisi tegas status match dan unmatch dalam rekonsiliasi, dan rekonsiliasi bank yang hanya dilakukan bulanan.
 T: Apa itu Quant Finance Insight?
 Quant Finance Insight adalah sesi untuk eksekutif yang memperkenalkan cara berpikir kuantitatif yang biasa dipakai institusi keuangan besar: membaca risiko dengan data, forecasting dengan rentang keyakinan, pricing berbasis data, serta memahami peran AI dan machine learning dalam keuangan.
 T: Berapa lama proses evaluasi?
@@ -1075,7 +993,7 @@ Review internal sebelum diserahkan ke klien.
 Studi kasus
 
 ### Rekonstruksi empat tahun buku dari mutasi bank
-Bisnis F&B di BaliAnonim, terikat NDA
+Bisnis F&BAnonim, terikat NDA
 Klien belum memiliki pembukuan terstruktur selama empat tahun buku (2022 sampai 2025). Satu-satunya data yang tersedia adalah mutasi rekening bank, tanpa pencatatan aset, penyusutan, maupun jurnal penyesuaian. Kami merekonstruksi seluruh catatan keuangan dari nol dan menyusun working papers lengkap.
 Hasilnya: untuk pertama kalinya klien dapat melihat posisi keuangan perusahaan secara lengkap selama empat tahun, dengan dokumentasi yang siap untuk pajak dan pemeriksaan.
 4Tahun buku direkonstruksi
@@ -1087,7 +1005,7 @@ FAQ
 
 ### Seputar jasa pembukuan.
 T: Apakah pembukuan bisa disusun jika kami hanya punya mutasi rekening bank?
-Bisa. Kami pernah merekonstruksi empat tahun buku (2022 sampai 2025) untuk bisnis F&B di Bali yang satu-satunya datanya adalah mutasi rekening bank. Setiap transaksi diklasifikasikan ke akun yang tepat, lalu disusun asset register, penyusutan, jurnal penyesuaian, laporan laba rugi, dan neraca.
+Bisa. Kami pernah merekonstruksi empat tahun buku (2022 sampai 2025) untuk bisnis F&B yang satu-satunya datanya adalah mutasi rekening bank. Setiap transaksi diklasifikasikan ke akun yang tepat, lalu disusun asset register, penyusutan, jurnal penyesuaian, laporan laba rugi, dan neraca.
 T: Apa saja output jasa pembukuan?
 Enam jenis working papers untuk setiap tahun buku: asset register, jadwal penyusutan, jurnal penyesuaian, laporan laba rugi, neraca, dan versi bulanan dari laporan tersebut untuk pemantauan kinerja.
 T: Apa bedanya jasa pembukuan dengan audit?
@@ -1329,7 +1247,7 @@ URL: https://harshaadvisory.com/tentang/
 Tentang kami
 
 ## Kami percaya bisnis yang sehat adalah bisnis yang memahami angkanya.
-Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan B2B yang berbasis di Denpasar, Bali, dan melayani perusahaan di seluruh Indonesia.
+Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan B2B yang melayani perusahaan di seluruh Indonesia.
 Kisah kami
 
 ### Dari financial planning pribadi, ke keuangan perusahaan.
@@ -1430,7 +1348,7 @@ Kinerja keuangan perusahaan sangat dipengaruhi oleh tingkat literasi keuangan CE
 Selain itu, adopsi teknologi keuangan (fintech) dan perilaku keuangan yang baik berkontribusi hingga 70,1% terhadap variasi kinerja usaha (Faadhilah & Firdaus, 2025). Budaya keuangan yang sehat harus diinternalisasi mulai dari level strategis hingga staf operasional.
 
 #### Studi Kasus: Krisis Rekonsiliasi pada Sektor Manufaktur
-Kondisi Awal: Sebuah perusahaan manufaktur yang berbasis di Bali mengalami pertumbuhan volume produksi yang pesat namun selalu merasa kekurangan modal kerja.
+Kondisi Awal: Sebuah perusahaan manufaktur mengalami pertumbuhan volume produksi yang pesat namun selalu merasa kekurangan modal kerja.
 Masalah: Hasil audit Financial Architecture Gap Analysis menemukan bahwa fungsi keuangan hanya dijalankan oleh satu orang tanpa sistem kontrol. Proses rekonsiliasi bank tidak dilakukan selama delapan bulan berturut-turut.
 Dampak: Kondisi ini menyebabkan selisih kas hingga ratusan juta rupiah yang tidak dapat dipertanggungjawabkan serta risiko fraud yang tinggi.
 Insight: Melalui implementasi segregation of duties dan pembenahan SOP keuangan, selisih tersebut berhasil ditelusuri dan sistem pencegahan risiko berhasil diperkuat.

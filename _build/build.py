@@ -92,7 +92,7 @@ ORG = {
     "logo": {"@type": "ImageObject", "url": SITE + "/assets/logo.png", "width": 1350, "height": 1350},
     "image": SITE + "/assets/og-image.jpg",
     "description": ("Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan B2B "
-                    "berbasis di Denpasar, Bali, yang membantu bisnis memahami angkanya sendiri melalui "
+                    "yang membantu perusahaan di seluruh Indonesia memahami angkanya sendiri melalui "
                     "jasa pembukuan, evaluasi keuangan bisnis, CFO Fraction, dan pelatihan keuangan "
                     "untuk karyawan dan manajemen."),
     "slogan": "Bisnis yang sehat adalah bisnis yang memahami angkanya.",
@@ -107,7 +107,7 @@ ORG = {
         "postalCode": "80226",
         "addressCountry": "ID",
     },
-    "areaServed": [{"@type": "AdministrativeArea", "name": "Bali"}, {"@type": "Country", "name": "Indonesia"}],
+    "areaServed": [{"@type": "Country", "name": "Indonesia"}],
     "priceRange": f"Mulai dari {PRICE_TEXT}",
     "openingHoursSpecification": [{
         "@type": "OpeningHoursSpecification",
@@ -231,7 +231,7 @@ def footer():
     <div class="footer-top">
       <div>
         <a href="/" class="brand"><img src="/assets/logo-mark.png" alt="" width="34" height="34"><span class="brand-name">Harsha <span>Advisory</span></span></a>
-        <p class="footer-about">Konsultan keuangan B2B dari Bali. Kami membantu bisnis memahami angkanya sendiri: pembukuan yang rapi, evaluasi finansial berkala, strategi ke depan, dan pelatihan keuangan untuk tim.</p>
+        <p class="footer-about">Konsultan keuangan B2B untuk perusahaan di seluruh Indonesia. Kami membantu bisnis memahami angkanya sendiri: pembukuan yang rapi, evaluasi finansial berkala, strategi ke depan, dan pelatihan keuangan untuk tim.</p>
         <div class="social">
           <a href="{INSTAGRAM}" target="_blank" rel="noopener" aria-label="Instagram Harsha Advisory">{icon("instagram")}</a>
           <a href="{LINKEDIN}" target="_blank" rel="noopener" aria-label="LinkedIn Harsha Advisory">{icon("linkedin")}</a>
@@ -248,7 +248,6 @@ def footer():
           <li><a href="/case-studies/">Studi Kasus</a></li>
           <li><a href="/insights/">Insights</a></li>
           <li><a href="/kamus-keuangan/">Kamus Keuangan</a></li>
-          <li><a href="/konsultan-keuangan-bali/">Konsultan Keuangan Bali</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="/kontak/">Kontak</a></li>
         </ul>
@@ -533,12 +532,12 @@ def write_llms(pages, articles):
     main_pages = [p for p in pages if not p.get("noindex") and p.get("layout") != "article"]
     order = {path: i for i, path in enumerate(["/", "/layanan/", "/layanan/jasa-pembukuan/",
              "/layanan/evaluasi-keuangan-bisnis/", "/layanan/cfo-fraction/", "/layanan/pelatihan-keuangan/",
-             "/sustainable-finance/", "/konsultan-keuangan-bali/", "/case-studies/", "/tentang/", "/kontak/",
+             "/sustainable-finance/", "/case-studies/", "/tentang/", "/kontak/",
              "/insights/", "/kamus-keuangan/"])}
     main_pages.sort(key=lambda p: order.get(p["path"], 99))
     text = f"""# Harsha Advisory
 
-> Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan B2B yang berbasis di Denpasar, Bali, Indonesia. Kami membantu perusahaan memahami angkanya sendiri melalui jasa pembukuan, evaluasi keuangan bisnis dengan pendekatan kuantitatif, CFO Fraction (CFO paruh waktu), dan pelatihan keuangan untuk karyawan dan manajemen.
+> Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan B2B yang melayani perusahaan di seluruh Indonesia. Kami membantu perusahaan memahami angkanya sendiri melalui jasa pembukuan, evaluasi keuangan bisnis dengan pendekatan kuantitatif, CFO Fraction (CFO paruh waktu), dan pelatihan keuangan untuk karyawan dan manajemen.
 
 Fakta utama:
 - Nama: Harsha Advisory. Badan usaha: PT Harsha Dana Digital.
