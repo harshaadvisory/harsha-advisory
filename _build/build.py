@@ -17,7 +17,7 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = ROOT / "_build" / "pages"
-SITE = "https://konsultankeuangan.id"
+SITE = "https://harshaadvisory.com"
 CAL = "https://calendly.com/harshadanadigital/konsultasi-gratis"
 EMAIL = "tanya@konsultankeuangan.id"
 WA_NUMBER = "6289673144112"

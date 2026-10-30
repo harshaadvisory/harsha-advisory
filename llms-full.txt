@@ -1,12 +1,12 @@
 # Harsha Advisory: isi lengkap website
 
-Sumber: https://konsultankeuangan.id/ . Diperbarui 2026-10-30. Ringkasan singkat ada di https://konsultankeuangan.id/llms.txt
+Sumber: https://harshaadvisory.com/ . Diperbarui 2026-10-30. Ringkasan singkat ada di https://harshaadvisory.com/llms.txt
 
 ---
 
 # Harsha Advisory | Konsultan Keuangan Bisnis di Bali untuk Perusahaan di Indonesia
 
-URL: https://konsultankeuangan.id/
+URL: https://harshaadvisory.com/
 
 Konsultan Keuangan Bisnis
 
@@ -244,7 +244,7 @@ Request proposal
 
 # Layanan Konsultan Keuangan Bisnis: Pembukuan, Evaluasi, CFO Fraction, Pelatihan
 
-URL: https://konsultankeuangan.id/layanan/
+URL: https://harshaadvisory.com/layanan/
 
 - Beranda
 - Layanan
@@ -338,7 +338,7 @@ Jadwalkan diskusi Chat WhatsAppRequest proposal
 
 # Studi Kasus & Portofolio: Hasil Nyata Pendampingan Keuangan dan Pelatihan
 
-URL: https://konsultankeuangan.id/case-studies/
+URL: https://harshaadvisory.com/case-studies/
 
 - Beranda
 - Studi Kasus
@@ -512,7 +512,7 @@ Jadwalkan diskusi Chat WhatsAppRequest proposal
 
 # Insights: Riset dan Analisis Keuangan Bisnis untuk Pengambil Keputusan
 
-URL: https://konsultankeuangan.id/insights/
+URL: https://harshaadvisory.com/insights/
 
 - Beranda
 - Insights
@@ -569,7 +569,7 @@ Analisis tema penting di keuangan korporat, treasury, dan sustainable finance. T
 
 # Kamus Keuangan Bisnis: Istilah Penting untuk Pemilik Usaha, dari BEP sampai CFO Fraction
 
-URL: https://konsultankeuangan.id/kamus-keuangan/
+URL: https://harshaadvisory.com/kamus-keuangan/
 
 - Beranda
 - Insights
@@ -606,7 +606,7 @@ Jadwalkan diskusi Chat WhatsApp
 
 # Konsultan Keuangan Bisnis di Bali: Jasa Pembukuan, CFO Fraction, Pelatihan | Denpasar
 
-URL: https://konsultankeuangan.id/konsultan-keuangan-bali/
+URL: https://harshaadvisory.com/konsultan-keuangan-bali/
 
 - Beranda
 - Layanan
@@ -688,7 +688,7 @@ Jadwalkan diskusi Chat WhatsApp
 
 # Kontak Harsha Advisory: Diskusi Gratis 30 Menit, Request Proposal, atau Email
 
-URL: https://konsultankeuangan.id/kontak/
+URL: https://harshaadvisory.com/kontak/
 
 - Beranda
 - Kontak
@@ -728,7 +728,7 @@ LinkedIn: Harshadana
 
 # CFO Fraction: Jasa CFO Paruh Waktu untuk Perusahaan yang Sedang Tumbuh
 
-URL: https://konsultankeuangan.id/layanan/cfo-fraction/
+URL: https://harshaadvisory.com/layanan/cfo-fraction/
 
 - Beranda
 - Layanan
@@ -838,7 +838,7 @@ Jadwalkan diskusi Chat WhatsAppRequest proposal
 
 # Evaluasi Keuangan Bisnis & Corporate Financial Diagnostic: Kontrol Internal dan Risiko Fraud
 
-URL: https://konsultankeuangan.id/layanan/evaluasi-keuangan-bisnis/
+URL: https://harshaadvisory.com/layanan/evaluasi-keuangan-bisnis/
 
 - Beranda
 - Layanan
@@ -1005,7 +1005,7 @@ Jadwalkan diskusi Chat WhatsAppRequest proposal
 
 # Jasa Pembukuan untuk Perusahaan: Review, Rapikan, dan Rekonstruksi Laporan Keuangan
 
-URL: https://konsultankeuangan.id/layanan/jasa-pembukuan/
+URL: https://harshaadvisory.com/layanan/jasa-pembukuan/
 
 - Beranda
 - Layanan
@@ -1104,7 +1104,7 @@ Jadwalkan diskusi Chat WhatsAppLapis berikutnya: Evaluasi
 
 # Pelatihan Keuangan Karyawan & Financial Wellness: Retirement Planning, Financial Planning
 
-URL: https://konsultankeuangan.id/layanan/pelatihan-keuangan/
+URL: https://harshaadvisory.com/layanan/pelatihan-keuangan/
 
 - Beranda
 - Layanan
@@ -1232,7 +1232,7 @@ Jadwalkan diskusi Chat WhatsAppRequest proposal
 
 # Sustainable Finance & ESG untuk Perusahaan: Pendekatan Terintegrasi, Bukan Greenwashing
 
-URL: https://konsultankeuangan.id/sustainable-finance/
+URL: https://harshaadvisory.com/sustainable-finance/
 
 - Beranda
 - Layanan
@@ -1322,7 +1322,7 @@ Jadwalkan diskusi Chat WhatsAppRequest proposal
 
 # Tentang Harsha Advisory & Founder Anak Agung Ngurah Mustakawarman, CFP®
 
-URL: https://konsultankeuangan.id/tentang/
+URL: https://harshaadvisory.com/tentang/
 
 - Beranda
 - Tentang
@@ -1391,7 +1391,7 @@ Jadwalkan via Calendly Chat WhatsAppHubungi kami
 
 # Mengapa Omzet Miliaran Sering Kali Gagal Menyelamatkan Perusahaan dari Kebangkrutan?
 
-URL: https://konsultankeuangan.id/insights/omzet-miliaran-gagal/
+URL: https://harshaadvisory.com/insights/omzet-miliaran-gagal/
 
 - Beranda
 - Insights
@@ -1482,7 +1482,7 @@ Baca artikel
 
 # CFO Fraction vs CFO Full-Time vs Staf Akuntansi: Mana yang Dibutuhkan Bisnis Anda?
 
-URL: https://konsultankeuangan.id/insights/cfo-fraction-vs-cfo-full-time/
+URL: https://harshaadvisory.com/insights/cfo-fraction-vs-cfo-full-time/
 
 - Beranda
 - Insights
@@ -1565,7 +1565,7 @@ Baca artikel
 
 # Jasa Pembukuan atau Software Akuntansi: Mana yang Dibutuhkan Bisnis Anda?
 
-URL: https://konsultankeuangan.id/insights/jasa-pembukuan-vs-software-akuntansi/
+URL: https://harshaadvisory.com/insights/jasa-pembukuan-vs-software-akuntansi/
 
 - Beranda
 - Insights
@@ -1646,7 +1646,7 @@ Baca artikel
 
 # Arus Kas: Sinyal Peringatan Dini di Balik Ilusi Pertumbuhan Bisnis
 
-URL: https://konsultankeuangan.id/insights/arus-kas-sinyal-peringatan/
+URL: https://harshaadvisory.com/insights/arus-kas-sinyal-peringatan/
 
 - Beranda
 - Insights
@@ -1739,7 +1739,7 @@ Baca artikel
 
 # Biaya Tersembunyi dari Rendahnya Literasi Keuangan: Data Riset Global & Dampaknya bagi Korporasi
 
-URL: https://konsultankeuangan.id/insights/biaya-tersembunyi-literasi-keuangan/
+URL: https://harshaadvisory.com/insights/biaya-tersembunyi-literasi-keuangan/
 
 - Beranda
 - Insights
@@ -1846,7 +1846,7 @@ Baca artikel
 
 # Risiko Tersembunyi Financial Stress pada Produktivitas Karyawan
 
-URL: https://konsultankeuangan.id/insights/risiko-financial-stress/
+URL: https://harshaadvisory.com/insights/risiko-financial-stress/
 
 - Beranda
 - Insights
@@ -1928,7 +1928,7 @@ Baca artikel
 
 # Transformasi Pembiayaan: Mengelola Utang sebagai Instrumen Strategis Perusahaan
 
-URL: https://konsultankeuangan.id/insights/transformasi-pembiayaan/
+URL: https://harshaadvisory.com/insights/transformasi-pembiayaan/
 
 - Beranda
 - Insights
@@ -2020,7 +2020,7 @@ Baca artikel
 
 # Mengelola Ilusi Kesiapan Finansial: Mengapa Investasi Tanpa Perencanaan adalah Ancaman bagi Produktivitas
 
-URL: https://konsultankeuangan.id/insights/ilusi-kesiapan-finansial/
+URL: https://harshaadvisory.com/insights/ilusi-kesiapan-finansial/
 
 - Beranda
 - Insights

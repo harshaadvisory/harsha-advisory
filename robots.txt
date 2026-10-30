@@ -28,4 +28,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://konsultankeuangan.id/sitemap.xml
+Sitemap: https://harshaadvisory.com/sitemap.xml

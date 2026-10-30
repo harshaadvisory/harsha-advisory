@@ -11,7 +11,7 @@ import re
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-HOST = "konsultankeuangan.id"
+HOST = "harshaadvisory.com"
 KEY = "b2682cd32aae43877f484331cbe5602b"
 
 
