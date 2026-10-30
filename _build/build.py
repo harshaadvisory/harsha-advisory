@@ -26,6 +26,8 @@ WA = f"https://wa.me/{WA_NUMBER}?text=Halo%20Harsha%20Advisory%2C%20saya%20ingin
 INSTAGRAM = "https://www.instagram.com/harsha.advisory/"
 LINKEDIN = "https://www.linkedin.com/company/harshadana"
 TODAY = datetime.date.today().isoformat()
+PRICE_FROM = 2500000
+PRICE_TEXT = "Rp 2,5 juta"
 
 ICONS = {
     "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
@@ -105,7 +107,8 @@ ORG = {
         "postalCode": "80226",
         "addressCountry": "ID",
     },
-    "areaServed": [{"@type": "Country", "name": "Indonesia"}],
+    "areaServed": [{"@type": "AdministrativeArea", "name": "Bali"}, {"@type": "Country", "name": "Indonesia"}],
+    "priceRange": f"Mulai dari {PRICE_TEXT}",
     "openingHoursSpecification": [{
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -123,7 +126,8 @@ ORG = {
         "@type": "OfferCatalog",
         "name": "Layanan Harsha Advisory",
         "itemListElement": [
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": n, "url": SITE + u}}
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": n, "url": SITE + u},
+             "priceSpecification": {"@type": "PriceSpecification", "minPrice": PRICE_FROM, "priceCurrency": "IDR"}}
             for n, u in SERVICES
         ],
     },
@@ -243,6 +247,8 @@ def footer():
           <li><a href="/tentang/">Tentang Kami</a></li>
           <li><a href="/case-studies/">Studi Kasus</a></li>
           <li><a href="/insights/">Insights</a></li>
+          <li><a href="/kamus-keuangan/">Kamus Keuangan</a></li>
+          <li><a href="/konsultan-keuangan-bali/">Konsultan Keuangan Bali</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="/kontak/">Kontak</a></li>
         </ul>
@@ -283,6 +289,15 @@ def faq_html(faq):
         paras = "".join(f"<p>{p}</p>" for p in a.split("\n\n"))
         out.append(f'<details class="reveal"><summary>{q}</summary><div class="answer">{paras}</div></details>')
     out.append("</div>")
+    return "\n".join(out)
+
+
+def glossary_html(terms):
+    out = ['<dl class="glossary">']
+    for name, slug, definition, link in terms:
+        more = f' <a class="link-arrow" href="{link}">Selengkapnya</a>' if link else ""
+        out.append(f'<div id="{slug}" class="reveal"><dt>{esc(name)}</dt><dd>{definition}{more}</dd></div>')
+    out.append("</dl>")
     return "\n".join(out)
 
 
@@ -368,6 +383,14 @@ def page_schema(p, url):
             "datePublished": p["published"], "dateModified": p["modified"],
             "author": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID},
             "image": SITE + "/assets/og-image.jpg", "mainEntityOfPage": {"@id": url + "#webpage"},
+        })
+    if p.get("glossary"):
+        graph.append({
+            "@type": "DefinedTermSet", "@id": url + "#kamus", "name": "Kamus Keuangan Bisnis Harsha Advisory",
+            "inLanguage": "id-ID", "publisher": {"@id": ORG_ID},
+            "hasDefinedTerm": [{"@type": "DefinedTerm", "@id": url + "#" + slug, "name": name,
+                                "description": strip_tags(d), "inDefinedTermSet": {"@id": url + "#kamus"},
+                                "url": url + "#" + slug} for name, slug, d, _ in p["glossary"]],
         })
     for extra in p.get("schema", []):
         graph.append(extra)
@@ -455,28 +478,28 @@ def article_main(p, articles):
 
 def render(p, articles):
     url = SITE + (p["path"] if p["path"] != "/404.html" else "/404.html")
-    if p.get("layout") == "article":
-        main = article_main(p, articles)
-    else:
-        main = p["body"]
-        featured = next(a for a in articles if a.get("featured"))
-        tokens = {
-            "{{cal}}": CAL,
-            "{{email}}": EMAIL,
-            "{{wa}}": WA,
-            "{{wa_display}}": WA_DISPLAY,
-            "{{instagram}}": INSTAGRAM,
-            "{{linkedin}}": LINKEDIN,
-            "{{crumbs}}": crumbs_html(p.get("crumbs", [])),
-            "{{faq}}": faq_html(p.get("faq", [])),
-            "{{post_feature}}": post_feature(featured),
-            "{{posts_rest}}": "".join(post_card(a) for a in articles if a is not featured),
-            "{{posts_latest}}": "".join(post_card(a) for a in articles[:3]),
-            "{{arrow}}": ARROW,
-        }
-        for k, v in tokens.items():
-            main = main.replace(k, v)
-        main = re.sub(r"\{\{icon:(\w+)\}\}", lambda m: icon(m.group(1)), main)
+    featured = next(a for a in articles if a.get("featured"))
+    tokens = {
+        "{{cal}}": CAL,
+        "{{email}}": EMAIL,
+        "{{wa}}": WA,
+        "{{wa_display}}": WA_DISPLAY,
+        "{{instagram}}": INSTAGRAM,
+        "{{linkedin}}": LINKEDIN,
+        "{{crumbs}}": crumbs_html(p.get("crumbs", [])),
+        "{{faq}}": faq_html(p.get("faq", [])),
+        "{{glossary}}": glossary_html(p.get("glossary", [])),
+        "{{post_feature}}": post_feature(featured),
+        "{{posts_rest}}": "".join(post_card(a) for a in articles if a is not featured),
+        "{{posts_latest}}": "".join(post_card(a) for a in articles[:3]),
+        "{{arrow}}": ARROW,
+    }
+    body = p["body"]
+    for k, v in tokens.items():
+        body = body.replace(k, v)
+    body = re.sub(r"\{\{icon:(\w+)\}\}", lambda m: icon(m.group(1)), body)
+    main = article_main(dict(p, body=body), articles) if p.get("layout") == "article" else body
+    p["main_html"] = main
     left = re.findall(r"\{\{[^}]+\}\}", main)
     if left:
         raise SystemExit(f"{p['src']}: token tidak dikenal {left}")
@@ -510,7 +533,8 @@ def write_llms(pages, articles):
     main_pages = [p for p in pages if not p.get("noindex") and p.get("layout") != "article"]
     order = {path: i for i, path in enumerate(["/", "/layanan/", "/layanan/jasa-pembukuan/",
              "/layanan/evaluasi-keuangan-bisnis/", "/layanan/cfo-fraction/", "/layanan/pelatihan-keuangan/",
-             "/sustainable-finance/", "/case-studies/", "/tentang/", "/kontak/", "/insights/"])}
+             "/sustainable-finance/", "/konsultan-keuangan-bali/", "/case-studies/", "/tentang/", "/kontak/",
+             "/insights/", "/kamus-keuangan/"])}
     main_pages.sort(key=lambda p: order.get(p["path"], 99))
     text = f"""# Harsha Advisory
 
@@ -523,16 +547,45 @@ Fakta utama:
 - Alamat: Jl. Tukad Unda No.6, Denpasar Selatan, Bali 80226. Melayani klien di seluruh Indonesia.
 - Kontak: {EMAIL}, WhatsApp {WA_DISPLAY} ({WA.split("?")[0]}). Diskusi awal 30 menit gratis: {CAL}
 - Klien dan mitra pelatihan antara lain: British Petroleum, Petronas, Kangean Energy, Eni Indonesia, Donggi Senoro LNG, Bank Indonesia, Komdigi, GoPay, BPR Lestari, Joger Bali.
-- Biaya: disesuaikan dengan ruang lingkup, ditawarkan setelah diskusi awal. Tidak ada paket harga tetap.
+- Biaya: layanan mulai dari {PRICE_TEXT}, disesuaikan dengan ruang lingkup dan ukuran perusahaan. Penawaran final disusun setelah diskusi awal 30 menit yang gratis.
 - Harsha Advisory tidak menyediakan audit statutory, layanan hukum, perpajakan kompleks lintas yurisdiksi, atau manajemen investasi diskresioner; untuk area tersebut kami bekerja dengan mitra spesialis.
 
 ## Halaman utama
 {chr(10).join(line(p) for p in main_pages)}
 
-## Artikel
+## Artikel dan panduan
 {chr(10).join(line(a) for a in articles)}
+
+## Opsional
+- [Isi lengkap website dalam teks]({SITE}/llms-full.txt): seluruh halaman dan artikel dalam satu file teks.
 """
     (ROOT / "llms.txt").write_text(text, encoding="utf-8", newline="\n")
+
+
+def html_to_text(s):
+    s = re.sub(r"<(script|style|svg|form)\b.*?</\1>", "", s, flags=re.S)
+    s = re.sub(r"<h([1-4])[^>]*>(.*?)</h\1>",
+               lambda m: "\n\n" + "#" * (int(m.group(1)) + 1) + " " + strip_tags(m.group(2)) + "\n", s, flags=re.S)
+    s = re.sub(r"<summary[^>]*>(.*?)</summary>", lambda m: "\n\nT: " + strip_tags(m.group(1)) + "\n", s, flags=re.S)
+    s = re.sub(r"<dt[^>]*>(.*?)</dt>", lambda m: "\n- " + strip_tags(m.group(1)) + ": ", s, flags=re.S)
+    s = re.sub(r"<li[^>]*>", "\n- ", s)
+    s = re.sub(r"</(td|th)>", " | ", s)
+    s = re.sub(r"</?(p|div|section|tr|table|ul|ol|dl|figure|blockquote|details|aside|br)\b[^>]*>", "\n", s)
+    s = html.unescape(re.sub(r"<[^>]+>", "", s))
+    lines = [re.sub(r"[ \t]+", " ", l).strip() for l in s.splitlines()]
+    s = "\n".join(l for l in lines if l and l != "|")
+    return re.sub(r"\n(#+ )", r"\n\n\1", s).strip()
+
+
+def write_llms_full(pages, articles):
+    order = {"/": 0, "/layanan/": 1}
+    main_pages = [p for p in pages if not p.get("noindex") and p.get("layout") != "article"]
+    main_pages.sort(key=lambda p: (order.get(p["path"], 2), p["path"]))
+    parts = [f"# Harsha Advisory: isi lengkap website\n\nSumber: {SITE}/ . Diperbarui {TODAY}. "
+             f"Ringkasan singkat ada di {SITE}/llms.txt"]
+    for p in main_pages + articles:
+        parts.append(f"\n\n---\n\n# {p['title']}\n\nURL: {SITE}{p['path']}\n\n{html_to_text(p['main_html'])}")
+    (ROOT / "llms-full.txt").write_text("".join(parts) + "\n", encoding="utf-8", newline="\n")
 
 
 def main():
@@ -549,7 +602,8 @@ def main():
         print("ok", p["path"])
     write_sitemap(pages)
     write_llms(pages, articles)
-    print(f"{len(pages)} halaman, sitemap.xml, llms.txt")
+    write_llms_full(pages, articles)
+    print(f"{len(pages)} halaman, sitemap.xml, llms.txt, llms-full.txt")
 
 
 if __name__ == "__main__":
