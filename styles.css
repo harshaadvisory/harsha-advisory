@@ -1344,3 +1344,28 @@ section { padding: 6rem 0; }
   transition: transform .5s ease;
 }
 .insight-card-image svg { transition: transform .5s ease; }
+
+/* ===== CASE STUDIES: YEAR GROUPS + COMPACT GRID ===== */
+.case-year-group + .case-year-group { margin-top: 3.5rem; }
+.case-year-head { display: flex; align-items: baseline; gap: 1rem; padding-bottom: .9rem; margin-bottom: 1.75rem; border-bottom: 1px solid var(--gray-200); }
+.case-year-head h2 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 800; color: var(--blue-900); letter-spacing: -.03em; line-height: 1; }
+.case-year-head span { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--orange-500); }
+.case-grid-compact { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.case-grid-compact .case-card { display: flex; flex-direction: column; border-radius: 14px; }
+.case-grid-compact .case-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(10,22,40,.08); }
+.case-grid-compact .case-card-image-photo { aspect-ratio: 3 / 2; }
+.case-grid-compact .case-card-overlay { padding: .9rem; }
+.case-grid-compact .case-card-image-photo .case-card-tag { font-size: .62rem; padding: .3rem .65rem; }
+.case-grid-compact .case-card-image-photo .case-card-year { font-size: .85rem; }
+.case-grid-compact .case-card-content { padding: 1.25rem 1.25rem 1.1rem; display: flex; flex-direction: column; flex: 1; }
+.case-grid-compact .case-card-content h3 { font-size: 1.02rem; margin-bottom: .5rem; }
+.case-grid-compact .case-card-desc { font-size: .84rem; line-height: 1.55; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.case-grid-compact .case-card-meta { margin: auto 0 0; padding-top: .9rem; gap: .2rem; }
+.case-grid-compact .case-card-meta span { font-size: .76rem; }
+@media (max-width: 1024px) {
+  .case-grid-compact { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .case-grid-compact { grid-template-columns: 1fr; }
+  .case-year-head h2 { font-size: 1.6rem; }
+}
