@@ -19,12 +19,13 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = ROOT / "_build" / "pages"
 SITE = "https://harshaadvisory.com"
 CAL = "https://calendly.com/harshadanadigital/konsultasi-gratis"
-EMAIL = "tanya@konsultankeuangan.id"
+EMAIL = "info@harshaadvisory.com"
 WA_NUMBER = "6289673144112"
 WA_DISPLAY = "+62 896-7314-4112"
 WA = f"https://wa.me/{WA_NUMBER}?text=Halo%20Harsha%20Advisory%2C%20saya%20ingin%20konsultasi%20tentang%20keuangan%20bisnis%20saya."
 INSTAGRAM = "https://www.instagram.com/harsha.advisory/"
 LINKEDIN = "https://www.linkedin.com/company/harshadana"
+THREADS = "https://www.threads.com/@harsha.advisory"
 TODAY = datetime.date.today().isoformat()
 PRICE_FROM = 2500000
 PRICE_TEXT = "Rp 2,5 juta"
@@ -47,6 +48,7 @@ ICONS = {
     "spark": '<path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6L12 3z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16z"/>',
     "instagram": '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/>',
     "linkedin": '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5V17M7.5 7.5v.01M11.5 17v-6.5M11.5 13.5c0-1.7 1.1-3 2.6-3s2.4 1 2.4 2.8V17"/>',
+    "threads": '<path transform="translate(1.9 1.9) scale(.84)" fill="currentColor" stroke="none" d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 013.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 00-2.215-.221z"/>',
     "menu": '<path d="M4 7h16M4 12h16M4 17h16"/>',
     "check": '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
     "whatsapp": '<path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1112 20.5a8.4 8.4 0 01-4.1-1.1L3.5 20.5z"/><path d="M9 8.5c0 3.3 3.2 6.5 6.5 6.5l1-1.6-2-1-1 .9c-1-.4-2.3-1.7-2.7-2.7l.9-1-1-2L9 8.5z"/>',
@@ -115,7 +117,7 @@ ORG = {
         "opens": "08:00", "closes": "17:00",
     }],
     "founder": {"@id": FOUNDER_ID},
-    "sameAs": [INSTAGRAM, LINKEDIN],
+    "sameAs": [INSTAGRAM, THREADS, LINKEDIN],
     "knowsAbout": [
         "Pembukuan dan laporan keuangan", "Evaluasi keuangan bisnis", "CFO Fraction",
         "Pengendalian internal dan pencegahan fraud", "Proyeksi arus kas",
@@ -224,6 +226,12 @@ def header(active):
 </header>"""
 
 
+def social_links(cls="social"):
+    links = [("Instagram", INSTAGRAM, "instagram"), ("Threads", THREADS, "threads"), ("LinkedIn", LINKEDIN, "linkedin")]
+    a = "".join(f'<a href="{u}" target="_blank" rel="noopener" aria-label="{n} Harsha Advisory" title="{n}">{icon(i)}</a>' for n, u, i in links)
+    return f'<div class="{cls}">{a}</div>'
+
+
 def footer():
     svc = "".join(f'<li><a href="{u}">{n}</a></li>' for n, u in SERVICES)
     return f"""<footer class="site-footer">
@@ -232,10 +240,7 @@ def footer():
       <div>
         <a href="/" class="brand"><img src="/assets/logo-mark.png" alt="" width="34" height="34"><span class="brand-name">Harsha <span>Advisory</span></span></a>
         <p class="footer-about">Konsultan keuangan B2B untuk perusahaan di seluruh Indonesia. Kami membantu bisnis memahami angkanya sendiri: pembukuan yang rapi, evaluasi finansial berkala, strategi ke depan, dan pelatihan keuangan untuk tim.</p>
-        <div class="social">
-          <a href="{INSTAGRAM}" target="_blank" rel="noopener" aria-label="Instagram Harsha Advisory">{icon("instagram")}</a>
-          <a href="{LINKEDIN}" target="_blank" rel="noopener" aria-label="LinkedIn Harsha Advisory">{icon("linkedin")}</a>
-        </div>
+        {social_links()}
       </div>
       <div>
         <h4>Layanan</h4>
@@ -463,7 +468,7 @@ def article_main(p, articles):
     <aside class="article-cta">
       <h2>Menghadapi tantangan serupa di perusahaan Anda?</h2>
       <p>Setiap perusahaan punya dinamika keuangan yang unik. Kami bantu menemukan akar masalahnya, merancang solusi yang terukur, dan mendampingi implementasinya.</p>
-      <div class="hero-cta"><a href="{CAL}" class="btn btn-light" target="_blank" rel="noopener">{icon("calendar")} Jadwalkan Diskusi 30 Menit</a><a href="{WA}" class="btn btn-outline-light" target="_blank" rel="noopener">{icon("whatsapp")} Chat WhatsApp</a></div>
+      <div class="hero-cta"><a href="{CAL}" class="btn btn-light" target="_blank" rel="noopener">{icon("calendar")} Jadwalkan Diskusi Gratis</a><a href="{WA}" class="btn btn-outline-light" target="_blank" rel="noopener">{icon("whatsapp")} Chat WhatsApp</a></div>
     </aside>
   </div>
 </article>
@@ -485,6 +490,8 @@ def render(p, articles):
         "{{wa_display}}": WA_DISPLAY,
         "{{instagram}}": INSTAGRAM,
         "{{linkedin}}": LINKEDIN,
+        "{{social}}": social_links("social light"),
+        "{{price}}": PRICE_TEXT,
         "{{crumbs}}": crumbs_html(p.get("crumbs", [])),
         "{{faq}}": faq_html(p.get("faq", [])),
         "{{glossary}}": glossary_html(p.get("glossary", [])),
