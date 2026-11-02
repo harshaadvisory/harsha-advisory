@@ -26,6 +26,7 @@ WA = f"https://wa.me/{WA_NUMBER}?text=Halo%20Harsha%20Advisory%2C%20saya%20ingin
 INSTAGRAM = "https://www.instagram.com/harsha.advisory/"
 LINKEDIN = "https://www.linkedin.com/company/harshadana"
 THREADS = "https://www.threads.com/@harsha.advisory"
+LYNK = "https://lynk.id/harshadana"
 TODAY = datetime.date.today().isoformat()
 PRICE_FROM = 2500000
 PRICE_TEXT = "Rp 2,5 juta"
@@ -65,6 +66,7 @@ ARROW = icon("arrow", "arrow")
 
 NAV = [
     ("layanan", "Layanan", "/layanan/"),
+    ("katalog", "Katalog", "/katalog/"),
     ("case-studies", "Studi Kasus", "/case-studies/"),
     ("pelatihan", "Pelatihan", "/layanan/pelatihan-keuangan/"),
     ("insights", "Insights", "/insights/"),
@@ -72,6 +74,11 @@ NAV = [
     ("kontak", "Kontak", "/kontak/"),
 ]
 
+CATALOG = [
+    ("konsultasi", "Konsultasi 1-on-1"),
+    ("paket", "Paket Bulanan"),
+    ("template", "Template"),
+]
 SERVICES = [
     ("Jasa Pembukuan", "/layanan/jasa-pembukuan/"),
     ("Evaluasi Keuangan Bisnis", "/layanan/evaluasi-keuangan-bisnis/"),
@@ -172,6 +179,10 @@ WEBSITE = {
 
 # ---------------------------------------------------------------- loading
 
+def load_products():
+    return json.loads((ROOT / "_build" / "products.json").read_text(encoding="utf-8"))
+
+
 def load_pages():
     pages = []
     for f in sorted(PAGES.rglob("*.html")):
@@ -250,6 +261,7 @@ def footer():
         <h4>Perusahaan</h4>
         <ul>
           <li><a href="/tentang/">Tentang Kami</a></li>
+          <li><a href="/katalog/">Katalog</a></li>
           <li><a href="/case-studies/">Studi Kasus</a></li>
           <li><a href="/insights/">Insights</a></li>
           <li><a href="/kamus-keuangan/">Kamus Keuangan</a></li>
@@ -340,6 +352,78 @@ def post_feature(p):
 </article>"""
 
 
+def rupiah(n):
+    return "Rp " + f"{n:,}".replace(",", ".")
+
+
+def product_url(p):
+    return f"/katalog/{p['slug']}/"
+
+
+def product_image(p):
+    return p.get("image", f"/assets/katalog/{p['slug']}.webp")
+
+
+def price_html(p):
+    return f'<span class="price"><b>{rupiah(p["price"])}</b> <s>{rupiah(p["normal_price"])}</s></span>'
+
+
+def product_card(p):
+    return f"""<article class="product reveal">
+  <a href="{product_url(p)}" tabindex="-1" aria-hidden="true"><img src="{product_image(p)}" alt="" width="{p['image_w']}" height="{p['image_h']}" loading="lazy"></a>
+  <div class="body">
+    <h3><a href="{product_url(p)}">{esc(p['name'])}</a></h3>
+    {price_html(p)}
+    <a class="link-arrow" href="{product_url(p)}">Lihat detail</a>
+  </div>
+</article>"""
+
+
+def product_pages(products):
+    pages = []
+    labels = dict(CATALOG)
+    for p in products:
+        label = labels[p["category"]]
+        buy = f"{LYNK}/{p['id']}" if p["needs_schedule"] else f"{LYNK}/{p['id']}/checkout"
+        verb = "Pilih jadwal &amp; pesan" if p["needs_schedule"] else "Beli sekarang"
+        note = "Anda akan memilih jadwal dan membayar di Lynk.id." if p["needs_schedule"] else "Pembayaran diproses dengan aman oleh Lynk.id."
+        others = [o for o in products if o["category"] == p["category"] and o is not p][:3]
+        crumbs = [["Katalog", "/katalog/"], [p["name"], None]]
+        pages.append({
+            "layout": "product", "product": p, "title": p["name"], "nav": "katalog", "image": product_image(p),
+            "description": f"{p['lead']} Harga {rupiah(p['price'])}.",
+            "path": product_url(p), "src": "_build/products.json", "crumbs": crumbs,
+            "body": f"""<section class="product-head">
+  <div class="wrap">
+    {crumbs_html(crumbs)}
+    <div class="product-grid">
+      <img src="{product_image(p)}" alt="{esc(p['name'])}" width="{p['image_w']}" height="{p['image_h']}">
+      <div>
+        <span class="tag">{label}</span>
+        <h1>{esc(p['name'])}</h1>
+        <p class="lead">{esc(p['lead'])}</p>
+        {price_html(p)}
+        <div class="hero-cta"><a href="{buy}" class="btn btn-primary" target="_blank" rel="noopener">{verb} {ARROW}</a><a href="{WA}" class="btn btn-ghost" target="_blank" rel="noopener">{icon("whatsapp")} Tanya dulu</a></div>
+        <p class="price-note">{note}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap wrap-narrow product-body">
+{p['body']}
+  </div>
+</section>
+<section class="section bg-paper">
+  <div class="wrap">
+    <div class="split-head"><div><span class="eyebrow">{label}</span><h2>Pilihan lainnya</h2></div><div><a class="link-arrow" href="/katalog/">Semua katalog</a></div></div>
+    <div class="products">{''.join(product_card(o) for o in others)}</div>
+  </div>
+</section>""",
+        })
+    return pages
+
+
 # ---------------------------------------------------------------- schema
 
 def page_schema(p, url):
@@ -396,6 +480,15 @@ def page_schema(p, url):
                                 "description": strip_tags(d), "inDefinedTermSet": {"@id": url + "#kamus"},
                                 "url": url + "#" + slug} for name, slug, d, _ in p["glossary"]],
         })
+    if p.get("layout") == "product":
+        item = p["product"]
+        graph.append({
+            "@type": "Product", "@id": url + "#product", "name": item["name"], "description": item["lead"],
+            "sku": item["id"], "category": dict(CATALOG)[item["category"]], "image": SITE + p["image"],
+            "brand": {"@id": ORG_ID}, "url": url,
+            "offers": {"@type": "Offer", "price": item["price"], "priceCurrency": "IDR", "url": url,
+                       "availability": "https://schema.org/InStock", "seller": {"@id": ORG_ID}},
+        })
     for extra in p.get("schema", []):
         graph.append(extra)
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1)
@@ -408,6 +501,10 @@ def head(p, url):
     robots = "noindex, follow" if p.get("noindex") else "index, follow, max-image-preview:large"
     og_type = "article" if p.get("layout") == "article" else "website"
     extra = ""
+    og_image = (f'<meta property="og:image" content="{SITE}{p["image"]}">' if p.get("image") else
+                f'<meta property="og:image" content="{SITE}/assets/og-image.jpg">\n'
+                '  <meta property="og:image:width" content="1200">\n'
+                '  <meta property="og:image:height" content="630">')
     if p.get("layout") == "article":
         extra = (f'\n  <meta property="article:published_time" content="{p["published"]}">'
                  f'\n  <meta property="article:modified_time" content="{p["modified"]}">'
@@ -430,9 +527,7 @@ def head(p, url):
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:description" content="{esc(p['description'])}">
   <meta property="og:url" content="{url}">
-  <meta property="og:image" content="{SITE}/assets/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  {og_image}
   <meta name="twitter:card" content="summary_large_image">{extra}{gsv}
   <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -480,7 +575,7 @@ def article_main(p, articles):
 </section>"""
 
 
-def render(p, articles):
+def render(p, articles, products):
     url = SITE + (p["path"] if p["path"] != "/404.html" else "/404.html")
     featured = next(a for a in articles if a.get("featured"))
     tokens = {
@@ -500,6 +595,8 @@ def render(p, articles):
         "{{posts_latest}}": "".join(post_card(a) for a in articles[:3]),
         "{{arrow}}": ARROW,
     }
+    for key, _ in CATALOG:
+        tokens[f"{{{{products:{key}}}}}"] = "".join(product_card(o) for o in products if o["category"] == key)
     body = p["body"]
     for k, v in tokens.items():
         body = body.replace(k, v)
@@ -533,13 +630,13 @@ def write_sitemap(pages):
         + "\n".join(rows) + "\n</urlset>\n", encoding="utf-8", newline="\n")
 
 
-def write_llms(pages, articles):
+def write_llms(pages, articles, shop):
     def line(p):
         return f"- [{p['title']}]({SITE}{p['path']}): {p['description']}"
     main_pages = [p for p in pages if not p.get("noindex") and p.get("layout") != "article"]
     order = {path: i for i, path in enumerate(["/", "/layanan/", "/layanan/jasa-pembukuan/",
              "/layanan/evaluasi-keuangan-bisnis/", "/layanan/cfo-fraction/", "/layanan/pelatihan-keuangan/",
-             "/sustainable-finance/", "/case-studies/", "/tentang/", "/kontak/",
+             "/sustainable-finance/", "/katalog/", "/case-studies/", "/tentang/", "/kontak/",
              "/insights/", "/kamus-keuangan/"])}
     main_pages.sort(key=lambda p: order.get(p["path"], 99))
     text = f"""# Harsha Advisory
@@ -558,6 +655,9 @@ Fakta utama:
 
 ## Halaman utama
 {chr(10).join(line(p) for p in main_pages)}
+
+## Katalog produk
+{chr(10).join(line(a) for a in shop)}
 
 ## Artikel dan panduan
 {chr(10).join(line(a) for a in articles)}
@@ -583,13 +683,13 @@ def html_to_text(s):
     return re.sub(r"\n(#+ )", r"\n\n\1", s).strip()
 
 
-def write_llms_full(pages, articles):
+def write_llms_full(pages, articles, shop):
     order = {"/": 0, "/layanan/": 1}
     main_pages = [p for p in pages if not p.get("noindex") and p.get("layout") != "article"]
     main_pages.sort(key=lambda p: (order.get(p["path"], 2), p["path"]))
     parts = [f"# Harsha Advisory: isi lengkap website\n\nSumber: {SITE}/ . Diperbarui {TODAY}. "
              f"Ringkasan singkat ada di {SITE}/llms.txt"]
-    for p in main_pages + articles:
+    for p in main_pages + shop + articles:
         parts.append(f"\n\n---\n\n# {p['title']}\n\nURL: {SITE}{p['path']}\n\n{html_to_text(p['main_html'])}")
     (ROOT / "llms-full.txt").write_text("".join(parts) + "\n", encoding="utf-8", newline="\n")
 
@@ -598,18 +698,25 @@ def main():
     pages = load_pages()
     articles = [p for p in pages if p.get("layout") == "article"]
     articles.sort(key=lambda a: a.get("order", 99))
+    products = load_products()
+    shop = product_pages(products)
+    next(p for p in pages if p["path"] == "/katalog/")["schema"] = [{
+        "@type": "ItemList", "name": "Katalog Harsha Advisory",
+        "itemListElement": [{"@type": "ListItem", "position": i, "name": o["name"], "url": SITE + product_url(o)}
+                            for i, o in enumerate(products, start=1)],
+    }]
     for p in pages:
         if p.get("layout") == "article":
             p.setdefault("crumbs", [["Insights", "/insights/"], [p["title"], None]])
-    for p in pages:
+    for p in pages + shop:
         target = out_path(p["path"])
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(render(p, articles), encoding="utf-8", newline="\n")
+        target.write_text(render(p, articles, products), encoding="utf-8", newline="\n")
         print("ok", p["path"])
-    write_sitemap(pages)
-    write_llms(pages, articles)
-    write_llms_full(pages, articles)
-    print(f"{len(pages)} halaman, sitemap.xml, llms.txt, llms-full.txt")
+    write_sitemap(pages + shop)
+    write_llms(pages, articles, shop)
+    write_llms_full(pages, articles, shop)
+    print(f"{len(pages + shop)} halaman, sitemap.xml, llms.txt, llms-full.txt")
 
 
 if __name__ == "__main__":
