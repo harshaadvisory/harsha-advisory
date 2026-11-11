@@ -10,6 +10,7 @@ plus sitemap.xml dan llms.txt. Folder _build tidak ikut dipublikasikan
 oleh GitHub Pages karena diawali garis bawah.
 """
 import datetime
+import hashlib
 import html
 import json
 import math
@@ -67,7 +68,7 @@ ARROW = icon("arrow", "arrow")
 
 NAV = [
     ("layanan", "Layanan", "/layanan/"),
-    ("katalog", "Katalog", "/katalog/"),
+    ("katalog", "Produk Digital", "/katalog/"),
     ("case-studies", "Studi Kasus", "/case-studies/"),
     ("pelatihan", "Pelatihan", "/layanan/pelatihan-keuangan/"),
     ("insights", "Insights", "/insights/"),
@@ -76,17 +77,47 @@ NAV = [
 ]
 
 CATALOG = [
-    ("konsultasi", "Konsultasi 1-on-1"),
-    ("paket", "Paket Bulanan"),
     ("template", "Template"),
+    ("konsultasi", "Konsultasi"),
+    ("bundle", "Bundle"),
 ]
 SERVICES = [
     ("Jasa Pembukuan", "/layanan/jasa-pembukuan/"),
     ("Evaluasi Keuangan Bisnis", "/layanan/evaluasi-keuangan-bisnis/"),
-    ("CFO Fraction", "/layanan/cfo-fraction/"),
+    ("CFO Fraction", "/layanan/cfo-fraction/", 5000000),
     ("Pelatihan Keuangan", "/layanan/pelatihan-keuangan/"),
     ("Sustainable Finance", "/sustainable-finance/"),
 ]
+
+# Kartu empat layanan utama, dipakai di beranda lewat token {{service_cards}}.
+SERVICE_CARDS = """<article class="service reveal">
+        <div class="service-top"><span class="service-icon">{{icon:book}}</span><span class="service-letter">A</span></div>
+        <h3>Jasa Pembukuan</h3>
+        <p>Kami review dan rapikan pembukuan yang sudah berjalan, bahkan merekonstruksinya dari mutasi bank bila perlu.</p>
+        <ul><li>Laporan laba rugi &amp; neraca, tahunan dan bulanan</li><li>Asset register, penyusutan, jurnal penyesuaian</li><li>Siap untuk pajak, bank, dan audit</li></ul>
+        <a class="link-arrow" href="/layanan/jasa-pembukuan/">Pelajari Jasa Pembukuan</a>
+      </article>
+      <article class="service reveal d1">
+        <div class="service-top"><span class="service-icon">{{icon:chart}}</span><span class="service-letter">B</span></div>
+        <h3>Evaluasi Keuangan Bisnis</h3>
+        <p>Membaca kondisi keuangan dengan pendekatan kuantitatif dan diagnostik kontrol internal yang sistematis.</p>
+        <ul><li>Corporate Financial Diagnostic 5 tahap</li><li>Pemetaan risiko fraud &amp; desain kontrol</li><li>Quant Finance Insight untuk manajemen</li></ul>
+        <a class="link-arrow" href="/layanan/evaluasi-keuangan-bisnis/">Pelajari Evaluasi Keuangan</a>
+      </article>
+      <article class="service reveal">
+        <div class="service-top"><span class="service-icon">{{icon:compass}}</span><span class="service-letter">C</span></div>
+        <h3>CFO Fraction</h3>
+        <p>Akses praktisi keuangan senior secara paruh waktu, tanpa biaya merekrut CFO penuh waktu.</p>
+        <ul><li>Laporan manajemen &amp; KPI dashboard bulanan</li><li>Proyeksi arus kas 90 hari</li><li>Perencanaan pajak &amp; keputusan berprioritas</li></ul>
+        <a class="link-arrow" href="/layanan/cfo-fraction/">Pelajari CFO Fraction</a>
+      </article>
+      <article class="service reveal d1">
+        <div class="service-top"><span class="service-icon">{{icon:users}}</span><span class="service-letter">D</span></div>
+        <h3>Pelatihan Keuangan</h3>
+        <p>Strategi keuangan untuk manajemen dan financial wellness untuk karyawan. Bahasa sederhana, materi praktis.</p>
+        <ul><li>Retirement planning &amp; financial planning</li><li>Literasi keuangan untuk pelaku usaha</li><li>In-house workshop, seminar, bootcamp</li></ul>
+        <a class="link-arrow" href="/layanan/pelatihan-keuangan/">Pelajari Pelatihan</a>
+      </article>"""
 
 ORG_ID = SITE + "/#organization"
 FOUNDER_ID = SITE + "/#founder"
@@ -136,9 +167,9 @@ ORG = {
         "@type": "OfferCatalog",
         "name": "Layanan Harsha Advisory",
         "itemListElement": [
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": n, "url": SITE + u},
-             "priceSpecification": {"@type": "PriceSpecification", "minPrice": PRICE_FROM, "priceCurrency": "IDR"}}
-            for n, u in SERVICES
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": s[0], "url": SITE + s[1]},
+             "priceSpecification": {"@type": "PriceSpecification", "minPrice": s[2] if len(s) > 2 else PRICE_FROM, "priceCurrency": "IDR"}}
+            for s in SERVICES
         ],
     },
 }
@@ -181,7 +212,9 @@ WEBSITE = {
 # ---------------------------------------------------------------- loading
 
 def load_products():
-    return json.loads((ROOT / "_build" / "products.json").read_text(encoding="utf-8"))
+    # Produk dengan "draft": true belum tayang (misalnya link Lynk belum ada).
+    items = json.loads((ROOT / "_build" / "products.json").read_text(encoding="utf-8"))
+    return [p for p in items if not p.get("draft")]
 
 
 def load_pages():
@@ -245,7 +278,7 @@ def social_links(cls="social"):
 
 
 def footer():
-    svc = "".join(f'<li><a href="{u}">{n}</a></li>' for n, u in SERVICES)
+    svc = "".join(f'<li><a href="{s[1]}">{s[0]}</a></li>' for s in SERVICES)
     return f"""<footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
@@ -262,7 +295,7 @@ def footer():
         <h4>Perusahaan</h4>
         <ul>
           <li><a href="/tentang/">Tentang Kami</a></li>
-          <li><a href="/katalog/">Katalog</a></li>
+          <li><a href="/katalog/">Produk Digital</a></li>
           <li><a href="/case-studies/">Studi Kasus</a></li>
           <li><a href="/insights/">Insights</a></li>
           <li><a href="/kamus-keuangan/">Kamus Keuangan</a></li>
@@ -290,7 +323,7 @@ def footer():
 </footer>
 <a class="wa-float" href="{WA}" target="_blank" rel="noopener" aria-label="Chat WhatsApp Harsha Advisory">{icon("whatsapp")}<span>Chat WhatsApp</span></a>
 <div class="mobile-cta"><a href="{WA}" class="btn btn-wa" target="_blank" rel="noopener" aria-label="Chat WhatsApp">{icon("whatsapp")} WhatsApp</a><a href="{CAL}" class="btn btn-blue" target="_blank" rel="noopener">{icon("calendar")} Diskusi Gratis</a></div>
-<script src="/script.js" defer></script>"""
+<script src="{versioned("/script.js")}" defer></script>"""
 
 
 def crumbs_html(crumbs):
@@ -336,9 +369,16 @@ def art(cls):
             '<path d="M0 190 C60 170 90 120 150 130 S250 90 300 100 S370 60 400 50"/></g></svg></div>')
 
 
+def thumb(p, loading="lazy"):
+    if not p.get("image"):
+        return art(p["art"])
+    return (f'<span class="thumb"><img src="{p["image"]}" alt="" width="{p["image_w"]}" '
+            f'height="{p["image_h"]}" loading="{loading}"></span>')
+
+
 def post_card(p):
     return f"""<article class="post reveal">
-  <a href="{p['path']}" tabindex="-1" aria-hidden="true">{art(p['art'])}</a>
+  <a href="{p['path']}" tabindex="-1" aria-hidden="true">{thumb(p)}</a>
   <div class="body">
     <div class="post-meta"><span class="tag">{esc(p['category'])}</span><span>{p['minutes']} menit baca</span></div>
     <h3><a href="{p['path']}">{esc(p['title'])}</a></h3>
@@ -349,8 +389,10 @@ def post_card(p):
 
 
 def post_feature(p):
+    visual = (f'<a href="{p["path"]}" tabindex="-1" aria-hidden="true">{thumb(p, "eager")}</a>'
+              if p.get("image") else art(p["art"]))
     return f"""<article class="post-feature reveal">
-  {art(p['art'])}
+  {visual}
   <div class="body">
     <div class="post-meta"><span class="tag dark">{esc(p['category'])}</span><span>{p['minutes']} menit baca · {fmt_date(p['published'])}</span></div>
     <h2><a href="{p['path']}">{esc(p['title'])}</a></h2>
@@ -368,12 +410,45 @@ def product_url(p):
     return f"/katalog/{p['slug']}/"
 
 
+def versioned(path):
+    """Tambahkan ?v=<hash isi file> agar browser mengunduh ulang saat gambar diganti dengan nama yang sama."""
+    f = ROOT / path.lstrip("/")
+    return f"{path}?v={hashlib.md5(f.read_bytes()).hexdigest()[:8]}" if f.is_file() else path
+
+
 def product_image(p):
-    return p.get("image", f"/assets/katalog/{p['slug']}.webp")
+    return versioned(p.get("image", f"/assets/katalog/{p['slug']}.webp"))
 
 
 def price_html(p):
-    return f'<span class="price"><b>{rupiah(p["price"])}</b> <s>{rupiah(p["normal_price"])}</s></span>'
+    strike = f' <s>{rupiah(p["normal_price"])}</s>' if p.get("normal_price") else ""
+    return f'<span class="price"><b>{rupiah(p["price"])}</b>{strike}</span>'
+
+
+def product_gallery(p):
+    """Gambar utama + gambar tambahan (kunci "gallery") sebagai slider dengan thumbnail."""
+    imgs = [product_image(p)] + [versioned(g) for g in p.get("gallery", [])]
+    name = esc(p["name"])
+    w, h = p["image_w"], p["image_h"]
+    if len(imgs) == 1:
+        return f'<img src="{imgs[0]}" alt="{name}" width="{w}" height="{h}">'
+    n = len(imgs)
+    slides = "".join(
+        f'<img src="{src}" alt="{name}, gambar {i} dari {n}" width="{w}" height="{h}" loading="{"eager" if i == 1 else "lazy"}">'
+        for i, src in enumerate(imgs, start=1))
+    thumbs = ""
+    for i, src in enumerate(imgs, start=1):
+        cur = ' aria-current="true"' if i == 1 else ""
+        thumbs += (f'<button type="button" aria-label="Lihat gambar {i} dari {n}"{cur}>'
+                   f'<img src="{src}" alt="" width="{w}" height="{h}" loading="lazy"></button>')
+    return f"""<div class="gallery" data-gallery>
+        <div class="gallery-main">
+          <div class="gallery-track" tabindex="0" role="region" aria-label="Galeri gambar {name}">{slides}</div>
+          <button type="button" class="gallery-nav prev" aria-label="Gambar sebelumnya">{icon("arrow")}</button>
+          <button type="button" class="gallery-nav next" aria-label="Gambar berikutnya">{icon("arrow")}</button>
+        </div>
+        <div class="gallery-thumbs">{thumbs}</div>
+      </div>"""
 
 
 def product_card(p):
@@ -396,7 +471,7 @@ def product_pages(products):
         verb = "Pilih jadwal &amp; pesan" if p["needs_schedule"] else "Beli sekarang"
         note = "Anda akan memilih jadwal dan membayar di Lynk.id." if p["needs_schedule"] else "Pembayaran diproses dengan aman oleh Lynk.id."
         others = [o for o in products if o["category"] == p["category"] and o is not p][:3]
-        crumbs = [["Katalog", "/katalog/"], [p["name"], None]]
+        crumbs = [["Produk Digital", "/katalog/"], [p["name"], None]]
         pages.append({
             "layout": "product", "product": p, "title": p["name"], "nav": "katalog", "image": product_image(p),
             "description": f"{p['lead']} Harga {rupiah(p['price'])}.",
@@ -405,7 +480,7 @@ def product_pages(products):
   <div class="wrap">
     {crumbs_html(crumbs)}
     <div class="product-grid">
-      <img src="{product_image(p)}" alt="{esc(p['name'])}" width="{p['image_w']}" height="{p['image_h']}">
+      {product_gallery(p)}
       <div>
         <span class="tag">{label}</span>
         <h1>{esc(p['name'])}</h1>
@@ -424,7 +499,7 @@ def product_pages(products):
 </section>
 <section class="section bg-paper">
   <div class="wrap">
-    <div class="split-head"><div><span class="eyebrow">{label}</span><h2>Pilihan lainnya</h2></div><div><a class="link-arrow" href="/katalog/">Semua katalog</a></div></div>
+    <div class="split-head"><div><span class="eyebrow">{label}</span><h2>Pilihan lainnya</h2></div><div><a class="link-arrow" href="/katalog/">Semua produk digital</a></div></div>
     <div class="products">{''.join(product_card(o) for o in others)}</div>
   </div>
 </section>""",
@@ -491,7 +566,8 @@ def page_schema(p, url):
         item = p["product"]
         graph.append({
             "@type": "Product", "@id": url + "#product", "name": item["name"], "description": item["lead"],
-            "sku": item["id"], "category": dict(CATALOG)[item["category"]], "image": SITE + p["image"],
+            "sku": item["id"], "category": dict(CATALOG)[item["category"]],
+            "image": [SITE + p["image"]] + [SITE + versioned(g) for g in item.get("gallery", [])],
             "brand": {"@id": ORG_ID}, "url": url,
             "offers": {"@type": "Offer", "price": item["price"], "priceCurrency": "IDR", "url": url,
                        "availability": "https://schema.org/InStock", "seller": {"@id": ORG_ID}},
@@ -520,7 +596,7 @@ def head(p, url):
                  f'\n  <meta property="article:published_time" content="{p["published"]}">'
                  f'\n  <meta property="article:modified_time" content="{p["modified"]}">'
                  f'\n  <meta property="article:section" content="{esc(p["category"])}">')
-    gsv = '\n  <meta name="google-site-verification" content="jmkiCpikYeTn6lvK6ahbdeN8ChffgprwPAnVHjPJRmo">' if p["path"] == "/" else ""
+    gsv = '\n  <meta name="google-site-verification" content="bTxXb9YGoeLd66LcHUGomCKRO3Yyi2kfCArZb8SdNls">' if p["path"] == "/" else ""
     return f"""<!DOCTYPE html>
 <html lang="id">
 <head>
@@ -546,7 +622,7 @@ def head(p, url):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="{versioned("/styles.css")}">
   <script type="application/ld+json">
 {page_schema(p, url)}
   </script>
@@ -610,6 +686,7 @@ def render(p, articles, products):
         "{{posts_rest}}": "".join(post_card(a) for a in articles if a is not featured),
         "{{posts_latest}}": "".join(post_card(a) for a in articles[:3]),
         "{{arrow}}": ARROW,
+        "{{service_cards}}": SERVICE_CARDS,
     }
     for key, _ in CATALOG:
         tokens[f"{{{{products:{key}}}}}"] = "".join(product_card(o) for o in products if o["category"] == key)
@@ -672,7 +749,7 @@ Fakta utama:
 ## Halaman utama
 {chr(10).join(line(p) for p in main_pages)}
 
-## Katalog produk
+## Produk digital
 {chr(10).join(line(a) for a in shop)}
 
 ## Artikel dan panduan
@@ -717,7 +794,7 @@ def main():
     products = load_products()
     shop = product_pages(products)
     next(p for p in pages if p["path"] == "/katalog/")["schema"] = [{
-        "@type": "ItemList", "name": "Katalog Harsha Advisory",
+        "@type": "ItemList", "name": "Produk Digital Harsha Advisory",
         "itemListElement": [{"@type": "ListItem", "position": i, "name": o["name"], "url": SITE + product_url(o)}
                             for i, o in enumerate(products, start=1)],
     }]
