@@ -12,6 +12,7 @@ oleh GitHub Pages karena diawali garis bawah.
 import datetime
 import html
 import json
+import math
 import pathlib
 import re
 
@@ -103,7 +104,7 @@ ORG = {
     "description": ("Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan B2B "
                     "yang membantu perusahaan di seluruh Indonesia memahami angkanya sendiri melalui "
                     "jasa pembukuan, evaluasi keuangan bisnis, CFO Fraction, dan pelatihan keuangan "
-                    "untuk karyawan dan manajemen."),
+                    "untuk manajemen dan tim."),
     "slogan": "Bisnis yang sehat adalah bisnis yang memahami angkanya.",
     "email": EMAIL,
     "telephone": "+62-896-7314-4112",
@@ -321,6 +322,13 @@ def strip_tags(s):
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", s))).strip()
 
 
+def article_words(p):
+    """Jumlah kata isi artikel (termasuk FAQ), tanpa daftar referensi dan kotak CTA."""
+    body = p["body"].replace("{{faq}}", faq_html(p.get("faq", [])))
+    body = re.sub(r'<div class="refs">.*?</div>', "", body, flags=re.S)
+    return len(strip_tags(body).split())
+
+
 def art(cls):
     return (f'<div class="art {cls}" aria-hidden="true"><svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice">'
             '<g fill="none" stroke="rgba(255,255,255,.16)" stroke-width="1.2">'
@@ -464,13 +472,12 @@ def page_schema(p, url):
                             "acceptedAnswer": {"@type": "Answer", "text": strip_tags(a)}} for q, a in p["faq"]],
         })
     if p.get("layout") == "article":
-        words = len(strip_tags(p["body"]).split())
         graph.append({
             "@type": "Article", "@id": url + "#article", "headline": p["title"], "description": p["description"],
-            "articleSection": p["category"], "inLanguage": "id-ID", "wordCount": words,
+            "articleSection": p["category"], "inLanguage": "id-ID", "wordCount": p["words"],
             "datePublished": p["published"], "dateModified": p["modified"],
             "author": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID},
-            "image": SITE + "/assets/og-image.jpg", "mainEntityOfPage": {"@id": url + "#webpage"},
+            "image": SITE + p.get("image", "/assets/og-image.jpg"), "mainEntityOfPage": {"@id": url + "#webpage"},
         })
     if p.get("glossary"):
         graph.append({
@@ -505,8 +512,12 @@ def head(p, url):
                 f'<meta property="og:image" content="{SITE}/assets/og-image.jpg">\n'
                 '  <meta property="og:image:width" content="1200">\n'
                 '  <meta property="og:image:height" content="630">')
+    if p.get("image") and p.get("image_w"):
+        og_image += (f'\n  <meta property="og:image:width" content="{p["image_w"]}">'
+                     f'\n  <meta property="og:image:height" content="{p["image_h"]}">')
     if p.get("layout") == "article":
-        extra = (f'\n  <meta property="article:published_time" content="{p["published"]}">'
+        extra = (f'\n  <meta name="twitter:image" content="{SITE}{p.get("image", "/assets/og-image.jpg")}">'
+                 f'\n  <meta property="article:published_time" content="{p["published"]}">'
                  f'\n  <meta property="article:modified_time" content="{p["modified"]}">'
                  f'\n  <meta property="article:section" content="{esc(p["category"])}">')
     gsv = '\n  <meta name="google-site-verification" content="jmkiCpikYeTn6lvK6ahbdeN8ChffgprwPAnVHjPJRmo">' if p["path"] == "/" else ""
@@ -543,7 +554,12 @@ def head(p, url):
 
 
 def article_main(p, articles):
-    others = [a for a in articles if a["path"] != p["path"]][:3]
+    by_path = {a["path"]: a for a in articles}
+    related = [by_path[f"/insights/{s}/"] for s in p.get("related", []) if f"/insights/{s}/" in by_path]
+    rest = [a for a in articles if a["path"] != p["path"] and a not in related]
+    others = (related + rest)[:3]
+    figure = (f'\n<figure class="article-figure"><img src="{p["image"]}" alt="{esc(p["image_alt"])}" '
+              f'width="{p["image_w"]}" height="{p["image_h"]}" loading="eager"></figure>') if p.get("image") else ""
     return f"""<section class="article-head">
   <div class="wrap wrap-narrow">
     {crumbs_html(p['crumbs'])}
@@ -556,7 +572,7 @@ def article_main(p, articles):
       <span>{p['minutes']} menit baca</span>
     </div>
   </div>
-</section>
+</section>{figure}
 <article class="article">
   <div class="wrap">
 {p['body']}
@@ -641,7 +657,7 @@ def write_llms(pages, articles, shop):
     main_pages.sort(key=lambda p: order.get(p["path"], 99))
     text = f"""# Harsha Advisory
 
-> Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan B2B yang melayani perusahaan di seluruh Indonesia. Kami membantu perusahaan memahami angkanya sendiri melalui jasa pembukuan, evaluasi keuangan bisnis dengan pendekatan kuantitatif, CFO Fraction (CFO paruh waktu), dan pelatihan keuangan untuk karyawan dan manajemen.
+> Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan B2B yang melayani perusahaan di seluruh Indonesia. Kami membantu perusahaan memahami angkanya sendiri melalui jasa pembukuan, evaluasi keuangan bisnis dengan pendekatan kuantitatif, CFO Fraction (CFO paruh waktu), dan pelatihan keuangan untuk manajemen dan tim.
 
 Fakta utama:
 - Nama: Harsha Advisory. Badan usaha: PT Harsha Dana Digital.
@@ -708,6 +724,8 @@ def main():
     for p in pages:
         if p.get("layout") == "article":
             p.setdefault("crumbs", [["Insights", "/insights/"], [p["title"], None]])
+            p["words"] = article_words(p)
+            p["minutes"] = max(2, math.ceil(p["words"] / 200))
     for p in pages + shop:
         target = out_path(p["path"])
         target.parent.mkdir(parents=True, exist_ok=True)

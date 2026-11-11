@@ -490,6 +490,11 @@ td.pos { color: var(--ok); font-weight: 700; }
 .refs { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
 .refs h2 { font-family: var(--sans); font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 1rem; }
 .refs li { font-size: .9rem; line-height: 1.6; color: var(--muted); }
+.refs p { font-size: .9rem; line-height: 1.6; color: var(--muted); }
+.article-figure { margin: 0; padding: 0 1.5rem; background: linear-gradient(var(--paper) 50%, transparent 50%); }
+.article-figure img { width: 100%; max-width: 732px; height: auto; margin: 0 auto; border-radius: var(--radius); border: 1px solid var(--line); }
+.article figure { margin: 2rem 0; }
+.article figure img { width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--line); }
 .article-cta { margin-top: 3rem; padding: 2.2rem; border-radius: var(--radius); background: var(--ink); }
 .article-cta h2 { color: #fff; font-size: 1.5rem; margin: 0 0 .7rem; }
 .article-cta p { color: rgba(255,255,255,.72); font-size: 1rem; margin-bottom: 1.4rem; }
