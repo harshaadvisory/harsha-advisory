@@ -26,6 +26,32 @@
     });
   }
 
+  // Galeri produk: geser (swipe), tombol panah, dan thumbnail.
+  document.querySelectorAll('[data-gallery]').forEach(function (g) {
+    var track = g.querySelector('.gallery-track');
+    var thumbs = g.querySelectorAll('.gallery-thumbs button');
+    var prev = g.querySelector('.gallery-nav.prev');
+    var next = g.querySelector('.gallery-nav.next');
+    var count = thumbs.length;
+    function current() { return Math.round(track.scrollLeft / track.clientWidth); }
+    function go(i) { track.scrollTo({ left: Math.max(0, Math.min(count - 1, i)) * track.clientWidth }); }
+    function sync() {
+      var i = current();
+      thumbs.forEach(function (b, k) { if (k === i) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+      prev.disabled = i <= 0;
+      next.disabled = i >= count - 1;
+    }
+    thumbs.forEach(function (b, k) { b.addEventListener('click', function () { go(k); }); });
+    prev.addEventListener('click', function () { go(current() - 1); });
+    next.addEventListener('click', function () { go(current() + 1); });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(current() - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); }
+    });
+    track.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
+    sync();
+  });
+
   var els = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {
     els.forEach(function (el) { el.classList.add('in'); });
