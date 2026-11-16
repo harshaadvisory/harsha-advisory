@@ -30,8 +30,105 @@ LINKEDIN = "https://www.linkedin.com/company/harshadana"
 THREADS = "https://www.threads.com/@harsha.advisory"
 LYNK = "https://lynk.id/harshadana"
 TODAY = datetime.date.today().isoformat()
-PRICE_FROM = 2500000
-PRICE_TEXT = "Rp 2,5 juta"
+PRICE_FROM = 5000000
+PRICE_TEXT = "Rp5 juta"
+
+# ---------------------------------------------------------------- bahasa
+# Versi Inggris: sumber di _build/pages_en/ (struktur sama, "path" tetap path
+# Indonesia) dan _build/products_en.json. Semua halaman Inggris tayang di /en/.
+PAGES_EN = ROOT / "_build" / "pages_en"
+CUR = {"lang": "id"}  # bahasa halaman yang sedang dirender
+
+WA_TEXT = {
+    "id": "Halo%20Harsha%20Advisory%2C%20saya%20ingin%20konsultasi%20tentang%20keuangan%20bisnis%20saya.",
+    "en": "Hello%20Harsha%20Advisory%2C%20I%20would%20like%20to%20discuss%20my%20company%27s%20finances.",
+}
+
+STR = {
+    "id": {
+        "price": PRICE_TEXT, "price_range": f"Mulai dari {PRICE_TEXT}",
+        "skip": "Langsung ke konten", "home_aria": "Harsha Advisory, ke beranda", "menu": "Menu utama",
+        "open_menu": "Buka menu", "cta": "Jadwalkan Diskusi", "home": "Beranda",
+        "f_about": "Konsultan keuangan dan perpajakan bisnis untuk perusahaan di seluruh Indonesia. Kami membantu direksi dan manajemen memahami kondisi keuangan dan mengambil keputusan dengan lebih yakin.",
+        "f_services": "Layanan", "f_company": "Perusahaan", "f_contact": "Kontak",
+        "f_links": [("Tentang Kami", "/tentang/"), ("Studi Kasus", "/case-studies/"), ("Insights", "/insights/"),
+                    ("Kamus Keuangan", "/kamus-keuangan/"), ("Produk Digital", "/katalog/"), ("FAQ", "/#faq"), ("Kontak", "/kontak/")],
+        "hours": "Senin sampai Jumat, 08.00 sampai 17.00 WITA",
+        "slogan": "Bisnis yang sehat adalah bisnis yang memahami angkanya.",
+        "wa_chat": "Chat WhatsApp", "wa_aria": "Chat WhatsApp Harsha Advisory", "wa_contact": "Hubungi via WhatsApp",
+        "min_read": "menit baca", "read_article": "Baca artikel", "read_more": "Baca selengkapnya",
+        "team": "Tim Harsha Advisory", "published": "Diterbitkan", "updated": "Diperbarui",
+        "art_cta_h": "Menghadapi keputusan serupa di perusahaan Anda?",
+        "art_cta_p": "Setiap perusahaan punya dinamika keuangan yang berbeda. Kami membantu manajemen memahami persoalannya dan menentukan prioritas yang paling relevan.",
+        "read_also": "Baca juga", "more_insights": "Insight lainnya", "all_articles": "Semua artikel",
+        "buy_schedule": "Pilih jadwal &amp; pesan", "buy_now": "Beli sekarang",
+        "note_schedule": "Anda akan memilih jadwal dan membayar di Lynk.id.",
+        "note_buy": "Pembayaran diproses dengan aman oleh Lynk.id.", "ask_first": "Tanya dulu",
+        "price_word": "Harga", "other_choices": "Pilihan lainnya", "all_products": "Semua produk digital",
+        "see_detail": "Lihat detail", "digital_products": "Produk Digital",
+        "img_of": "gambar {i} dari {n}", "see_img": "Lihat gambar {i} dari {n}", "gallery": "Galeri gambar {name}",
+        "prev_img": "Gambar sebelumnya", "next_img": "Gambar berikutnya",
+        "lang_name": "Bahasa Indonesia", "switch_label": "Ganti bahasa",
+        "months": ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
+                   "September", "Oktober", "November", "Desember"],
+    },
+    "en": {
+        "price": "IDR 5 million", "price_range": "From IDR 5 million",
+        "skip": "Skip to content", "home_aria": "Harsha Advisory, home", "menu": "Main menu",
+        "open_menu": "Open menu", "cta": "Schedule a Discussion", "home": "Home",
+        "f_about": "Business finance and tax advisory for companies across Indonesia. We help directors and management understand their financial position and make decisions with greater confidence.",
+        "f_services": "Services", "f_company": "Company", "f_contact": "Contact",
+        "f_links": [("About Us", "/tentang/"), ("Case Studies", "/case-studies/"), ("Insights", "/insights/"),
+                    ("Finance Glossary", "/kamus-keuangan/"), ("Digital Products", "/katalog/"), ("FAQ", "/#faq"), ("Contact", "/kontak/")],
+        "hours": "Monday to Friday, 08:00 to 17:00 WITA (UTC+8)",
+        "slogan": "A healthy business is one that understands its numbers.",
+        "wa_chat": "Chat on WhatsApp", "wa_aria": "Chat with Harsha Advisory on WhatsApp", "wa_contact": "Contact via WhatsApp",
+        "min_read": "min read", "read_article": "Read article", "read_more": "Read more",
+        "team": "Harsha Advisory Team", "published": "Published", "updated": "Updated",
+        "art_cta_h": "Facing a similar decision in your company?",
+        "art_cta_p": "Every company has its own financial dynamics. We help management understand the issue and set the most relevant priorities.",
+        "read_also": "Read also", "more_insights": "More insights", "all_articles": "All articles",
+        "buy_schedule": "Choose a schedule &amp; book", "buy_now": "Buy now",
+        "note_schedule": "You will choose a schedule and pay on Lynk.id.",
+        "note_buy": "Payment is processed securely by Lynk.id.", "ask_first": "Ask first",
+        "price_word": "Price", "other_choices": "Other options", "all_products": "All digital products",
+        "see_detail": "View details", "digital_products": "Digital Products",
+        "img_of": "image {i} of {n}", "see_img": "View image {i} of {n}", "gallery": "{name} image gallery",
+        "prev_img": "Previous image", "next_img": "Next image",
+        "lang_name": "English", "switch_label": "Change language",
+        "months": ["January", "February", "March", "April", "May", "June", "July", "August",
+                   "September", "October", "November", "December"],
+    },
+}
+
+
+def t(key):
+    return STR[CUR["lang"]][key]
+
+
+def wa_link():
+    return f"https://wa.me/{WA_NUMBER}?text={WA_TEXT[CUR['lang']]}"
+
+
+def is_internal_page(path):
+    """Path halaman situs (bukan aset atau file) yang punya versi per bahasa."""
+    base = path.split("#")[0].split("?")[0]
+    return (path.startswith("/") and not path.startswith("//") and not path.startswith("/en/")
+            and not path.startswith("/assets/") and not re.search(r"\.\w+$", base))
+
+
+def lp(path, lang=None):
+    """Path untuk bahasa tertentu: '/x/' -> '/en/x/' pada versi Inggris."""
+    lang = lang or CUR["lang"]
+    if lang == "en" and is_internal_page(path):
+        return "/en" + path
+    return path
+
+
+def localize_links(markup):
+    if CUR["lang"] != "en":
+        return markup
+    return re.sub(r'href="(/[^"]*)"', lambda m: f'href="{lp(m.group(1))}"', markup)
 
 ICONS = {
     "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
@@ -66,57 +163,99 @@ def icon(name, cls=""):
 
 ARROW = icon("arrow", "arrow")
 
+CFO_URL = "/layanan/fractional-cfo/"
+
+# Menu utama mengikuti keputusan audit (PDF halaman 5). Produk Digital dan Kontak
+# sengaja tidak masuk navbar: Produk Digital hanya di footer, kontak lewat tombol.
 NAV = [
-    ("layanan", "Layanan", "/layanan/"),
-    ("katalog", "Produk Digital", "/katalog/"),
+    ("home", "Beranda", "/"),
+    ("fractional-cfo", "Fractional CFO", CFO_URL),
+    ("pelatihan", "Corporate Training", "/layanan/pelatihan-keuangan/"),
     ("case-studies", "Studi Kasus", "/case-studies/"),
-    ("pelatihan", "Pelatihan", "/layanan/pelatihan-keuangan/"),
     ("insights", "Insights", "/insights/"),
     ("tentang", "Tentang", "/tentang/"),
-    ("kontak", "Kontak", "/kontak/"),
 ]
+
+NAV_EN = {"home": "Home", "fractional-cfo": "Fractional CFO", "pelatihan": "Corporate Training",
+          "case-studies": "Case Studies", "insights": "Insights", "tentang": "About"}
 
 CATALOG = [
     ("template", "Template"),
     ("konsultasi", "Konsultasi"),
     ("bundle", "Bundle"),
 ]
+CATALOG_EN = {"template": "Templates", "konsultasi": "Consultation", "bundle": "Bundles"}
 SERVICES = [
-    ("Jasa Pembukuan", "/layanan/jasa-pembukuan/"),
-    ("Evaluasi Keuangan Bisnis", "/layanan/evaluasi-keuangan-bisnis/"),
-    ("CFO Fraction", "/layanan/cfo-fraction/", 5000000),
+    ("Fractional CFO", CFO_URL),
+    ("Business Financial Evaluation", "/layanan/evaluasi-keuangan-bisnis/"),
     ("Pelatihan Keuangan", "/layanan/pelatihan-keuangan/"),
     ("Sustainable Finance", "/sustainable-finance/"),
 ]
+SERVICES_EN = {"Pelatihan Keuangan": "Financial Training"}
 
-# Kartu empat layanan utama, dipakai di beranda lewat token {{service_cards}}.
-SERVICE_CARDS = """<article class="service reveal">
-        <div class="service-top"><span class="service-icon">{{icon:book}}</span><span class="service-letter">A</span></div>
-        <h3>Jasa Pembukuan</h3>
-        <p>Kami review dan rapikan pembukuan yang sudah berjalan, bahkan merekonstruksinya dari mutasi bank bila perlu.</p>
-        <ul><li>Laporan laba rugi &amp; neraca, tahunan dan bulanan</li><li>Asset register, penyusutan, jurnal penyesuaian</li><li>Siap untuk pajak, bank, dan audit</li></ul>
-        <a class="link-arrow" href="/layanan/jasa-pembukuan/">Pelajari Jasa Pembukuan</a>
-      </article>
-      <article class="service reveal d1">
-        <div class="service-top"><span class="service-icon">{{icon:chart}}</span><span class="service-letter">B</span></div>
-        <h3>Evaluasi Keuangan Bisnis</h3>
-        <p>Membaca kondisi keuangan dengan pendekatan kuantitatif dan diagnostik kontrol internal yang sistematis.</p>
-        <ul><li>Corporate Financial Diagnostic 5 tahap</li><li>Pemetaan risiko fraud &amp; desain kontrol</li><li>Quant Finance Insight untuk manajemen</li></ul>
-        <a class="link-arrow" href="/layanan/evaluasi-keuangan-bisnis/">Pelajari Evaluasi Keuangan</a>
+
+def catalog_label(key):
+    return CATALOG_EN[key] if CUR["lang"] == "en" else dict(CATALOG)[key]
+
+
+def services():
+    if CUR["lang"] == "en":
+        return [(SERVICES_EN.get(n, n), lp(u)) for n, u in SERVICES]
+    return SERVICES
+
+# URL lama yang dialihkan. GitHub Pages tidak punya redirect server, jadi
+# dibuat halaman pengalihan (meta refresh + canonical ke tujuan baru).
+REDIRECTS = {
+    "/layanan/cfo-fraction/": CFO_URL,
+    "/layanan/": "/",
+    "/layanan/jasa-pembukuan/": "/",
+    "/insights/cfo-fraction-vs-cfo-full-time/": "/insights/fractional-cfo-vs-cfo-full-time/",
+    "/insights/jasa-pembukuan-vs-software-akuntansi/": "/insights/",
+}
+
+# Kartu solusi di beranda (token {{service_cards}}): Fractional CFO sebagai kartu utama.
+SERVICE_CARDS = """<article class="service service-featured reveal">
+        <div>
+          <div class="service-top"><span class="service-icon">{{icon:compass}}</span><span class="tag">Layanan unggulan</span></div>
+          <h3>Fractional CFO</h3>
+          <p>Kami membantu manajemen membaca kinerja, menjaga fokus pada arus kas, dan menilai pilihan keuangan dengan perspektif yang lebih menyeluruh.</p>
+          <a class="btn btn-primary" href="/layanan/fractional-cfo/">Kenali Fractional CFO {{arrow}}</a>
+        </div>
+        <ul><li>Profitabilitas dan kinerja usaha</li><li>Arus kas dan kebutuhan modal kerja</li><li>Skenario dan konsekuensi keputusan keuangan</li><li>Pembahasan rutin bersama manajemen</li></ul>
       </article>
       <article class="service reveal">
-        <div class="service-top"><span class="service-icon">{{icon:compass}}</span><span class="service-letter">C</span></div>
-        <h3>CFO Fraction</h3>
-        <p>Akses praktisi keuangan senior secara paruh waktu, tanpa biaya merekrut CFO penuh waktu.</p>
-        <ul><li>Laporan manajemen &amp; KPI dashboard bulanan</li><li>Proyeksi arus kas 90 hari</li><li>Perencanaan pajak &amp; keputusan berprioritas</li></ul>
-        <a class="link-arrow" href="/layanan/cfo-fraction/">Pelajari CFO Fraction</a>
+        <div class="service-top"><span class="service-icon">{{icon:chart}}</span><span class="service-letter">BFE</span></div>
+        <h3>Business Financial Evaluation (BFE)</h3>
+        <p>Kenali posisi keuangan perusahaan dan area yang paling perlu menjadi perhatian sebelum menentukan langkah berikutnya.</p>
+        <a class="link-arrow" href="/layanan/evaluasi-keuangan-bisnis/">Pelajari BFE</a>
       </article>
       <article class="service reveal d1">
-        <div class="service-top"><span class="service-icon">{{icon:users}}</span><span class="service-letter">D</span></div>
+        <div class="service-top"><span class="service-icon">{{icon:users}}</span><span class="tag">Corporate Training</span></div>
         <h3>Pelatihan Keuangan</h3>
-        <p>Strategi keuangan untuk manajemen dan financial wellness untuk karyawan. Bahasa sederhana, materi praktis.</p>
-        <ul><li>Retirement planning &amp; financial planning</li><li>Literasi keuangan untuk pelaku usaha</li><li>In-house workshop, seminar, bootcamp</li></ul>
-        <a class="link-arrow" href="/layanan/pelatihan-keuangan/">Pelajari Pelatihan</a>
+        <p>Pembelajaran keuangan untuk manajemen dan peserta perusahaan, disusun sesuai konteks dan tujuan program.</p>
+        <a class="link-arrow" href="/layanan/pelatihan-keuangan/">Diskusikan Program Pelatihan</a>
+      </article>"""
+
+SERVICE_CARDS_EN = """<article class="service service-featured reveal">
+        <div>
+          <div class="service-top"><span class="service-icon">{{icon:compass}}</span><span class="tag">Flagship service</span></div>
+          <h3>Fractional CFO</h3>
+          <p>We help management read performance, stay focused on cash flow, and weigh financial options with a broader perspective.</p>
+          <a class="btn btn-primary" href="/layanan/fractional-cfo/">Discover Fractional CFO {{arrow}}</a>
+        </div>
+        <ul><li>Profitability and business performance</li><li>Cash flow and working capital needs</li><li>Scenarios and consequences of financial decisions</li><li>Regular discussions with management</li></ul>
+      </article>
+      <article class="service reveal">
+        <div class="service-top"><span class="service-icon">{{icon:chart}}</span><span class="service-letter">BFE</span></div>
+        <h3>Business Financial Evaluation (BFE)</h3>
+        <p>Understand your company's financial position and the areas that need the most attention before deciding on the next step.</p>
+        <a class="link-arrow" href="/layanan/evaluasi-keuangan-bisnis/">Explore BFE</a>
+      </article>
+      <article class="service reveal d1">
+        <div class="service-top"><span class="service-icon">{{icon:users}}</span><span class="tag">Corporate Training</span></div>
+        <h3>Financial Training</h3>
+        <p>Financial learning for management and company participants, designed around the context and goals of each program.</p>
+        <a class="link-arrow" href="/layanan/pelatihan-keuangan/">Discuss a Training Program</a>
       </article>"""
 
 ORG_ID = SITE + "/#organization"
@@ -132,10 +271,10 @@ ORG = {
     "url": SITE + "/",
     "logo": {"@type": "ImageObject", "url": SITE + "/assets/logo.png", "width": 1350, "height": 1350},
     "image": SITE + "/assets/og-image.jpg",
-    "description": ("Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan B2B "
-                    "yang membantu perusahaan di seluruh Indonesia memahami angkanya sendiri melalui "
-                    "jasa pembukuan, evaluasi keuangan bisnis, CFO Fraction, dan pelatihan keuangan "
-                    "untuk manajemen dan tim."),
+    "description": ("Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan dan "
+                    "perpajakan bisnis B2B yang membantu direksi dan manajemen di seluruh Indonesia memahami "
+                    "kondisi finansial dan mengambil keputusan dengan lebih yakin, melalui Fractional CFO, "
+                    "Business Financial Evaluation, dan Pelatihan Keuangan."),
     "slogan": "Bisnis yang sehat adalah bisnis yang memahami angkanya.",
     "email": EMAIL,
     "telephone": "+62-896-7314-4112",
@@ -158,7 +297,7 @@ ORG = {
     "founder": {"@id": FOUNDER_ID},
     "sameAs": [INSTAGRAM, THREADS, LINKEDIN],
     "knowsAbout": [
-        "Pembukuan dan laporan keuangan", "Evaluasi keuangan bisnis", "CFO Fraction",
+        "Fractional CFO", "Business Financial Evaluation", "Profitabilitas dan arus kas perusahaan",
         "Pengendalian internal dan pencegahan fraud", "Proyeksi arus kas",
         "Retirement planning", "Financial planning", "Literasi keuangan karyawan",
         "Treasury advisory BPR", "Surat Berharga Negara (SBN)", "Sustainable finance",
@@ -168,7 +307,7 @@ ORG = {
         "name": "Layanan Harsha Advisory",
         "itemListElement": [
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": s[0], "url": SITE + s[1]},
-             "priceSpecification": {"@type": "PriceSpecification", "minPrice": s[2] if len(s) > 2 else PRICE_FROM, "priceCurrency": "IDR"}}
+             "priceSpecification": {"@type": "PriceSpecification", "minPrice": PRICE_FROM, "priceCurrency": "IDR"}}
             for s in SERVICES
         ],
     },
@@ -199,6 +338,28 @@ FOUNDER = {
                    "Forensic accounting", "Treasury advisory", "Capital markets"],
 }
 
+ORG_EN_DESC = ("Harsha Advisory (PT Harsha Dana Digital) is a B2B business finance and tax advisory firm that "
+               "helps directors and management across Indonesia understand their financial position and make "
+               "decisions with greater confidence, through Fractional CFO, Business Financial Evaluation, and "
+               "Financial Training.")
+FOUNDER_EN_DESC = ("Finance practitioner with more than 12 years of experience in banking and investment, who has "
+                   "advised more than 200 financial planning clients in Indonesia, the United States, Japan, and Singapore.")
+
+
+def org():
+    if CUR["lang"] == "id":
+        return ORG
+    o = dict(ORG, description=ORG_EN_DESC, slogan=STR["en"]["slogan"], priceRange=STR["en"]["price_range"])
+    o["hasOfferCatalog"] = dict(ORG["hasOfferCatalog"], name="Harsha Advisory services", itemListElement=[
+        dict(item, itemOffered={"@type": "Service", "name": n, "url": SITE + u})
+        for item, (n, u) in zip(ORG["hasOfferCatalog"]["itemListElement"], services())])
+    return o
+
+
+def founder():
+    return FOUNDER if CUR["lang"] == "id" else dict(FOUNDER, description=FOUNDER_EN_DESC, url=SITE + "/en/tentang/")
+
+
 WEBSITE = {
     "@type": "WebSite",
     "@id": WEBSITE_ID,
@@ -211,15 +372,22 @@ WEBSITE = {
 
 # ---------------------------------------------------------------- loading
 
-def load_products():
+def load_products(lang="id"):
     # Produk dengan "draft": true belum tayang (misalnya link Lynk belum ada).
     items = json.loads((ROOT / "_build" / "products.json").read_text(encoding="utf-8"))
+    if lang == "en":
+        f = ROOT / "_build" / "products_en.json"
+        tr = {p["id"]: p for p in json.loads(f.read_text(encoding="utf-8"))} if f.is_file() else {}
+        items = [dict(p, **{k: tr[p["id"]][k] for k in ("name", "lead", "body")}, lang="en")
+                 for p in items if p["id"] in tr]
     return [p for p in items if not p.get("draft")]
 
 
-def load_pages():
+def load_pages(folder=PAGES, lang="id"):
     pages = []
-    for f in sorted(PAGES.rglob("*.html")):
+    if not folder.is_dir():
+        return pages
+    for f in sorted(folder.rglob("*.html")):
         raw = f.read_text(encoding="utf-8")
         m = re.match(r"\s*<!--meta\s*(\{.*?\})\s*-->\s*", raw, re.S)
         if not m:
@@ -227,6 +395,11 @@ def load_pages():
         meta = json.loads(m.group(1))
         meta["body"] = raw[m.end():]
         meta["src"] = f
+        meta["lang"] = lang
+        meta["id_path"] = meta["path"]
+        if lang == "en":
+            meta["path"] = "/en" + meta["path"]
+            meta["crumbs"] = [[label, lp(href, "en") if href else None] for label, href in meta.get("crumbs", [])]
         pages.append(meta)
     return pages
 
@@ -242,31 +415,42 @@ def esc(s):
 
 
 def fmt_date(iso):
-    bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli",
-             "Agustus", "September", "Oktober", "November", "Desember"]
     d = datetime.date.fromisoformat(iso)
-    return f"{d.day} {bulan[d.month - 1]} {d.year}"
+    return f"{d.day} {t('months')[d.month - 1]} {d.year}"
 
 
 # ---------------------------------------------------------------- partials
 
-def header(active):
+def lang_switch(alt):
+    """Tombol ID | EN. `alt` = path halaman padanan di bahasa lain (atau beranda)."""
+    cur = CUR["lang"]
+    other = "en" if cur == "id" else "id"
+    here = '<span aria-current="true">' + cur.upper() + "</span>"
+    there = (f'<a href="{alt}" hreflang="{other}" lang="{other}" '
+             f'title="{STR[other]["lang_name"]}">{other.upper()}</a>')
+    parts = [here, there] if cur == "id" else [there, here]
+    return f'<div class="lang-switch" role="group" aria-label="{t("switch_label")}">{parts[0]}{parts[1]}</div>'
+
+
+def header(active, alt):
     links = []
     for key, label, href in NAV:
         cur = ' aria-current="page"' if key == active else ""
-        links.append(f'<a href="{href}"{cur}>{label}</a>')
-    return f"""<a class="skip" href="#main">Langsung ke konten</a>
+        label = NAV_EN.get(key, label) if CUR["lang"] == "en" else label
+        links.append(f'<a href="{lp(href)}"{cur}>{label}</a>')
+    return f"""<a class="skip" href="#main">{t("skip")}</a>
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="/" class="brand" aria-label="Harsha Advisory, ke beranda">
+    <a href="{lp("/")}" class="brand" aria-label="{t("home_aria")}">
       <img src="/assets/logo-mark.png" alt="" width="34" height="34">
       <span class="brand-name">Harsha <span>Advisory</span></span>
     </a>
-    <nav class="nav" id="site-nav" aria-label="Menu utama">
+    <nav class="nav" id="site-nav" aria-label="{t("menu")}">
       {' '.join(links)}
-      <a href="{CAL}" class="btn btn-primary" target="_blank" rel="noopener">Diskusi Gratis</a>
+      <a href="{CAL}" class="btn btn-primary" target="_blank" rel="noopener">{t("cta")}</a>
     </nav>
-    <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="site-nav">{icon("menu")}</button>
+    {lang_switch(alt)}
+    <button class="nav-toggle" aria-label="{t("open_menu")}" aria-expanded="false" aria-controls="site-nav">{icon("menu")}</button>
   </div>
 </header>"""
 
@@ -278,56 +462,50 @@ def social_links(cls="social"):
 
 
 def footer():
-    svc = "".join(f'<li><a href="{s[1]}">{s[0]}</a></li>' for s in SERVICES)
+    svc = "".join(f'<li><a href="{u}">{n}</a></li>' for n, u in services())
+    company = "".join(f'<li><a href="{lp(u)}">{n}</a></li>' for n, u in t("f_links"))
+    wa = wa_link()
     return f"""<footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
       <div>
-        <a href="/" class="brand"><img src="/assets/logo-mark.png" alt="" width="34" height="34"><span class="brand-name">Harsha <span>Advisory</span></span></a>
-        <p class="footer-about">Konsultan keuangan B2B untuk perusahaan di seluruh Indonesia. Kami membantu bisnis memahami angkanya sendiri: pembukuan yang rapi, evaluasi finansial berkala, strategi ke depan, dan pelatihan keuangan untuk tim.</p>
+        <a href="{lp("/")}" class="brand"><img src="/assets/logo-mark.png" alt="" width="34" height="34"><span class="brand-name">Harsha <span>Advisory</span></span></a>
+        <p class="footer-about">{t("f_about")}</p>
         {social_links()}
       </div>
       <div>
-        <h4>Layanan</h4>
+        <h4>{t("f_services")}</h4>
         <ul>{svc}</ul>
       </div>
       <div>
-        <h4>Perusahaan</h4>
-        <ul>
-          <li><a href="/tentang/">Tentang Kami</a></li>
-          <li><a href="/katalog/">Produk Digital</a></li>
-          <li><a href="/case-studies/">Studi Kasus</a></li>
-          <li><a href="/insights/">Insights</a></li>
-          <li><a href="/kamus-keuangan/">Kamus Keuangan</a></li>
-          <li><a href="/#faq">FAQ</a></li>
-          <li><a href="/kontak/">Kontak</a></li>
-        </ul>
+        <h4>{t("f_company")}</h4>
+        <ul>{company}</ul>
       </div>
       <div>
-        <h4>Kontak</h4>
+        <h4>{t("f_contact")}</h4>
         <address>
           PT Harsha Dana Digital<br>
           Jl. Tukad Unda No.6, Denpasar Selatan<br>
           Bali 80226, Indonesia<br>
           <a href="mailto:{EMAIL}">{EMAIL}</a><br>
-          <a href="{WA}" target="_blank" rel="noopener">WhatsApp {WA_DISPLAY}</a><br>
-          Senin sampai Jumat, 08.00 sampai 17.00 WITA
+          <a href="{wa}" target="_blank" rel="noopener">WhatsApp {WA_DISPLAY}</a><br>
+          {t("hours")}
         </address>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; {datetime.date.today().year} Harsha Advisory · PT Harsha Dana Digital</span>
-      <span>Bisnis yang sehat adalah bisnis yang memahami angkanya.</span>
+      <span>{t("slogan")}</span>
     </div>
   </div>
 </footer>
-<a class="wa-float" href="{WA}" target="_blank" rel="noopener" aria-label="Chat WhatsApp Harsha Advisory">{icon("whatsapp")}<span>Chat WhatsApp</span></a>
-<div class="mobile-cta"><a href="{WA}" class="btn btn-wa" target="_blank" rel="noopener" aria-label="Chat WhatsApp">{icon("whatsapp")} WhatsApp</a><a href="{CAL}" class="btn btn-blue" target="_blank" rel="noopener">{icon("calendar")} Diskusi Gratis</a></div>
+<a class="wa-float" href="{wa}" target="_blank" rel="noopener" aria-label="{t("wa_aria")}">{icon("whatsapp")}<span>{t("wa_chat")}</span></a>
+<div class="mobile-cta"><a href="{wa}" class="btn btn-wa" target="_blank" rel="noopener" aria-label="{t("wa_chat")}">{icon("whatsapp")} WhatsApp</a><a href="{CAL}" class="btn btn-blue" target="_blank" rel="noopener">{icon("calendar")} {t("cta")}</a></div>
 <script src="{versioned("/script.js")}" defer></script>"""
 
 
 def crumbs_html(crumbs):
-    items = ['<li><a href="/">Beranda</a></li>']
+    items = [f'<li><a href="{lp("/")}">{t("home")}</a></li>']
     for label, href in crumbs:
         items.append(f'<li><a href="{href}">{esc(label)}</a></li>' if href else f'<li aria-current="page">{esc(label)}</li>')
     return '<ol class="crumbs">' + "".join(items) + "</ol>"
@@ -345,7 +523,7 @@ def faq_html(faq):
 def glossary_html(terms):
     out = ['<dl class="glossary">']
     for name, slug, definition, link in terms:
-        more = f' <a class="link-arrow" href="{link}">Selengkapnya</a>' if link else ""
+        more = f' <a class="link-arrow" href="{link}">{"Learn more" if CUR["lang"] == "en" else "Selengkapnya"}</a>' if link else ""
         out.append(f'<div id="{slug}" class="reveal"><dt>{esc(name)}</dt><dd>{definition}{more}</dd></div>')
     out.append("</dl>")
     return "\n".join(out)
@@ -380,10 +558,10 @@ def post_card(p):
     return f"""<article class="post reveal">
   <a href="{p['path']}" tabindex="-1" aria-hidden="true">{thumb(p)}</a>
   <div class="body">
-    <div class="post-meta"><span class="tag">{esc(p['category'])}</span><span>{p['minutes']} menit baca</span></div>
+    <div class="post-meta"><span class="tag">{esc(p['category'])}</span><span>{p['minutes']} {t("min_read")}</span></div>
     <h3><a href="{p['path']}">{esc(p['title'])}</a></h3>
     <p>{esc(p['excerpt'])}</p>
-    <a class="link-arrow" href="{p['path']}">Baca artikel</a>
+    <a class="link-arrow" href="{p['path']}">{t("read_article")}</a>
   </div>
 </article>"""
 
@@ -394,20 +572,22 @@ def post_feature(p):
     return f"""<article class="post-feature reveal">
   {visual}
   <div class="body">
-    <div class="post-meta"><span class="tag dark">{esc(p['category'])}</span><span>{p['minutes']} menit baca · {fmt_date(p['published'])}</span></div>
+    <div class="post-meta"><span class="tag dark">{esc(p['category'])}</span><span>{p['minutes']} {t("min_read")} · {fmt_date(p['published'])}</span></div>
     <h2><a href="{p['path']}">{esc(p['title'])}</a></h2>
     <p>{esc(p['excerpt'])}</p>
-    <a class="link-arrow" href="{p['path']}">Baca selengkapnya</a>
+    <a class="link-arrow" href="{p['path']}">{t("read_more")}</a>
   </div>
 </article>"""
 
 
 def rupiah(n):
+    if CUR["lang"] == "en":
+        return f"IDR {n:,}"
     return "Rp " + f"{n:,}".replace(",", ".")
 
 
 def product_url(p):
-    return f"/katalog/{p['slug']}/"
+    return lp(f"/katalog/{p['slug']}/")
 
 
 def versioned(path):
@@ -434,18 +614,18 @@ def product_gallery(p):
         return f'<img src="{imgs[0]}" alt="{name}" width="{w}" height="{h}">'
     n = len(imgs)
     slides = "".join(
-        f'<img src="{src}" alt="{name}, gambar {i} dari {n}" width="{w}" height="{h}" loading="{"eager" if i == 1 else "lazy"}">'
+        f'<img src="{src}" alt="{name}, {t("img_of").format(i=i, n=n)}" width="{w}" height="{h}" loading="{"eager" if i == 1 else "lazy"}">'
         for i, src in enumerate(imgs, start=1))
     thumbs = ""
     for i, src in enumerate(imgs, start=1):
         cur = ' aria-current="true"' if i == 1 else ""
-        thumbs += (f'<button type="button" aria-label="Lihat gambar {i} dari {n}"{cur}>'
+        thumbs += (f'<button type="button" aria-label="{t("see_img").format(i=i, n=n)}"{cur}>'
                    f'<img src="{src}" alt="" width="{w}" height="{h}" loading="lazy"></button>')
     return f"""<div class="gallery" data-gallery>
         <div class="gallery-main">
-          <div class="gallery-track" tabindex="0" role="region" aria-label="Galeri gambar {name}">{slides}</div>
-          <button type="button" class="gallery-nav prev" aria-label="Gambar sebelumnya">{icon("arrow")}</button>
-          <button type="button" class="gallery-nav next" aria-label="Gambar berikutnya">{icon("arrow")}</button>
+          <div class="gallery-track" tabindex="0" role="region" aria-label="{t("gallery").format(name=name)}">{slides}</div>
+          <button type="button" class="gallery-nav prev" aria-label="{t("prev_img")}">{icon("arrow")}</button>
+          <button type="button" class="gallery-nav next" aria-label="{t("next_img")}">{icon("arrow")}</button>
         </div>
         <div class="gallery-thumbs">{thumbs}</div>
       </div>"""
@@ -457,25 +637,27 @@ def product_card(p):
   <div class="body">
     <h3><a href="{product_url(p)}">{esc(p['name'])}</a></h3>
     {price_html(p)}
-    <a class="link-arrow" href="{product_url(p)}">Lihat detail</a>
+    <a class="link-arrow" href="{product_url(p)}">{t("see_detail")}</a>
   </div>
 </article>"""
 
 
 def product_pages(products):
+    """Halaman produk untuk bahasa yang sedang aktif (CUR)."""
     pages = []
-    labels = dict(CATALOG)
+    catalog = lp("/katalog/")
     for p in products:
-        label = labels[p["category"]]
+        label = catalog_label(p["category"])
         buy = f"{LYNK}/{p['id']}" if p["needs_schedule"] else f"{LYNK}/{p['id']}/checkout"
-        verb = "Pilih jadwal &amp; pesan" if p["needs_schedule"] else "Beli sekarang"
-        note = "Anda akan memilih jadwal dan membayar di Lynk.id." if p["needs_schedule"] else "Pembayaran diproses dengan aman oleh Lynk.id."
+        verb = t("buy_schedule") if p["needs_schedule"] else t("buy_now")
+        note = t("note_schedule") if p["needs_schedule"] else t("note_buy")
         others = [o for o in products if o["category"] == p["category"] and o is not p][:3]
-        crumbs = [["Produk Digital", "/katalog/"], [p["name"], None]]
+        crumbs = [[t("digital_products"), catalog], [p["name"], None]]
         pages.append({
             "layout": "product", "product": p, "title": p["name"], "nav": "katalog", "image": product_image(p),
-            "description": f"{p['lead']} Harga {rupiah(p['price'])}.",
-            "path": product_url(p), "src": "_build/products.json", "crumbs": crumbs,
+            "description": f"{p['lead']} {t('price_word')} {rupiah(p['price'])}.",
+            "path": product_url(p), "id_path": f"/katalog/{p['slug']}/", "lang": CUR["lang"],
+            "src": "_build/products.json", "crumbs": crumbs,
             "body": f"""<section class="product-head">
   <div class="wrap">
     {crumbs_html(crumbs)}
@@ -486,7 +668,7 @@ def product_pages(products):
         <h1>{esc(p['name'])}</h1>
         <p class="lead">{esc(p['lead'])}</p>
         {price_html(p)}
-        <div class="hero-cta"><a href="{buy}" class="btn btn-primary" target="_blank" rel="noopener">{verb} {ARROW}</a><a href="{WA}" class="btn btn-ghost" target="_blank" rel="noopener">{icon("whatsapp")} Tanya dulu</a></div>
+        <div class="hero-cta"><a href="{buy}" class="btn btn-primary" target="_blank" rel="noopener">{verb} {ARROW}</a><a href="{wa_link()}" class="btn btn-ghost" target="_blank" rel="noopener">{icon("whatsapp")} {t("ask_first")}</a></div>
         <p class="price-note">{note}</p>
       </div>
     </div>
@@ -499,7 +681,7 @@ def product_pages(products):
 </section>
 <section class="section bg-paper">
   <div class="wrap">
-    <div class="split-head"><div><span class="eyebrow">{label}</span><h2>Pilihan lainnya</h2></div><div><a class="link-arrow" href="/katalog/">Semua produk digital</a></div></div>
+    <div class="split-head"><div><span class="eyebrow">{label}</span><h2>{t("other_choices")}</h2></div><div><a class="link-arrow" href="{catalog}">{t("all_products")}</a></div></div>
     <div class="products">{''.join(product_card(o) for o in others)}</div>
   </div>
 </section>""",
@@ -509,8 +691,13 @@ def product_pages(products):
 
 # ---------------------------------------------------------------- schema
 
+ALT = {}  # (bahasa, path Indonesia) -> path halaman di bahasa itu
+IN_LANG = {"id": "id-ID", "en": "en"}
+
+
 def page_schema(p, url):
-    graph = [ORG, WEBSITE]
+    lang = IN_LANG[CUR["lang"]]
+    graph = [org(), WEBSITE]
     crumbs = p.get("crumbs", [])
     page_type = p.get("pageType", "WebPage")
     webpage = {
@@ -521,24 +708,25 @@ def page_schema(p, url):
         "description": p["description"],
         "isPartOf": {"@id": WEBSITE_ID},
         "about": {"@id": ORG_ID},
-        "inLanguage": "id-ID",
+        "inLanguage": lang,
         "dateModified": p.get("modified", p.get("lastmod", TODAY)),
     }
-    if p["path"] != "/":
-        items = [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": SITE + "/"}]
+    if p["path"] != lp("/"):
+        items = [{"@type": "ListItem", "position": 1, "name": t("home"), "item": SITE + lp("/")}]
         for i, (label, href) in enumerate(crumbs, start=2):
             items.append({"@type": "ListItem", "position": i, "name": label, "item": SITE + (href or p["path"])})
         graph.append({"@type": "BreadcrumbList", "@id": url + "#breadcrumb", "itemListElement": items})
         webpage["breadcrumb"] = {"@id": url + "#breadcrumb"}
     graph.append(webpage)
     if p.get("founder"):
-        graph.append(FOUNDER)
+        graph.append(founder())
     if p.get("service"):
         s = p["service"]
+        default_aud = "Companies and business owners" if CUR["lang"] == "en" else "Perusahaan dan pemilik bisnis"
         graph.append({
             "@type": "Service", "@id": url + "#service", "name": s["name"], "serviceType": s.get("type", s["name"]),
             "description": s["description"], "provider": {"@id": ORG_ID}, "url": url,
-            "areaServed": {"@type": "Country", "name": "Indonesia"}, "audience": {"@type": "BusinessAudience", "name": s.get("audience", "Perusahaan dan pemilik bisnis")},
+            "areaServed": {"@type": "Country", "name": "Indonesia"}, "audience": {"@type": "BusinessAudience", "name": s.get("audience", default_aud)},
         })
     if p.get("faq"):
         graph.append({
@@ -549,15 +737,17 @@ def page_schema(p, url):
     if p.get("layout") == "article":
         graph.append({
             "@type": "Article", "@id": url + "#article", "headline": p["title"], "description": p["description"],
-            "articleSection": p["category"], "inLanguage": "id-ID", "wordCount": p["words"],
+            "articleSection": p["category"], "inLanguage": lang, "wordCount": p["words"],
             "datePublished": p["published"], "dateModified": p["modified"],
             "author": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID},
             "image": SITE + p.get("image", "/assets/og-image.jpg"), "mainEntityOfPage": {"@id": url + "#webpage"},
         })
     if p.get("glossary"):
+        set_name = ("Harsha Advisory Business Finance Glossary" if CUR["lang"] == "en"
+                    else "Kamus Keuangan Bisnis Harsha Advisory")
         graph.append({
-            "@type": "DefinedTermSet", "@id": url + "#kamus", "name": "Kamus Keuangan Bisnis Harsha Advisory",
-            "inLanguage": "id-ID", "publisher": {"@id": ORG_ID},
+            "@type": "DefinedTermSet", "@id": url + "#kamus", "name": set_name,
+            "inLanguage": lang, "publisher": {"@id": ORG_ID},
             "hasDefinedTerm": [{"@type": "DefinedTerm", "@id": url + "#" + slug, "name": name,
                                 "description": strip_tags(d), "inDefinedTermSet": {"@id": url + "#kamus"},
                                 "url": url + "#" + slug} for name, slug, d, _ in p["glossary"]],
@@ -566,7 +756,7 @@ def page_schema(p, url):
         item = p["product"]
         graph.append({
             "@type": "Product", "@id": url + "#product", "name": item["name"], "description": item["lead"],
-            "sku": item["id"], "category": dict(CATALOG)[item["category"]],
+            "sku": item["id"], "category": catalog_label(item["category"]),
             "image": [SITE + p["image"]] + [SITE + versioned(g) for g in item.get("gallery", [])],
             "brand": {"@id": ORG_ID}, "url": url,
             "offers": {"@type": "Offer", "price": item["price"], "priceCurrency": "IDR", "url": url,
@@ -578,6 +768,15 @@ def page_schema(p, url):
 
 
 # ---------------------------------------------------------------- render
+
+def hreflang_links(p):
+    id_url, en_url = ALT.get(("id", p["id_path"])), ALT.get(("en", p["id_path"]))
+    if p.get("noindex") or not (id_url and en_url):
+        return ""
+    return (f'\n  <link rel="alternate" hreflang="id" href="{SITE}{id_url}">'
+            f'\n  <link rel="alternate" hreflang="en" href="{SITE}{en_url}">'
+            f'\n  <link rel="alternate" hreflang="x-default" href="{SITE}{id_url}">')
+
 
 def head(p, url):
     title = p["title"] if p.get("rawTitle") else f'{p["title"]} | Harsha Advisory'
@@ -597,20 +796,21 @@ def head(p, url):
                  f'\n  <meta property="article:modified_time" content="{p["modified"]}">'
                  f'\n  <meta property="article:section" content="{esc(p["category"])}">')
     gsv = '\n  <meta name="google-site-verification" content="bTxXb9YGoeLd66LcHUGomCKRO3Yyi2kfCArZb8SdNls">' if p["path"] == "/" else ""
+    locale = "en_US" if CUR["lang"] == "en" else "id_ID"
     return f"""<!DOCTYPE html>
-<html lang="id">
+<html lang="{CUR["lang"]}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(p['description'])}">
   <meta name="robots" content="{robots}">
-  <link rel="canonical" href="{url}">
+  <link rel="canonical" href="{url}">{hreflang_links(p)}
   <meta name="author" content="Harsha Advisory">
   <meta name="theme-color" content="#f7f5f0">
   <meta property="og:type" content="{og_type}">
   <meta property="og:site_name" content="Harsha Advisory">
-  <meta property="og:locale" content="id_ID">
+  <meta property="og:locale" content="{locale}">
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:description" content="{esc(p['description'])}">
   <meta property="og:url" content="{url}">
@@ -631,7 +831,7 @@ def head(p, url):
 
 def article_main(p, articles):
     by_path = {a["path"]: a for a in articles}
-    related = [by_path[f"/insights/{s}/"] for s in p.get("related", []) if f"/insights/{s}/" in by_path]
+    related = [by_path[lp(f"/insights/{s}/")] for s in p.get("related", []) if lp(f"/insights/{s}/") in by_path]
     rest = [a for a in articles if a["path"] != p["path"] and a not in related]
     others = (related + rest)[:3]
     figure = (f'\n<figure class="article-figure"><img src="{p["image"]}" alt="{esc(p["image_alt"])}" '
@@ -642,10 +842,10 @@ def article_main(p, articles):
     <span class="tag">{esc(p['category'])}</span>
     <h1>{esc(p['title'])}</h1>
     <div class="byline">
-      <span class="who"><img src="/assets/logo-mark.png" alt="" width="36" height="36">Tim Harsha Advisory</span>
-      <span>Diterbitkan <time datetime="{p['published']}">{fmt_date(p['published'])}</time></span>
-      <span>Diperbarui <time datetime="{p['modified']}">{fmt_date(p['modified'])}</time></span>
-      <span>{p['minutes']} menit baca</span>
+      <span class="who"><img src="/assets/logo-mark.png" alt="" width="36" height="36">{t("team")}</span>
+      <span>{t("published")} <time datetime="{p['published']}">{fmt_date(p['published'])}</time></span>
+      <span>{t("updated")} <time datetime="{p['modified']}">{fmt_date(p['modified'])}</time></span>
+      <span>{p['minutes']} {t("min_read")}</span>
     </div>
   </div>
 </section>{figure}
@@ -653,32 +853,33 @@ def article_main(p, articles):
   <div class="wrap">
 {p['body']}
     <aside class="article-cta">
-      <h2>Menghadapi tantangan serupa di perusahaan Anda?</h2>
-      <p>Setiap perusahaan punya dinamika keuangan yang unik. Kami bantu menemukan akar masalahnya, merancang solusi yang terukur, dan mendampingi implementasinya.</p>
-      <div class="hero-cta"><a href="{CAL}" class="btn btn-light" target="_blank" rel="noopener">{icon("calendar")} Jadwalkan Diskusi Gratis</a><a href="{WA}" class="btn btn-outline-light" target="_blank" rel="noopener">{icon("whatsapp")} Chat WhatsApp</a></div>
+      <h2>{t("art_cta_h")}</h2>
+      <p>{t("art_cta_p")}</p>
+      <div class="hero-cta"><a href="{CAL}" class="btn btn-light" target="_blank" rel="noopener">{icon("calendar")} {t("cta")}</a><a href="{wa_link()}" class="btn btn-outline-light" target="_blank" rel="noopener">{icon("whatsapp")} {t("wa_contact")}</a></div>
     </aside>
   </div>
 </article>
 <section class="section bg-paper">
   <div class="wrap">
-    <div class="split-head"><div><span class="eyebrow">Baca juga</span><h2>Insight lainnya</h2></div><div><a class="link-arrow" href="/insights/">Semua artikel</a></div></div>
+    <div class="split-head"><div><span class="eyebrow">{t("read_also")}</span><h2>{t("more_insights")}</h2></div><div><a class="link-arrow" href="{lp("/insights/")}">{t("all_articles")}</a></div></div>
     <div class="posts">{''.join(post_card(o) for o in others)}</div>
   </div>
 </section>"""
 
 
 def render(p, articles, products):
-    url = SITE + (p["path"] if p["path"] != "/404.html" else "/404.html")
+    url = SITE + p["path"]
     featured = next(a for a in articles if a.get("featured"))
     tokens = {
+        "{{service_cards}}": SERVICE_CARDS_EN if CUR["lang"] == "en" else SERVICE_CARDS,  # lebih dulu: kartu berisi token lain
         "{{cal}}": CAL,
         "{{email}}": EMAIL,
-        "{{wa}}": WA,
+        "{{wa}}": wa_link(),
         "{{wa_display}}": WA_DISPLAY,
         "{{instagram}}": INSTAGRAM,
         "{{linkedin}}": LINKEDIN,
         "{{social}}": social_links("social light"),
-        "{{price}}": PRICE_TEXT,
+        "{{price}}": t("price"),
         "{{crumbs}}": crumbs_html(p.get("crumbs", [])),
         "{{faq}}": faq_html(p.get("faq", [])),
         "{{glossary}}": glossary_html(p.get("glossary", [])),
@@ -686,7 +887,6 @@ def render(p, articles, products):
         "{{posts_rest}}": "".join(post_card(a) for a in articles if a is not featured),
         "{{posts_latest}}": "".join(post_card(a) for a in articles[:3]),
         "{{arrow}}": ARROW,
-        "{{service_cards}}": SERVICE_CARDS,
     }
     for key, _ in CATALOG:
         tokens[f"{{{{products:{key}}}}}"] = "".join(product_card(o) for o in products if o["category"] == key)
@@ -695,13 +895,16 @@ def render(p, articles, products):
         body = body.replace(k, v)
     body = re.sub(r"\{\{icon:(\w+)\}\}", lambda m: icon(m.group(1)), body)
     main = article_main(dict(p, body=body), articles) if p.get("layout") == "article" else body
+    main = localize_links(main)
     p["main_html"] = main
     left = re.findall(r"\{\{[^}]+\}\}", main)
     if left:
         raise SystemExit(f"{p['src']}: token tidak dikenal {left}")
+    other = "en" if CUR["lang"] == "id" else "id"
+    alt = ALT.get((other, p["id_path"])) or lp("/", other)
     return f"""{head(p, url)}
 <body>
-{header(p.get('nav'))}
+{header(p.get('nav'), alt)}
 <main id="main">
 {main}
 </main>
@@ -709,6 +912,29 @@ def render(p, articles, products):
 </body>
 </html>
 """
+
+
+def write_redirects():
+    for old, new in REDIRECTS.items():
+        target = SITE + new
+        out = out_path(old)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(f"""<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Halaman dipindahkan | Harsha Advisory</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{target}">
+  <meta http-equiv="refresh" content="0; url={new}">
+  <script>location.replace("{new}" + location.hash);</script>
+</head>
+<body>
+  <p>Halaman ini telah dipindahkan ke <a href="{new}">{target}</a>.</p>
+</body>
+</html>
+""", encoding="utf-8", newline="\n")
+        print("redirect", old, "->", new)
 
 
 def write_sitemap(pages):
@@ -723,28 +949,42 @@ def write_sitemap(pages):
         + "\n".join(rows) + "\n</urlset>\n", encoding="utf-8", newline="\n")
 
 
-def write_llms(pages, articles, shop):
+MAIN_ORDER = ["/", CFO_URL, "/layanan/evaluasi-keuangan-bisnis/", "/layanan/pelatihan-keuangan/",
+              "/sustainable-finance/", "/case-studies/", "/tentang/", "/kontak/",
+              "/insights/", "/kamus-keuangan/", "/katalog/"]
+
+
+def main_pages_sorted(pages):
+    order = {path: i for i, path in enumerate(MAIN_ORDER)}
+    main_pages = [p for p in pages if not p.get("noindex") and p.get("layout") != "article"]
+    return sorted(main_pages, key=lambda p: order.get(p["id_path"], 99))
+
+
+def write_llms(pages, articles, shop, en_pages):
     def line(p):
         return f"- [{p['title']}]({SITE}{p['path']}): {p['description']}"
-    main_pages = [p for p in pages if not p.get("noindex") and p.get("layout") != "article"]
-    order = {path: i for i, path in enumerate(["/", "/layanan/", "/layanan/jasa-pembukuan/",
-             "/layanan/evaluasi-keuangan-bisnis/", "/layanan/cfo-fraction/", "/layanan/pelatihan-keuangan/",
-             "/sustainable-finance/", "/katalog/", "/case-studies/", "/tentang/", "/kontak/",
-             "/insights/", "/kamus-keuangan/"])}
-    main_pages.sort(key=lambda p: order.get(p["path"], 99))
+    main_pages = main_pages_sorted(pages)
+    en_main = main_pages_sorted(en_pages)
+    english = ""
+    if en_main:
+        english = f"""
+## English version
+Seluruh halaman juga tersedia dalam bahasa Inggris di {SITE}/en/ . Halaman utama:
+{chr(10).join(line(p) for p in en_main)}
+"""
     text = f"""# Harsha Advisory
 
-> Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan B2B yang melayani perusahaan di seluruh Indonesia. Kami membantu perusahaan memahami angkanya sendiri melalui jasa pembukuan, evaluasi keuangan bisnis dengan pendekatan kuantitatif, CFO Fraction (CFO paruh waktu), dan pelatihan keuangan untuk manajemen dan tim.
+> Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan dan perpajakan bisnis B2B yang melayani perusahaan di seluruh Indonesia. Kami membantu direksi dan manajemen memahami kondisi finansial dan mengambil keputusan dengan lebih yakin. Layanan utama kami adalah Fractional CFO, dilengkapi Business Financial Evaluation (BFE) dan Pelatihan Keuangan (Corporate Training).
 
 Fakta utama:
 - Nama: Harsha Advisory. Badan usaha: PT Harsha Dana Digital.
-- Founder & CEO: Anak Agung Ngurah Mustakawarman, CFP®. Lebih dari 12 tahun pengalaman perbankan dan 10 tahun pengalaman investasi; lebih dari 200 klien financial planning di 4 negara (Indonesia, Amerika Serikat, Jepang, Singapura). Sertifikasi: CFP®, WMI, WPPE, PI.
+- Layanan: Fractional CFO (layanan unggulan), Business Financial Evaluation (BFE), dan Pelatihan Keuangan untuk manajemen dan peserta perusahaan.
+- Founder & CEO: Anak Agung Ngurah Mustakawarman, CFP®, dengan lisensi Penasihat Investasi dari OJK. Lebih dari 12 tahun pengalaman perbankan dan 10 tahun pengalaman investasi; lebih dari 200 klien financial planning di 4 negara (Indonesia, Amerika Serikat, Jepang, Singapura).
 - Penghargaan founder: Top 40 Youth Economic Leadership Program (Bank Indonesia Institute); Top 50 Startup Terbaik Indonesia (Kemenparekraf).
 - Alamat: Jl. Tukad Unda No.6, Denpasar Selatan, Bali 80226. Melayani klien di seluruh Indonesia.
-- Kontak: {EMAIL}, WhatsApp {WA_DISPLAY} ({WA.split("?")[0]}). Diskusi awal 30 menit gratis: {CAL}
-- Klien dan mitra pelatihan antara lain: British Petroleum, Petronas, Kangean Energy, Eni Indonesia, Donggi Senoro LNG, Bank Indonesia, Komdigi, GoPay, BPR Lestari, Joger Bali.
-- Biaya: layanan mulai dari {PRICE_TEXT}, disesuaikan dengan ruang lingkup dan ukuran perusahaan. Penawaran final disusun setelah diskusi awal 30 menit yang gratis.
-- Harsha Advisory tidak menyediakan audit statutory, layanan hukum, perpajakan kompleks lintas yurisdiksi, atau manajemen investasi diskresioner; untuk area tersebut kami bekerja dengan mitra spesialis.
+- Kontak: {EMAIL}, WhatsApp {WA_DISPLAY} ({WA.split("?")[0]}). Jadwalkan diskusi: {CAL}
+- Klien pelatihan antara lain: British Petroleum, Petronas, Kangean Energy, Bank Indonesia, Komdigi, GoPay, BPR Lestari.
+- Biaya: layanan mulai dari {PRICE_TEXT}, dengan penawaran akhir mengikuti kebutuhan dan cakupan pekerjaan perusahaan.
 
 ## Halaman utama
 {chr(10).join(line(p) for p in main_pages)}
@@ -754,7 +994,7 @@ Fakta utama:
 
 ## Artikel dan panduan
 {chr(10).join(line(a) for a in articles)}
-
+{english}
 ## Opsional
 - [Isi lengkap website dalam teks]({SITE}/llms-full.txt): seluruh halaman dan artikel dalam satu file teks.
 """
@@ -777,7 +1017,7 @@ def html_to_text(s):
 
 
 def write_llms_full(pages, articles, shop):
-    order = {"/": 0, "/layanan/": 1}
+    order = {"/": 0}
     main_pages = [p for p in pages if not p.get("noindex") and p.get("layout") != "article"]
     main_pages.sort(key=lambda p: (order.get(p["path"], 2), p["path"]))
     parts = [f"# Harsha Advisory: isi lengkap website\n\nSumber: {SITE}/ . Diperbarui {TODAY}. "
@@ -787,31 +1027,57 @@ def write_llms_full(pages, articles, shop):
     (ROOT / "llms-full.txt").write_text("".join(parts) + "\n", encoding="utf-8", newline="\n")
 
 
-def main():
-    pages = load_pages()
-    articles = [p for p in pages if p.get("layout") == "article"]
-    articles.sort(key=lambda a: a.get("order", 99))
-    products = load_products()
+def prepare(lang, folder):
+    """Muat semua halaman, artikel, dan produk untuk satu bahasa."""
+    CUR["lang"] = lang
+    pages = load_pages(folder, lang)
+    if not pages:
+        return None
+    articles = sorted([p for p in pages if p.get("layout") == "article"], key=lambda a: a.get("order", 99))
+    products = load_products(lang)
     shop = product_pages(products)
-    next(p for p in pages if p["path"] == "/katalog/")["schema"] = [{
-        "@type": "ItemList", "name": "Produk Digital Harsha Advisory",
-        "itemListElement": [{"@type": "ListItem", "position": i, "name": o["name"], "url": SITE + product_url(o)}
-                            for i, o in enumerate(products, start=1)],
-    }]
+    katalog = next((p for p in pages if p["id_path"] == "/katalog/"), None)
+    if katalog:
+        katalog["schema"] = [{
+            "@type": "ItemList", "name": ("Harsha Advisory Digital Products" if lang == "en" else "Produk Digital Harsha Advisory"),
+            "itemListElement": [{"@type": "ListItem", "position": i, "name": o["name"], "url": SITE + product_url(o)}
+                                for i, o in enumerate(products, start=1)],
+        }]
     for p in pages:
         if p.get("layout") == "article":
-            p.setdefault("crumbs", [["Insights", "/insights/"], [p["title"], None]])
+            p.setdefault("crumbs", [["Insights", lp("/insights/")], [p["title"], None]])
             p["words"] = article_words(p)
             p["minutes"] = max(2, math.ceil(p["words"] / 200))
-    for p in pages + shop:
-        target = out_path(p["path"])
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(render(p, articles, products), encoding="utf-8", newline="\n")
-        print("ok", p["path"])
-    write_sitemap(pages + shop)
-    write_llms(pages, articles, shop)
+    return pages, articles, products, shop
+
+
+def main():
+    sites = {}
+    for lang, folder in (("id", PAGES), ("en", PAGES_EN)):
+        data = prepare(lang, folder)
+        if data:
+            sites[lang] = data
+    ALT.clear()
+    for lang, (pages, _, _, shop) in sites.items():
+        for p in pages + shop:
+            ALT[(lang, p["id_path"])] = p["path"]
+    everything = []
+    for lang, (pages, articles, products, shop) in sites.items():
+        CUR["lang"] = lang
+        for p in pages + shop:
+            target = out_path(p["path"])
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(render(p, articles, products), encoding="utf-8", newline="\n")
+            print("ok", p["path"])
+        everything += pages + shop
+    CUR["lang"] = "id"
+    write_redirects()
+    write_sitemap(everything)
+    pages, articles, _, shop = sites["id"]
+    en_pages = sites["en"][0] if "en" in sites else []
+    write_llms(pages, articles, shop, en_pages)
     write_llms_full(pages, articles, shop)
-    print(f"{len(pages + shop)} halaman, sitemap.xml, llms.txt, llms-full.txt")
+    print(f"{len(everything)} halaman ({', '.join(sites)}), sitemap.xml, llms.txt, llms-full.txt")
 
 
 if __name__ == "__main__":
