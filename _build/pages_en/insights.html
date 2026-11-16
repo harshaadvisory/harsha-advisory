@@ -1,0 +1,40 @@
+<!--meta
+{
+ "title": "Corporate Finance Insights",
+ "description": "Perspectives on profitability, cash flow, and corporate financial decision-making.",
+ "path": "/insights/",
+ "nav": "insights",
+ "pageType": "CollectionPage",
+ "crumbs": [["Insights", null]]
+}
+-->
+<section class="page-hero">
+  <div class="wrap">
+    {{crumbs}}
+    <span class="eyebrow">Insights</span>
+    <h1>Financial Perspectives for <em>Company Decisions.</em></h1>
+    <p class="lead">Explore our thinking on profitability, cash flow, and how to read a company's financial position. These insights help management assess the situation more clearly before deciding on the next step.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {{post_feature}}
+    <div class="posts" style="margin-top:1.25rem">{{posts_rest}}</div>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="newsletter reveal">
+      <div><span class="eyebrow">Newsletter</span><h2>One strategic insight, <em>every month.</em></h2><p>Analysis of key themes in corporate finance, treasury, and sustainable finance. No spam.</p></div>
+      <form class="inline-form" action="https://formspree.io/f/xqejdjae" method="POST">
+        <label class="skip" for="nl-email">Email</label>
+        <input id="nl-email" type="email" name="email" placeholder="email@company.com" required autocomplete="email">
+        <input type="hidden" name="_subject" value="Newsletter Subscription, Harsha Advisory">
+        <input type="hidden" name="form-type" value="newsletter">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
