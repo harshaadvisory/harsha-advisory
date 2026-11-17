@@ -269,6 +269,9 @@ sup.r { font-size: .45em; vertical-align: super; line-height: 0; margin-left: .0
 .metrics.four { grid-template-columns: repeat(4, 1fr); }
 .metrics.light .metric b { color: var(--ink); }
 .metrics.light .metric span { color: var(--muted); }
+/* Angka panjang dalam kolom sempit (mis. proyeksi kas): lebih kecil dan tidak terpotong ke baris baru. */
+.metrics.compact .metric { padding: 1.4rem 1.1rem; }
+.metrics.compact .metric b { font-size: clamp(1.15rem, 1.9vw, 1.5rem); white-space: nowrap; }
 .note { font-size: .84rem; font-style: italic; color: var(--muted-2); margin-top: 1rem; }
 .bg-ink .note { color: rgba(255,255,255,.5); }
 
