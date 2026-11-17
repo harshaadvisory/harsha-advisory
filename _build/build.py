@@ -20,7 +20,6 @@ import re
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = ROOT / "_build" / "pages"
 SITE = "https://harshaadvisory.com"
-CAL = "https://calendly.com/harshadanadigital/konsultasi-gratis"
 EMAIL = "info@harshaadvisory.com"
 WA_NUMBER = "6289673144112"
 WA_DISPLAY = "+62 896-7314-4112"
@@ -46,10 +45,10 @@ WA_TEXT = {
 
 STR = {
     "id": {
-        "price": PRICE_TEXT, "price_range": f"Mulai dari {PRICE_TEXT}",
+        "price": f"{PRICE_TEXT} per bulan", "price_range": f"Mulai dari {PRICE_TEXT}",
         "skip": "Langsung ke konten", "home_aria": "Harsha Advisory, ke beranda", "menu": "Menu utama",
-        "open_menu": "Buka menu", "cta": "Jadwalkan Diskusi", "home": "Beranda",
-        "f_about": "Konsultan keuangan dan perpajakan bisnis untuk perusahaan di seluruh Indonesia. Kami membantu direksi dan manajemen memahami kondisi keuangan dan mengambil keputusan dengan lebih yakin.",
+        "open_menu": "Buka menu", "cta": "Jadwalkan Diskusi Awal", "home": "Beranda",
+        "f_about": "Harsha Advisory adalah firma konsultasi keuangan bisnis yang membantu pemilik usaha dan manajemen mengambil keputusan melalui analisis keuangan dan pendampingan strategis.",
         "f_services": "Layanan", "f_company": "Perusahaan", "f_contact": "Kontak",
         "f_links": [("Tentang Kami", "/tentang/"), ("Studi Kasus", "/case-studies/"), ("Insights", "/insights/"),
                     ("Kamus Keuangan", "/kamus-keuangan/"), ("Produk Digital", "/katalog/"), ("FAQ", "/#faq"), ("Kontak", "/kontak/")],
@@ -58,8 +57,8 @@ STR = {
         "wa_chat": "Chat WhatsApp", "wa_aria": "Chat WhatsApp Harsha Advisory", "wa_contact": "Hubungi via WhatsApp",
         "min_read": "menit baca", "read_article": "Baca artikel", "read_more": "Baca selengkapnya",
         "team": "Tim Harsha Advisory", "published": "Diterbitkan", "updated": "Diperbarui",
-        "art_cta_h": "Menghadapi keputusan serupa di perusahaan Anda?",
-        "art_cta_p": "Setiap perusahaan punya dinamika keuangan yang berbeda. Kami membantu manajemen memahami persoalannya dan menentukan prioritas yang paling relevan.",
+        "art_cta_h": "Keputusan Bisnis yang Tepat Dimulai dari Analisis yang Tepat",
+        "art_cta_p": "Menghadapi persoalan serupa di perusahaan Anda? Jadwalkan konsultasi awal 30 menit secara gratis via WhatsApp.",
         "read_also": "Baca juga", "more_insights": "Insight lainnya", "all_articles": "Semua artikel",
         "buy_schedule": "Pilih jadwal &amp; pesan", "buy_now": "Beli sekarang",
         "note_schedule": "Anda akan memilih jadwal dan membayar di Lynk.id.",
@@ -73,10 +72,10 @@ STR = {
                    "September", "Oktober", "November", "Desember"],
     },
     "en": {
-        "price": "IDR 5 million", "price_range": "From IDR 5 million",
+        "price": "IDR 5 million per month", "price_range": "From IDR 5 million",
         "skip": "Skip to content", "home_aria": "Harsha Advisory, home", "menu": "Main menu",
         "open_menu": "Open menu", "cta": "Schedule a Discussion", "home": "Home",
-        "f_about": "Business finance and tax advisory for companies across Indonesia. We help directors and management understand their financial position and make decisions with greater confidence.",
+        "f_about": "Harsha Advisory is a business financial advisory firm helping owners and management make informed decisions through financial analysis and strategic guidance.",
         "f_services": "Services", "f_company": "Company", "f_contact": "Contact",
         "f_links": [("About Us", "/tentang/"), ("Case Studies", "/case-studies/"), ("Insights", "/insights/"),
                     ("Finance Glossary", "/kamus-keuangan/"), ("Digital Products", "/katalog/"), ("FAQ", "/#faq"), ("Contact", "/kontak/")],
@@ -85,8 +84,8 @@ STR = {
         "wa_chat": "Chat on WhatsApp", "wa_aria": "Chat with Harsha Advisory on WhatsApp", "wa_contact": "Contact via WhatsApp",
         "min_read": "min read", "read_article": "Read article", "read_more": "Read more",
         "team": "Harsha Advisory Team", "published": "Published", "updated": "Updated",
-        "art_cta_h": "Facing a similar decision in your company?",
-        "art_cta_p": "Every company has its own financial dynamics. We help management understand the issue and set the most relevant priorities.",
+        "art_cta_h": "Better Business Decisions Start with Better Financial Analysis",
+        "art_cta_p": "Facing a similar issue in your company? Schedule a free 30-minute initial consultation on WhatsApp.",
         "read_also": "Read also", "more_insights": "More insights", "all_articles": "All articles",
         "buy_schedule": "Choose a schedule &amp; book", "buy_now": "Buy now",
         "note_schedule": "You will choose a schedule and pay on Lynk.id.",
@@ -170,13 +169,13 @@ CFO_URL = "/layanan/fractional-cfo/"
 NAV = [
     ("home", "Beranda", "/"),
     ("fractional-cfo", "Fractional CFO", CFO_URL),
-    ("pelatihan", "Corporate Training", "/layanan/pelatihan-keuangan/"),
+    ("pelatihan", "Corporate Financial Training", "/layanan/pelatihan-keuangan/"),
     ("case-studies", "Studi Kasus", "/case-studies/"),
     ("insights", "Insights", "/insights/"),
     ("tentang", "Tentang", "/tentang/"),
 ]
 
-NAV_EN = {"home": "Home", "fractional-cfo": "Fractional CFO", "pelatihan": "Corporate Training",
+NAV_EN = {"home": "Home", "fractional-cfo": "Fractional CFO", "pelatihan": "Corporate Financial Training",
           "case-studies": "Case Studies", "insights": "Insights", "tentang": "About"}
 
 CATALOG = [
@@ -230,7 +229,7 @@ SERVICE_CARDS = """<article class="service service-featured reveal">
         <a class="link-arrow" href="/layanan/evaluasi-keuangan-bisnis/">Pelajari BFE</a>
       </article>
       <article class="service reveal d1">
-        <div class="service-top"><span class="service-icon">{{icon:users}}</span><span class="tag">Corporate Training</span></div>
+        <div class="service-top"><span class="service-icon">{{icon:users}}</span><span class="tag">Corporate Financial Training</span></div>
         <h3>Pelatihan Keuangan</h3>
         <p>Pembelajaran keuangan untuk manajemen dan peserta perusahaan, disusun sesuai konteks dan tujuan program.</p>
         <a class="link-arrow" href="/layanan/pelatihan-keuangan/">Diskusikan Program Pelatihan</a>
@@ -252,7 +251,7 @@ SERVICE_CARDS_EN = """<article class="service service-featured reveal">
         <a class="link-arrow" href="/layanan/evaluasi-keuangan-bisnis/">Explore BFE</a>
       </article>
       <article class="service reveal d1">
-        <div class="service-top"><span class="service-icon">{{icon:users}}</span><span class="tag">Corporate Training</span></div>
+        <div class="service-top"><span class="service-icon">{{icon:users}}</span><span class="tag">Corporate Financial Training</span></div>
         <h3>Financial Training</h3>
         <p>Financial learning for management and company participants, designed around the context and goals of each program.</p>
         <a class="link-arrow" href="/layanan/pelatihan-keuangan/">Discuss a Training Program</a>
@@ -271,10 +270,10 @@ ORG = {
     "url": SITE + "/",
     "logo": {"@type": "ImageObject", "url": SITE + "/assets/logo.png", "width": 1350, "height": 1350},
     "image": SITE + "/assets/og-image.jpg",
-    "description": ("Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan dan "
-                    "perpajakan bisnis B2B yang membantu direksi dan manajemen di seluruh Indonesia memahami "
-                    "kondisi finansial dan mengambil keputusan dengan lebih yakin, melalui Fractional CFO, "
-                    "Business Financial Evaluation, dan Pelatihan Keuangan."),
+    "description": ("Harsha Advisory (PT Harsha Dana Digital) adalah firma konsultasi keuangan bisnis yang "
+                    "membantu pemilik usaha dan manajemen di seluruh Indonesia mengambil keputusan melalui "
+                    "analisis keuangan dan pendampingan strategis: Fractional CFO, Business Financial "
+                    "Evaluation, dan Corporate Financial Training."),
     "slogan": "Bisnis yang sehat adalah bisnis yang memahami angkanya.",
     "email": EMAIL,
     "telephone": "+62-896-7314-4112",
@@ -288,7 +287,6 @@ ORG = {
         "addressCountry": "ID",
     },
     "areaServed": [{"@type": "Country", "name": "Indonesia"}],
-    "priceRange": f"Mulai dari {PRICE_TEXT}",
     "openingHoursSpecification": [{
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -307,7 +305,8 @@ ORG = {
         "name": "Layanan Harsha Advisory",
         "itemListElement": [
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": s[0], "url": SITE + s[1]},
-             "priceSpecification": {"@type": "PriceSpecification", "minPrice": PRICE_FROM, "priceCurrency": "IDR"}}
+             **({"priceSpecification": {"@type": "PriceSpecification", "minPrice": PRICE_FROM, "priceCurrency": "IDR"}}
+                if s[1] == CFO_URL else {})}
             for s in SERVICES
         ],
     },
@@ -338,10 +337,9 @@ FOUNDER = {
                    "Forensic accounting", "Treasury advisory", "Capital markets"],
 }
 
-ORG_EN_DESC = ("Harsha Advisory (PT Harsha Dana Digital) is a B2B business finance and tax advisory firm that "
-               "helps directors and management across Indonesia understand their financial position and make "
-               "decisions with greater confidence, through Fractional CFO, Business Financial Evaluation, and "
-               "Financial Training.")
+ORG_EN_DESC = ("Harsha Advisory (PT Harsha Dana Digital) is a business financial advisory firm helping owners "
+               "and management across Indonesia make informed decisions through financial analysis and strategic "
+               "guidance: Fractional CFO, Business Financial Evaluation, and Corporate Financial Training.")
 FOUNDER_EN_DESC = ("Finance practitioner with more than 12 years of experience in banking and investment, who has "
                    "advised more than 200 financial planning clients in Indonesia, the United States, Japan, and Singapore.")
 
@@ -349,7 +347,7 @@ FOUNDER_EN_DESC = ("Finance practitioner with more than 12 years of experience i
 def org():
     if CUR["lang"] == "id":
         return ORG
-    o = dict(ORG, description=ORG_EN_DESC, slogan=STR["en"]["slogan"], priceRange=STR["en"]["price_range"])
+    o = dict(ORG, description=ORG_EN_DESC, slogan=STR["en"]["slogan"])
     o["hasOfferCatalog"] = dict(ORG["hasOfferCatalog"], name="Harsha Advisory services", itemListElement=[
         dict(item, itemOffered={"@type": "Service", "name": n, "url": SITE + u})
         for item, (n, u) in zip(ORG["hasOfferCatalog"]["itemListElement"], services())])
@@ -447,7 +445,7 @@ def header(active, alt):
     </a>
     <nav class="nav" id="site-nav" aria-label="{t("menu")}">
       {' '.join(links)}
-      <a href="{CAL}" class="btn btn-primary" target="_blank" rel="noopener">{t("cta")}</a>
+      <a href="{wa_link()}" class="btn btn-primary" target="_blank" rel="noopener">{t("cta")}</a>
     </nav>
     {lang_switch(alt)}
     <button class="nav-toggle" aria-label="{t("open_menu")}" aria-expanded="false" aria-controls="site-nav">{icon("menu")}</button>
@@ -500,7 +498,7 @@ def footer():
   </div>
 </footer>
 <a class="wa-float" href="{wa}" target="_blank" rel="noopener" aria-label="{t("wa_aria")}">{icon("whatsapp")}<span>{t("wa_chat")}</span></a>
-<div class="mobile-cta"><a href="{wa}" class="btn btn-wa" target="_blank" rel="noopener" aria-label="{t("wa_chat")}">{icon("whatsapp")} WhatsApp</a><a href="{CAL}" class="btn btn-blue" target="_blank" rel="noopener">{icon("calendar")} {t("cta")}</a></div>
+<div class="mobile-cta"><a href="{wa}" class="btn btn-wa" target="_blank" rel="noopener">{icon("whatsapp")} {t("cta")}</a></div>
 <script src="{versioned("/script.js")}" defer></script>"""
 
 
@@ -855,7 +853,7 @@ def article_main(p, articles):
     <aside class="article-cta">
       <h2>{t("art_cta_h")}</h2>
       <p>{t("art_cta_p")}</p>
-      <div class="hero-cta"><a href="{CAL}" class="btn btn-light" target="_blank" rel="noopener">{icon("calendar")} {t("cta")}</a><a href="{wa_link()}" class="btn btn-outline-light" target="_blank" rel="noopener">{icon("whatsapp")} {t("wa_contact")}</a></div>
+      <div class="hero-cta"><a href="{wa_link()}" class="btn btn-light" target="_blank" rel="noopener">{icon("whatsapp")} {t("cta")}</a></div>
     </aside>
   </div>
 </article>
@@ -872,7 +870,6 @@ def render(p, articles, products):
     featured = next(a for a in articles if a.get("featured"))
     tokens = {
         "{{service_cards}}": SERVICE_CARDS_EN if CUR["lang"] == "en" else SERVICE_CARDS,  # lebih dulu: kartu berisi token lain
-        "{{cal}}": CAL,
         "{{email}}": EMAIL,
         "{{wa}}": wa_link(),
         "{{wa_display}}": WA_DISPLAY,
@@ -974,7 +971,7 @@ Seluruh halaman juga tersedia dalam bahasa Inggris di {SITE}/en/ . Halaman utama
 """
     text = f"""# Harsha Advisory
 
-> Harsha Advisory (PT Harsha Dana Digital) adalah perusahaan konsultan keuangan dan perpajakan bisnis B2B yang melayani perusahaan di seluruh Indonesia. Kami membantu direksi dan manajemen memahami kondisi finansial dan mengambil keputusan dengan lebih yakin. Layanan utama kami adalah Fractional CFO, dilengkapi Business Financial Evaluation (BFE) dan Pelatihan Keuangan (Corporate Training).
+> Harsha Advisory (PT Harsha Dana Digital) adalah firma konsultasi keuangan bisnis yang membantu pemilik usaha dan manajemen di seluruh Indonesia mengambil keputusan melalui analisis keuangan dan pendampingan strategis. Layanan utama kami adalah Fractional CFO, dilengkapi Business Financial Evaluation (BFE) dan Corporate Financial Training.
 
 Fakta utama:
 - Nama: Harsha Advisory. Badan usaha: PT Harsha Dana Digital.
@@ -982,9 +979,9 @@ Fakta utama:
 - Founder & CEO: Anak Agung Ngurah Mustakawarman, CFP®, dengan lisensi Penasihat Investasi dari OJK. Lebih dari 12 tahun pengalaman perbankan dan 10 tahun pengalaman investasi; lebih dari 200 klien financial planning di 4 negara (Indonesia, Amerika Serikat, Jepang, Singapura).
 - Penghargaan founder: Top 40 Youth Economic Leadership Program (Bank Indonesia Institute); Top 50 Startup Terbaik Indonesia (Kemenparekraf).
 - Alamat: Jl. Tukad Unda No.6, Denpasar Selatan, Bali 80226. Melayani klien di seluruh Indonesia.
-- Kontak: {EMAIL}, WhatsApp {WA_DISPLAY} ({WA.split("?")[0]}). Jadwalkan diskusi: {CAL}
+- Kontak: {EMAIL}, WhatsApp {WA_DISPLAY} ({WA.split("?")[0]}). Konsultasi awal 30 menit gratis via WhatsApp
 - Klien pelatihan antara lain: British Petroleum, Petronas, Kangean Energy, Bank Indonesia, Komdigi, GoPay, BPR Lestari.
-- Biaya: layanan mulai dari {PRICE_TEXT}, dengan penawaran akhir mengikuti kebutuhan dan cakupan pekerjaan perusahaan.
+- Biaya: Fractional CFO mulai dari {PRICE_TEXT} per bulan, dengan periode kerja sama minimal 3 bulan; Business Financial Evaluation dan Corporate Financial Training disusun sesuai ruang lingkup. Penawaran akhir mengikuti kebutuhan dan cakupan pekerjaan.
 
 ## Halaman utama
 {chr(10).join(line(p) for p in main_pages)}
