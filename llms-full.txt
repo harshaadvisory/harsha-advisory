@@ -1,6 +1,6 @@
 # Harsha Advisory: isi lengkap website
 
-Sumber: https://harshaadvisory.com/ . Diperbarui 2026-11-17. Ringkasan singkat ada di https://harshaadvisory.com/llms.txt
+Sumber: https://harshaadvisory.com/ . Diperbarui 2026-11-18. Ringkasan singkat ada di https://harshaadvisory.com/llms.txt
 
 ---
 
@@ -10,7 +10,7 @@ URL: https://harshaadvisory.com/
 
 Konsultan Keuangan Bisnis
 
-## Angka yang Jelas. Keputusan Bisnis yang Lebih Tepat
+## Angka yang JelasKeputusan Bisnis yang Lebih Tepat
 Harsha Advisory membantu pemilik bisnis dan manajemen memahami profitabilitas, mengelola arus kas, dan merencanakan pertumbuhan melalui analisis keuangan dan pendampingan strategis.
 Layanan unggulan Fractional CFO menghubungkan analisis keuangan dengan prioritas perusahaan.
 Jadwalkan Diskusi Awal
@@ -25,10 +25,10 @@ Jul
 Sep
 Nov
 OmzetLaba bersih
-Ramai, belum tentu untung. Biaya bahan baku naik 18% dan diskon belum terkendali. Angka seperti inilah yang kami bantu baca bersama manajemen.
+Ramai, belum tentu untung Biaya bahan baku naik 18% dan diskon belum terkendali. Angka seperti inilah yang kami bantu baca bersama manajemen.
 Tantangan pengambil keputusan
 
-### Bisnis terlihat bertumbuh. Apakah keuangannya juga semakin kuat?
+### Bisnis terlihat bertumbuhApakah keuangannya juga semakin kuat?
 Penjualan meningkat belum tentu berarti kas lebih longgar.
 Manajemen membutuhkan gambaran yang jelas tentang margin, biaya, dan kebutuhan dana sebelum mengambil keputusan.
 i.
@@ -511,7 +511,7 @@ URL: https://harshaadvisory.com/layanan/evaluasi-keuangan-bisnis/
 - Business Financial Evaluation
 Business Financial Evaluation (BFE)
 
-## Kenali Kondisi Keuangan. Temukan Prioritas Perbaikannya
+## Kenali Kondisi KeuanganTemukan Prioritas Perbaikannya
 Evaluasi kondisi keuangan perusahaan, temukan potensi kebocoran biaya, dan identifikasi risiko yang perlu ditangani. Dapatkan gambaran yang lebih jelas sebelum menentukan keputusan berikutnya.
 Diskusikan Evaluasi Keuangan PerusahaanLihat studi kasus
 Manfaat
@@ -662,7 +662,7 @@ Diskusikan Fractional CFOLihat contoh analisis
 Mulai dari Rp5 juta per bulan, dengan periode kerja sama minimal 3 bulan. Biaya akhir mengikuti kebutuhan dan cakupan pekerjaan perusahaan.
 Mengapa layanan ini relevan
 
-### Laporan Keuangan Menunjukkan Kondisi. Kami Membantu Menentukan Langkah
+### Laporan Keuangan Menunjukkan KondisiKami Membantu Menentukan Langkah
 Laporan keuangan menunjukkan apa yang sudah terjadi.
 Pendampingan Fractional CFO membantu manajemen menghubungkan angka tersebut dengan keputusan yang harus diambil berikutnya.
 Area pendampingan
@@ -991,7 +991,7 @@ Tentang Harsha Advisory
 Harsha Advisory adalah perusahaan konsultan keuangan bisnis yang membantu pemilik usaha, direksi, dan manajemen mengambil keputusan melalui analisis finansial dan pendampingan strategis.
 Pendekatan kami
 
-### Analisis yang Mendalam. Rekomendasi yang Dapat Dijalankan
+### Analisis yang MendalamRekomendasi yang Dapat Dijalankan
 Bagi kami, laporan keuangan bukan titik akhir.
 Yang terpenting adalah bagaimana informasi tersebut membantu manajemen melihat situasi, membahas prioritas, dan menentukan arah.
 Karena itu layanan kami berpusat pada Fractional CFO, dilengkapi Business Financial Evaluation dan Pelatihan Keuangan untuk manajemen dan peserta perusahaan.

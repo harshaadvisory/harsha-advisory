@@ -53,7 +53,7 @@ STR = {
         "f_links": [("Tentang Kami", "/tentang/"), ("Studi Kasus", "/case-studies/"), ("Insights", "/insights/"),
                     ("Kamus Keuangan", "/kamus-keuangan/"), ("Produk Digital", "/katalog/"), ("FAQ", "/#faq"), ("Kontak", "/kontak/")],
         "hours": "Senin sampai Jumat, 08.00 sampai 17.00 WITA",
-        "slogan": "Bisnis yang sehat adalah bisnis yang memahami angkanya.",
+        "slogan": "Bisnis yang sehat adalah bisnis yang memahami angkanya",
         "wa_chat": "Chat WhatsApp", "wa_aria": "Chat WhatsApp Harsha Advisory", "wa_contact": "Hubungi via WhatsApp",
         "min_read": "menit baca", "read_article": "Baca artikel", "read_more": "Baca selengkapnya",
         "team": "Tim Harsha Advisory", "published": "Diterbitkan", "updated": "Diperbarui",
@@ -80,7 +80,7 @@ STR = {
         "f_links": [("About Us", "/tentang/"), ("Case Studies", "/case-studies/"), ("Insights", "/insights/"),
                     ("Finance Glossary", "/kamus-keuangan/"), ("Digital Products", "/katalog/"), ("FAQ", "/#faq"), ("Contact", "/kontak/")],
         "hours": "Monday to Friday, 08:00 to 17:00 WITA (UTC+8)",
-        "slogan": "A healthy business is one that understands its numbers.",
+        "slogan": "A healthy business is one that understands its numbers",
         "wa_chat": "Chat on WhatsApp", "wa_aria": "Chat with Harsha Advisory on WhatsApp", "wa_contact": "Contact via WhatsApp",
         "min_read": "min read", "read_article": "Read article", "read_more": "Read more",
         "team": "Harsha Advisory Team", "published": "Published", "updated": "Updated",
@@ -274,7 +274,7 @@ ORG = {
                     "membantu pemilik usaha dan manajemen di seluruh Indonesia mengambil keputusan melalui "
                     "analisis keuangan dan pendampingan strategis: Fractional CFO, Business Financial "
                     "Evaluation, dan Corporate Financial Training."),
-    "slogan": "Bisnis yang sehat adalah bisnis yang memahami angkanya.",
+    "slogan": "Bisnis yang sehat adalah bisnis yang memahami angkanya",
     "email": EMAIL,
     "telephone": "+62-896-7314-4112",
     "contactPoint": [{"@type": "ContactPoint", "contactType": "customer service", "telephone": "+62-896-7314-4112", "email": EMAIL, "areaServed": "ID", "availableLanguage": ["Indonesian", "English"]}],
